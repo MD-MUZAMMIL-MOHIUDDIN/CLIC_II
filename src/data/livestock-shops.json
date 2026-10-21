@@ -1,0 +1,50 @@
+[
+  {
+    "id": "ls_401",
+    "userId": "usr_livestock_1",
+    "shopName": "Gopalak Dairy & Livestock Breed Center",
+    "contactPerson": "Anil Kumar Yadav",
+    "contactPhone": "+91 99345 67893",
+    "contactEmail": "gopalak.dairy@krishiseva.in",
+    "location": {
+      "state": "Haryana",
+      "district": "Karnal",
+      "block": "Gharaunda",
+      "village": "Kohand",
+      "lat": 29.5372,
+      "lng": 76.9723,
+      "pincode": "132114"
+    },
+    "operatingHours": "07:00 AM - 08:00 PM",
+    "verified": true,
+    "rating": 4.8,
+    "reviewCount": 92,
+    "categories": ["Cattle & Buffalo", "Animal Feed", "Mineral Mixtures"],
+    "description": "Certified Murrah buffalo and Gir cow breeding farm. All live animals are veterinary health certified, dewormed, and vaccinated. Also manufactures premium enriched cattle feed and chelated mineral blocks.",
+    "imageUrl": "https://images.unsplash.com/photo-1546445317-29f4545e9d53?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "ls_402",
+    "userId": "usr_livestock_2",
+    "shopName": "Deccan Pashu Seva & Poultry Hub",
+    "contactPerson": "Venkatesh Rao",
+    "contactPhone": "+91 98490 11223",
+    "contactEmail": "deccan.pashu@krishiseva.in",
+    "location": {
+      "state": "Telangana",
+      "district": "Warangal",
+      "block": "Hanamkonda",
+      "village": "Kazipet",
+      "lat": 17.9689,
+      "lng": 79.5941,
+      "pincode": "506003"
+    },
+    "operatingHours": "08:00 AM - 07:30 PM",
+    "verified": true,
+    "rating": 4.6,
+    "reviewCount": 38,
+    "categories": ["Goat & Sheep", "Poultry", "Care Equipment"],
+    "description": "Supplier of purebred Osmanabadi and Sirohi goats, Kadaknath poultry chicks, automatic nipple drinkers, and chaff cutters.",
+    "imageUrl": "https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=800&auto=format&fit=crop&q=80"
+  }
+]

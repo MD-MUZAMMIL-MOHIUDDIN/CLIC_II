@@ -1,0 +1,41 @@
+[
+  {
+    "id": "cns_7001",
+    "scientistId": "sci_501",
+    "scientistName": "Dr. Anandita Sengupta",
+    "farmerId": "usr_farmer_1",
+    "farmerName": "Rameshwar Patel",
+    "farmerPhone": "+91 98765 43210",
+    "crop": "Gram (Chana)",
+    "cropStage": "Early Vegetative (30 Days)",
+    "topic": "Collar Rot & Seedling Wilting Symptoms",
+    "issueDescription": "Observed dark brown lesions near the soil line on young gram plants. Patches of 10-15 plants are wilting suddenly after the first light irrigation. Roots show dark rotting.",
+    "photoUrl": "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=800&auto=format&fit=crop&q=80",
+    "slot": "Tomorrow 10:30 AM - 11:00 AM",
+    "format": "Video Call",
+    "status": "Responded",
+    "responseNotes": "Symptoms are characteristic of Rhizoctonia / Sclerotium collar rot triggered by wet soil conditions. Avoid excess ponding. Drench root zone immediately with Trichoderma viride @ 5g/L or carbendazim if fungal spread is rapid. Apply bio-formulations during evening hours.",
+    "prescribedBioInputs": ["bio_001"],
+    "submittedAt": "2026-10-14T09:20:00+05:30",
+    "respondedAt": "2026-10-14T14:45:00+05:30"
+  },
+  {
+    "id": "cns_7002",
+    "scientistId": "sci_502",
+    "scientistName": "Dr. Virendra Singh Tomar",
+    "farmerId": "usr_farmer_1",
+    "farmerName": "Rameshwar Patel",
+    "farmerPhone": "+91 98765 43210",
+    "crop": "Wheat (Rabi)",
+    "cropStage": "Seed Bed Preparation",
+    "topic": "Micronutrient Zinc Deficiency & Biofertilizer Priming",
+    "issueDescription": "Soil test report indicates available Zinc at 0.48 ppm (below critical limit of 0.6 ppm). Want advice on whether to apply Zinc Sulphate or Zinc Solubilizing Bio-inoculant along with PSB.",
+    "photoUrl": "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800&auto=format&fit=crop&q=80",
+    "slot": "Friday 09:30 AM - 10:00 AM",
+    "format": "Video Call",
+    "status": "Scheduled",
+    "responseNotes": null,
+    "prescribedBioInputs": [],
+    "submittedAt": "2026-10-15T07:10:00+05:30"
+  }
+]

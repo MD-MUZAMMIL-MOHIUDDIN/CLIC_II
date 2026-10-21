@@ -1,0 +1,52 @@
+[
+  {
+    "id": "notif_001",
+    "userId": "usr_farmer_1",
+    "title": "Booking Confirmed: Mahindra 575 DI Tractor",
+    "message": "Malwa Kisan CHC has accepted your booking for 18 Oct 2026. Operator assigned: Mohan Lal (+91 98221 00412).",
+    "type": "booking",
+    "createdAt": "2026-10-14T11:00:00+05:30",
+    "read": false,
+    "actionUrl": "/farmer/bookings"
+  },
+  {
+    "id": "notif_002",
+    "userId": "usr_farmer_1",
+    "title": "Scientist Advisory Received: Dr. Anandita Sengupta",
+    "message": "Dr. Sengupta has provided diagnosis and bio-fungicide prescription for your Gram wilt query.",
+    "type": "consultation",
+    "createdAt": "2026-10-14T14:50:00+05:30",
+    "read": false,
+    "actionUrl": "/farmer/consultations"
+  },
+  {
+    "id": "notif_003",
+    "userId": "usr_farmer_1",
+    "title": "Seasonal Advisory: Optimal Rabi Sowing Window",
+    "message": "Favourable soil temperature (18-22°C) predicted for next 10 days across Indore district for Wheat & Chana sowing.",
+    "type": "weather",
+    "createdAt": "2026-10-15T06:00:00+05:30",
+    "read": true,
+    "actionUrl": "/bio-inputs"
+  },
+  {
+    "id": "notif_004",
+    "userId": "usr_chc_1",
+    "title": "New Booking Request: Shaktiman Rotavator",
+    "message": "Farmer Rameshwar Patel has requested 5 acres rotavator service for 20 Oct.",
+    "type": "booking",
+    "createdAt": "2026-10-15T08:45:00+05:30",
+    "read": false,
+    "actionUrl": "/chc-dashboard"
+  },
+  {
+    "id": "notif_005",
+    "userId": "usr_facilitator_1",
+    "title": "New CHC Application in Queue",
+    "message": "Verma Agri Machinery Hub (Jaipur) has submitted registration with 2 documentation attachments.",
+    "type": "approval",
+    "createdAt": "2026-10-12T14:35:00+05:30",
+    "read": false,
+    "actionUrl": "/facilitator"
+  }
+]

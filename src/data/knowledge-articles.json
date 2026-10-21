@@ -1,0 +1,72 @@
+[
+  {
+    "id": "art_101",
+    "title": "Soil Organic Carbon Enhancement in Intensive Cereal-Pulse Rotations",
+    "category": "Soil Health",
+    "excerpt": "Practical protocols for boosting active soil microbial biomass and humic fractions without disrupting seasonal cropping cycles.",
+    "content": "Intensive cropping without organic replenishment depletes soil organic carbon (SOC) below the threshold level of 0.5%, impairing aggregate stability and nutrient buffer capacity. By adopting summer green manuring with Sesbania (Dhaincha) or Sunn hemp, incorporating paddy/wheat straw with cellulolytic fungal inoculants, and applying well-aerated compost @ 5 tonnes/ha, farmers can increase organic carbon by 0.15% over a 3-year cycle.",
+    "author": "Dr. Virendra Singh Tomar",
+    "institution": "KVK Kasturbagram, Indore",
+    "publishedDate": "2026-09-15",
+    "readTime": "6 min read",
+    "tags": ["Soil Health", "Compost", "Green Manure", "Carbon Sequestration"],
+    "imageUrl": "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800&auto=format&fit=crop&q=80",
+    "featured": true
+  },
+  {
+    "id": "art_102",
+    "title": "Bio-Priming & Seed Inoculation: The First Shield Against Seedling Blight",
+    "category": "Natural & Bio-inputs",
+    "excerpt": "A step-by-step field guide to simultaneous Rhizobium and Trichoderma inoculation on pulses and oilseeds.",
+    "content": "Bio-priming integrates controlled seed hydration with biological antagonist inoculation. For chickpea and soybean, treating seeds with Trichoderma viride WP @ 5g/kg seed followed by dual liquid Rhizobium + PSB @ 10ml/kg seed enhances germination vigour by 14% and creates an active fungal rhizosphere mantle preventing seedling wilt even in damp black soils.",
+    "author": "Dr. Anandita Sengupta",
+    "institution": "ICAR - Indian Institute of Soybean Research",
+    "publishedDate": "2026-09-28",
+    "readTime": "5 min read",
+    "tags": ["Bio-priming", "Trichoderma", "Rhizobium", "Seed Health"],
+    "imageUrl": "https://images.unsplash.com/photo-1628352081506-83c43123ed6d?w=800&auto=format&fit=crop&q=80",
+    "featured": true
+  },
+  {
+    "id": "art_103",
+    "title": "Direct Seeding of Rice (DSR) & Laser Levelling: Water-Smart Agriculture",
+    "category": "Farm Mechanization",
+    "excerpt": "How precision land grading combined with pneumatic seed drill implements reduces irrigation water needs by 30%.",
+    "content": "Laser land levelling levels fields within ±2 cm tolerance, eliminating high and low water stagnation spots. When followed by calibrated tractor-mounted multi-crop drills for Direct Seeded Rice (DSR) or wheat, diesel consumption drops by 20%, weed infestation decreases by 40%, and water footprint is drastically reduced compared to conventional puddle transplanting.",
+    "author": "Er. Sukhwinder Dhillon",
+    "institution": "Punjab Farm Machinery Testing Unit",
+    "publishedDate": "2026-10-02",
+    "readTime": "8 min read",
+    "tags": ["Mechanization", "Laser Levelling", "Water Conservation", "DSR"],
+    "imageUrl": "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=800&auto=format&fit=crop&q=80",
+    "featured": false
+  },
+  {
+    "id": "art_104",
+    "title": "Ration Balancing & Silage Preparation for High-Yielding Dairy Bovines",
+    "category": "Livestock Management",
+    "excerpt": "Optimizing roughage-to-concentrate ratios and packing bunker silage to sustain peak milk production through dry winter months.",
+    "content": "Feeding high-producing Murrah and Gir cattle with unbalanced grain concentrates causes sub-acute ruminal acidosis (SARA). Feeding green maize/sorghum silage harvested at the 50% milk-dough stage, combined with bypass fat (100g/day) and chelated mineral mixtures, maintains rumen pH at 6.4-6.8 and elevates milk fat test by 0.4 to 0.6 percentage points.",
+    "author": "Dr. Hemant Bhargava",
+    "institution": "NDRI Karnal",
+    "publishedDate": "2026-08-20",
+    "readTime": "7 min read",
+    "tags": ["Livestock", "Dairy Nutrition", "Silage", "Mineral Mixture"],
+    "imageUrl": "https://images.unsplash.com/photo-1546445317-29f4545e9d53?w=800&auto=format&fit=crop&q=80",
+    "featured": false
+  },
+  {
+    "id": "art_105",
+    "title": "Ecological Management of Fall Armyworm and Pod Borer in Rabi Pulses",
+    "category": "Integrated Pest Management",
+    "excerpt": "Utilizing pheromone traps, bird perches, and Beauveria bassiana sprays before resorting to chemical insecticides.",
+    "content": "Integrated Pest Management in gram relies on proactive threshold monitoring. Installing 5 funnel pheromone traps per acre provides early alert for Helicoverpa armigera moth flights. Erecting T-shaped wooden bird perches (15/acre) encourages insectivorous birds. If larval counts exceed 1 caterpillar per meter row, applying Beauveria bassiana 1.15% WP @ 1.2 kg/acre provides 82% control without harming predatory ladybird beetles.",
+    "author": "Dr. Manpreet Kaur Gill",
+    "institution": "Punjab Agricultural University",
+    "publishedDate": "2026-10-05",
+    "readTime": "6 min read",
+    "tags": ["IPM", "Pest Management", "Biological Control", "Chickpea"],
+    "imageUrl": "https://images.unsplash.com/photo-1589923188900-85dae523342b?w=800&auto=format&fit=crop&q=80",
+    "featured": false
+  }
+]

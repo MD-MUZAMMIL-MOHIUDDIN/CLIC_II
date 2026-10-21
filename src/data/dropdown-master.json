@@ -1,0 +1,59 @@
+{
+  "refTypes": [
+    { "RefId": "1", "RefName": "Crop Category" },
+    { "RefId": "2", "RefName": "Soil Type" },
+    { "RefId": "3", "RefName": "Farm Machinery Equipment" },
+    { "RefId": "4", "RefName": "ID Proof Document Type" },
+    { "RefId": "5", "RefName": "Irrigation Method" },
+    { "RefId": "6", "RefName": "Livestock Breed" },
+    { "RefId": "7", "RefName": "Crop Season" },
+    { "RefId": "8", "RefName": "Crop Problem Category (crop_problem_category)" }
+  ],
+  "dropdowns": [
+    { "DropdownId": "1", "Value": "CEREALS", "Text": "Cereals", "RefId": "1" },
+    { "DropdownId": "2", "Value": "MILLETS", "Text": "Millets", "RefId": "1" },
+    { "DropdownId": "3", "Value": "PULSES", "Text": "Pulses", "RefId": "1" },
+    { "DropdownId": "4", "Value": "OILSEEDS", "Text": "Oilseeds", "RefId": "1" },
+    { "DropdownId": "5", "Value": "COMMERCIAL", "Text": "Commercial Crops", "RefId": "1" },
+    { "DropdownId": "6", "Value": "VEGETABLES", "Text": "Vegetables", "RefId": "1" },
+    { "DropdownId": "7", "Value": "FRUITS", "Text": "Fruits", "RefId": "1" },
+    { "DropdownId": "8", "Value": "SPICES", "Text": "Spices & Condiments", "RefId": "1" },
+    { "DropdownId": "9", "Value": "FODDER", "Text": "Fodder Crops", "RefId": "1" },
+
+    { "DropdownId": "10", "Value": "ALLUVIAL", "Text": "Alluvial Soil (Sandy/Clay Loam)", "RefId": "2" },
+    { "DropdownId": "11", "Value": "BLACK_COTTON", "Text": "Black Cotton Soil (Regur)", "RefId": "2" },
+    { "DropdownId": "12", "Value": "RED_YELLOW", "Text": "Red and Yellow Soil", "RefId": "2" },
+    { "DropdownId": "13", "Value": "LATERITE", "Text": "Laterite Soil", "RefId": "2" },
+    { "DropdownId": "14", "Value": "ARID_DESERT", "Text": "Arid & Desert Soil", "RefId": "2" },
+
+    { "DropdownId": "15", "Value": "TRACTOR", "Text": "Tractors & Prime Movers (45HP - 75HP)", "RefId": "3" },
+    { "DropdownId": "16", "Value": "HARVESTER", "Text": "Multi-Crop Combine Harvester", "RefId": "3" },
+    { "DropdownId": "17", "Value": "ROTAVATOR", "Text": "Rotary Tiller / Rotavator", "RefId": "3" },
+    { "DropdownId": "18", "Value": "SEED_DRILL", "Text": "Happy Seeder / Zero-Till Seed Drill", "RefId": "3" },
+    { "DropdownId": "19", "Value": "DRONE_SPRAYER", "Text": "Agricultural Drone Sprayer (10L-16L)", "RefId": "3" },
+
+    { "DropdownId": "20", "Value": "AADHAAR", "Text": "Aadhaar Card (UIDAI)", "RefId": "4" },
+    { "DropdownId": "21", "Value": "PAN_CARD", "Text": "Permanent Account Number (PAN)", "RefId": "4" },
+    { "DropdownId": "22", "Value": "KISAN_CREDIT_CARD", "Text": "Kisan Credit Card (KCC)", "RefId": "4" },
+    { "DropdownId": "23", "Value": "VOTER_ID", "Text": "Voter Identification Card (EPIC)", "RefId": "4" },
+    { "DropdownId": "24", "Value": "DRIVING_LICENSE", "Text": "Driving License", "RefId": "4" },
+
+    { "DropdownId": "25", "Value": "DRIP", "Text": "Micro Drip Irrigation", "RefId": "5" },
+    { "DropdownId": "26", "Value": "SPRINKLER", "Text": "Micro Sprinkler Irrigation", "RefId": "5" },
+    { "DropdownId": "27", "Value": "SURFACE_CANAL", "Text": "Canal & Furrow Irrigation", "RefId": "5" },
+    { "DropdownId": "28", "Value": "SOLAR_PUMP", "Text": "Solar Powered Tubewell Irrigation", "RefId": "5" },
+
+    { "DropdownId": "29", "Value": "GIR", "Text": "Gir Indigenous Cattle", "RefId": "6" },
+    { "DropdownId": "30", "Value": "SAHIWAL", "Text": "Sahiwal High-Yield Cow", "RefId": "6" },
+    { "DropdownId": "31", "Value": "MURRAH", "Text": "Murrah Buffalo", "RefId": "6" },
+    { "DropdownId": "32", "Value": "OSMANABADI", "Text": "Osmanabadi Goat", "RefId": "6" },
+
+    { "DropdownId": "33", "Value": "KHARIF", "Text": "Kharif (Monsoon Season)", "RefId": "7" },
+    { "DropdownId": "34", "Value": "RABI", "Text": "Rabi (Winter Season)", "RefId": "7" },
+    { "DropdownId": "35", "Value": "ZAID", "Text": "Zaid (Summer Season)", "RefId": "7" },
+
+    { "DropdownId": "36", "Value": "1", "Text": "Pest", "RefId": "8" },
+    { "DropdownId": "37", "Value": "2", "Text": "Disease", "RefId": "8" },
+    { "DropdownId": "38", "Value": "3", "Text": "Nutrient Deficiency", "RefId": "8" }
+  ]
+}

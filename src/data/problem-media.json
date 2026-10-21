@@ -1,0 +1,137 @@
+[
+  {
+    "ProblemMediaId": "1",
+    "CropProblemId": "1",
+    "MediaType": "IMAGE",
+    "MediaUrl": "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800&auto=format&fit=crop&q=80",
+    "MediaDescription": "Circular hopper burn patch showing dried brown tillers in mature paddy crop canopy.",
+    "DisplayOrder": 1,
+    "IsActive": true
+  },
+  {
+    "ProblemMediaId": "2",
+    "CropProblemId": "1",
+    "MediaType": "IMAGE",
+    "MediaUrl": "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=800&auto=format&fit=crop&q=80",
+    "MediaDescription": "Close-up of brown plant hopper nymphs congregating at water line on rice stem base.",
+    "DisplayOrder": 2,
+    "IsActive": true
+  },
+  {
+    "ProblemMediaId": "3",
+    "CropProblemId": "2",
+    "MediaType": "IMAGE",
+    "MediaUrl": "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?w=800&auto=format&fit=crop&q=80",
+    "MediaDescription": "Spindle-shaped blast lesions with ash-grey centers and brown margins on paddy leaves.",
+    "DisplayOrder": 1,
+    "IsActive": true
+  },
+  {
+    "ProblemMediaId": "4",
+    "CropProblemId": "2",
+    "MediaType": "IMAGE",
+    "MediaUrl": "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=800&auto=format&fit=crop&q=80",
+    "MediaDescription": "Severe neck blast infection preventing grain filling and leading to blank panicles.",
+    "DisplayOrder": 2,
+    "IsActive": true
+  },
+  {
+    "ProblemMediaId": "5",
+    "CropProblemId": "3",
+    "MediaType": "IMAGE",
+    "MediaUrl": "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800&auto=format&fit=crop&q=80",
+    "MediaDescription": "Khaira disease: Characteristic reddish-brown rusty pigmentation on middle leaves in calcareous soil.",
+    "DisplayOrder": 1,
+    "IsActive": true
+  },
+  {
+    "ProblemMediaId": "6",
+    "CropProblemId": "4",
+    "MediaType": "IMAGE",
+    "MediaUrl": "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=800&auto=format&fit=crop&q=80",
+    "MediaDescription": "Fall armyworm larva voraciously chewing central whorl leaves of young maize plant.",
+    "DisplayOrder": 1,
+    "IsActive": true
+  },
+  {
+    "ProblemMediaId": "7",
+    "CropProblemId": "4",
+    "MediaType": "IMAGE",
+    "MediaUrl": "https://images.unsplash.com/photo-1599818816942-835048e9c708?w=800&auto=format&fit=crop&q=80",
+    "MediaDescription": "Characteristic shot-hole foliar perforation and fecal frass deposits in the maize whorl.",
+    "DisplayOrder": 2,
+    "IsActive": true
+  },
+  {
+    "ProblemMediaId": "8",
+    "CropProblemId": "5",
+    "MediaType": "IMAGE",
+    "MediaUrl": "https://images.unsplash.com/photo-1628352081506-83c43123ed6d?w=800&auto=format&fit=crop&q=80",
+    "MediaDescription": "Long cigar-shaped elliptical necrotic lesions of Turcicum leaf blight on maize foliage.",
+    "DisplayOrder": 1,
+    "IsActive": true
+  },
+  {
+    "ProblemMediaId": "9",
+    "CropProblemId": "6",
+    "MediaType": "IMAGE",
+    "MediaUrl": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=800&auto=format&fit=crop&q=80",
+    "MediaDescription": "Linear stripes of bright yellow powdery uredinial pustules along wheat leaf veins.",
+    "DisplayOrder": 1,
+    "IsActive": true
+  },
+  {
+    "ProblemMediaId": "10",
+    "CropProblemId": "7",
+    "MediaType": "IMAGE",
+    "MediaUrl": "https://images.unsplash.com/photo-1471193945509-9ad0617afabf?w=800&auto=format&fit=crop&q=80",
+    "MediaDescription": "Dense colony of wheat aphids infesting succulent flag leaf and emerging earhead.",
+    "DisplayOrder": 1,
+    "IsActive": true
+  },
+  {
+    "ProblemMediaId": "11",
+    "CropProblemId": "8",
+    "MediaType": "IMAGE",
+    "MediaUrl": "https://images.unsplash.com/photo-1560493676-04071c5f467b?w=800&auto=format&fit=crop&q=80",
+    "MediaDescription": "Gram pod borer caterpillar boring into pigeonpea pod with head inside pod.",
+    "DisplayOrder": 1,
+    "IsActive": true
+  },
+  {
+    "ProblemMediaId": "12",
+    "CropProblemId": "9",
+    "MediaType": "IMAGE",
+    "MediaUrl": "https://images.unsplash.com/photo-1582281298055-e25b84a30b0b?w=800&auto=format&fit=crop&q=80",
+    "MediaDescription": "Fusarium wilt: sudden drooping and wilting of red gram branchlets in flowering stage.",
+    "DisplayOrder": 1,
+    "IsActive": true
+  },
+  {
+    "ProblemMediaId": "13",
+    "CropProblemId": "10",
+    "MediaType": "IMAGE",
+    "MediaUrl": "https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?w=800&auto=format&fit=crop&q=80",
+    "MediaDescription": "Severe interveinal chlorosis turning young chickpea leaves ivory white.",
+    "DisplayOrder": 1,
+    "IsActive": true
+  },
+  {
+    "ProblemMediaId": "14",
+    "CropProblemId": "11",
+    "MediaType": "IMAGE",
+    "MediaUrl": "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800&auto=format&fit=crop&q=80",
+    "MediaDescription": "Yellow mosaic virus: alternating bright yellow and dark green mosaic pattern on greengram.",
+    "DisplayOrder": 1,
+    "IsActive": true
+  },
+  {
+    "ProblemMediaId": "15",
+    "CropProblemId": "12",
+    "MediaType": "IMAGE",
+    "MediaUrl": "https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?w=800&auto=format&fit=crop&q=80",
+    "MediaDescription": "Sorghum shoot fly dead-heart: central seedling shoot dried and rotting with tillering.",
+    "DisplayOrder": 1,
+    "IsActive": true
+  }
+]

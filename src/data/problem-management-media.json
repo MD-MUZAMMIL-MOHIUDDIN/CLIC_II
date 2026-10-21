@@ -1,0 +1,110 @@
+[
+  {
+    "ManagementMediaId": "1",
+    "ManagementId": "1",
+    "MediaType": "IMAGE",
+    "MediaUrl": "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800&auto=format&fit=crop&q=80",
+    "MediaDescription": "Forming 30 cm alleyway pathways every 2 meters in paddy fields to improve sunlight and aeration against hoppers.",
+    "DisplayOrder": 1,
+    "IsActive": true
+  },
+  {
+    "ManagementMediaId": "2",
+    "ManagementId": "2",
+    "MediaType": "IMAGE",
+    "MediaUrl": "https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?w=800&auto=format&fit=crop&q=80",
+    "MediaDescription": "Neem formulation botanical spray applied with targeted nozzle aimed at the base of rice tillers.",
+    "DisplayOrder": 1,
+    "IsActive": true
+  },
+  {
+    "ManagementMediaId": "3",
+    "ManagementId": "3",
+    "MediaType": "IMAGE",
+    "MediaUrl": "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=800&auto=format&fit=crop&q=80",
+    "MediaDescription": "Chemical spray application with hollow cone nozzle targeting hopper colonies congregated at stem base.",
+    "DisplayOrder": 1,
+    "IsActive": true
+  },
+  {
+    "ManagementMediaId": "4",
+    "ManagementId": "4",
+    "MediaType": "IMAGE",
+    "MediaUrl": "https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?w=800&auto=format&fit=crop&q=80",
+    "MediaDescription": "Certified seed slurry treatment with protective fungicide prior to wet-bed nursery sowing.",
+    "DisplayOrder": 1,
+    "IsActive": true
+  },
+  {
+    "ManagementMediaId": "5",
+    "ManagementId": "5",
+    "MediaType": "IMAGE",
+    "MediaUrl": "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800&auto=format&fit=crop&q=80",
+    "MediaDescription": "Prophylactic Tricyclazole spray during boot leaf stage before panicle emergence to block neck blast.",
+    "DisplayOrder": 1,
+    "IsActive": true
+  },
+  {
+    "ManagementMediaId": "6",
+    "ManagementId": "6",
+    "MediaType": "IMAGE",
+    "MediaUrl": "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=800&auto=format&fit=crop&q=80",
+    "MediaDescription": "Foliar zinc sulphate spray mixed with lime neutralizing agent applied uniformly on chlorotic leaves.",
+    "DisplayOrder": 1,
+    "IsActive": true
+  },
+  {
+    "ManagementMediaId": "7",
+    "ManagementId": "7",
+    "MediaType": "IMAGE",
+    "MediaUrl": "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=800&auto=format&fit=crop&q=80",
+    "MediaDescription": "Pheromone funnel trap installed at canopy height in maize field for monitoring male FAW moths.",
+    "DisplayOrder": 1,
+    "IsActive": true
+  },
+  {
+    "ManagementMediaId": "8",
+    "ManagementId": "8",
+    "MediaType": "IMAGE",
+    "MediaUrl": "https://images.unsplash.com/photo-1599818816942-835048e9c708?w=800&auto=format&fit=crop&q=80",
+    "MediaDescription": "Biological bio-pesticide application into central whorl using hand-operated knapsack sprayer.",
+    "DisplayOrder": 1,
+    "IsActive": true
+  },
+  {
+    "ManagementMediaId": "9",
+    "ManagementId": "9",
+    "MediaType": "IMAGE",
+    "MediaUrl": "https://images.unsplash.com/photo-1628352081506-83c43123ed6d?w=800&auto=format&fit=crop&q=80",
+    "MediaDescription": "Direct whorl application of insecticide using single nozzle directed downward into central funnel.",
+    "DisplayOrder": 1,
+    "IsActive": true
+  },
+  {
+    "ManagementMediaId": "10",
+    "ManagementId": "10",
+    "MediaType": "IMAGE",
+    "MediaUrl": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=800&auto=format&fit=crop&q=80",
+    "MediaDescription": "Fungicidal spray across wheat foliage at initial appearance of stripe rust pustules.",
+    "DisplayOrder": 1,
+    "IsActive": true
+  },
+  {
+    "ManagementMediaId": "11",
+    "ManagementId": "11",
+    "MediaType": "IMAGE",
+    "MediaUrl": "https://images.unsplash.com/photo-1560493676-04071c5f467b?w=800&auto=format&fit=crop&q=80",
+    "MediaDescription": "Trichogramma bio-control egg parasitoid cards stapled to underside of leaves in pigeonpea canopy.",
+    "DisplayOrder": 1,
+    "IsActive": true
+  },
+  {
+    "ManagementMediaId": "12",
+    "ManagementId": "12",
+    "MediaType": "IMAGE",
+    "MediaUrl": "https://images.unsplash.com/photo-1582281298055-e25b84a30b0b?w=800&auto=format&fit=crop&q=80",
+    "MediaDescription": "High-volume chemical spray on developing pigeonpea pods to suppress Helicoverpa armigera borers.",
+    "DisplayOrder": 1,
+    "IsActive": true
+  }
+]

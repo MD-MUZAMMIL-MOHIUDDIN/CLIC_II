@@ -1,0 +1,40 @@
+[
+  {
+    "id": "farmer_101",
+    "userId": "usr_farmer_1",
+    "name": "Rameshwar Patel",
+    "phone": "+91 98765 43210",
+    "location": {
+      "state": "Madhya Pradesh",
+      "district": "Indore",
+      "block": "Sanwer",
+      "village": "Kanadia",
+      "lat": 22.7196,
+      "lng": 75.8577,
+      "pincode": "452016"
+    },
+    "landSizeAcres": 14,
+    "primaryCrops": ["Soybean (Kharif)", "Wheat (Rabi)", "Gram (Chana)", "Garlic"],
+    "soilType": "Deep Medium Black (Vertisol)",
+    "irrigationType": "Drip Irrigation + Borewell"
+  },
+  {
+    "id": "farmer_102",
+    "userId": "usr_farmer_2",
+    "name": "Jaswant Singh Brar",
+    "phone": "+91 98111 22334",
+    "location": {
+      "state": "Punjab",
+      "district": "Ludhiana",
+      "block": "Samrala",
+      "village": "Doraha",
+      "lat": 30.8034,
+      "lng": 76.0319,
+      "pincode": "141421"
+    },
+    "landSizeAcres": 22,
+    "primaryCrops": ["Paddy (Basmati)", "Wheat", "Mustard", "Silage Maize"],
+    "soilType": "Alluvial Loam",
+    "irrigationType": "Canal + Submersible Tube Well"
+  }
+]

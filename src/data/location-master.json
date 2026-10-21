@@ -1,0 +1,73 @@
+{
+  "states": [
+    { "StateId": "1", "Value": "MP", "Text": "Madhya Pradesh" },
+    { "StateId": "2", "Value": "PB", "Text": "Punjab" },
+    { "StateId": "3", "Value": "HR", "Text": "Haryana" },
+    { "StateId": "4", "Value": "MH", "Text": "Maharashtra" },
+    { "StateId": "5", "Value": "TG", "Text": "Telangana" },
+    { "StateId": "6", "Value": "RJ", "Text": "Rajasthan" }
+  ],
+  "districts": [
+    { "DistrictId": "1", "Value": "IND", "Text": "Indore", "StateId": "1" },
+    { "DistrictId": "2", "Value": "UJJ", "Text": "Ujjain", "StateId": "1" },
+    { "DistrictId": "3", "Value": "DHA", "Text": "Dhar", "StateId": "1" },
+    { "DistrictId": "4", "Value": "LDH", "Text": "Ludhiana", "StateId": "2" },
+    { "DistrictId": "5", "Value": "PAT", "Text": "Patiala", "StateId": "2" },
+    { "DistrictId": "6", "Value": "KAR", "Text": "Karnal", "StateId": "3" },
+    { "DistrictId": "7", "Value": "AMB", "Text": "Ambala", "StateId": "3" },
+    { "DistrictId": "8", "Value": "PUN", "Text": "Pune", "StateId": "4" },
+    { "DistrictId": "9", "Value": "NAS", "Text": "Nashik", "StateId": "4" },
+    { "DistrictId": "10", "Value": "WAR", "Text": "Warangal", "StateId": "5" },
+    { "DistrictId": "11", "Value": "JAI", "Text": "Jaipur", "StateId": "6" }
+  ],
+  "mandals": [
+    { "MandalId": "1", "Value": "SAN", "Text": "Sanwer", "DistrictId": "1" },
+    { "MandalId": "2", "Value": "DEP", "Text": "Depalpur", "DistrictId": "1" },
+    { "MandalId": "3", "Value": "MHW", "Text": "Mhow (Dr. Ambedkar Nagar)", "DistrictId": "1" },
+    { "MandalId": "4", "Value": "IND_URB", "Text": "Indore Urban", "DistrictId": "1" },
+    { "MandalId": "5", "Value": "BDN", "Text": "Badnagar", "DistrictId": "2" },
+    { "MandalId": "6", "Value": "MAH", "Text": "Mahidpur", "DistrictId": "2" },
+    { "MandalId": "7", "Value": "SMR", "Text": "Samrala", "DistrictId": "4" },
+    { "MandalId": "8", "Value": "JAG", "Text": "Jagraon", "DistrictId": "4" },
+    { "MandalId": "9", "Value": "GHA", "Text": "Gharaunda", "DistrictId": "6" },
+    { "MandalId": "10", "Value": "NIL", "Text": "Nilokheri", "DistrictId": "6" },
+    { "MandalId": "11", "Value": "HAV", "Text": "Haveli", "DistrictId": "8" },
+    { "MandalId": "12", "Value": "BAR", "Text": "Baramati", "DistrictId": "8" },
+    { "MandalId": "13", "Value": "HNK", "Text": "Hanamkonda", "DistrictId": "10" },
+    { "MandalId": "14", "Value": "CHK", "Text": "Chaksu", "DistrictId": "11" }
+  ],
+  "panchayats": [
+    { "PanchayatId": "1", "Value": "KAN_GP", "Text": "Kanadia Gram Panchayat", "MandalId": "1" },
+    { "PanchayatId": "2", "Value": "MAG_GP", "Text": "Manglia Gram Panchayat", "MandalId": "1" },
+    { "PanchayatId": "3", "Value": "BET_GP", "Text": "Betma Gram Panchayat", "MandalId": "2" },
+    { "PanchayatId": "4", "Value": "RAU_GP", "Text": "Rau Gram Panchayat", "MandalId": "3" },
+    { "PanchayatId": "5", "Value": "SIM_GP", "Text": "Simrol Gram Panchayat", "MandalId": "3" },
+    { "PanchayatId": "6", "Value": "TAJ_GP", "Text": "Tajpur Gram Panchayat", "MandalId": "5" },
+    { "PanchayatId": "7", "Value": "SAH_GP", "Text": "Sahnewal Gram Panchayat", "MandalId": "7" },
+    { "PanchayatId": "8", "Value": "KOH_GP", "Text": "Kohand Gram Panchayat", "MandalId": "9" },
+    { "PanchayatId": "9", "Value": "TAR_GP", "Text": "Taraori Gram Panchayat", "MandalId": "10" },
+    { "PanchayatId": "10", "Value": "MAL_GP", "Text": "Malegaon Gram Panchayat", "MandalId": "11" },
+    { "PanchayatId": "11", "Value": "KAZ_GP", "Text": "Kazipet Gram Panchayat", "MandalId": "13" },
+    { "PanchayatId": "12", "Value": "KOT_GP", "Text": "Kotkhawda Gram Panchayat", "MandalId": "14" }
+  ],
+  "villages": [
+    { "VillageId": "1", "Value": "KAN_VIL", "Text": "Kanadia", "PanchayatId": "1" },
+    { "VillageId": "2", "Value": "SEM_VIL", "Text": "Semliya Chau", "PanchayatId": "1" },
+    { "VillageId": "3", "Value": "MAG_VIL", "Text": "Manglia", "PanchayatId": "2" },
+    { "VillageId": "4", "Value": "HAS_VIL", "Text": "Hasalpur", "PanchayatId": "2" },
+    { "VillageId": "5", "Value": "BET_VIL", "Text": "Betma", "PanchayatId": "3" },
+    { "VillageId": "6", "Value": "RAU_VIL", "Text": "Rau", "PanchayatId": "4" },
+    { "VillageId": "7", "Value": "SIM_VIL", "Text": "Simrol", "PanchayatId": "5" },
+    { "VillageId": "8", "Value": "TAJ_VIL", "Text": "Tajpur", "PanchayatId": "6" },
+    { "VillageId": "9", "Value": "KAJ_VIL", "Text": "Kajleshwar", "PanchayatId": "6" },
+    { "VillageId": "10", "Value": "SAH_VIL", "Text": "Sahnewal", "PanchayatId": "7" },
+    { "VillageId": "11", "Value": "DOR_VIL", "Text": "Doraha", "PanchayatId": "7" },
+    { "VillageId": "12", "Value": "KOH_VIL", "Text": "Kohand", "PanchayatId": "8" },
+    { "VillageId": "13", "Value": "TAR_VIL", "Text": "Taraori", "PanchayatId": "9" },
+    { "VillageId": "14", "Value": "MAL_VIL", "Text": "Malegaon", "PanchayatId": "10" },
+    { "VillageId": "15", "Value": "KAZ_VIL", "Text": "Kazipet", "PanchayatId": "11" },
+    { "VillageId": "16", "Value": "MAD_VIL", "Text": "Madikonda", "PanchayatId": "11" },
+    { "VillageId": "17", "Value": "KOT_VIL", "Text": "Kotkhawda", "PanchayatId": "12" },
+    { "VillageId": "18", "Value": "BAG_VIL", "Text": "Bagru", "PanchayatId": "12" }
+  ]
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "CropProblemId": "1",
+    "CropId": "1",
+    "ProblemCategoryId": "36",
+    "ProblemName": "Brown Plant Hopper (BPH)",
+    "ScientificName": "Nilaparvata lugens",
+    "Description": "Major sap-sucking pest of paddy causing hopper burn patches in dense, lush canopies.",
+    "Symptoms": "Circular yellow patches rapidly turning brown ('hopper burn'); sooty mold at tiller bases; premature lodging in mature crop.",
+    "IsActive": true
+  },
+  {
+    "CropProblemId": "2",
+    "CropId": "1",
+    "ProblemCategoryId": "37",
+    "ProblemName": "Rice Blast",
+    "ScientificName": "Magnaporthe oryzae",
+    "Description": "Devastating fungal disease affecting leaves, nodes, and panicles during periods of high humidity and low night temperatures.",
+    "Symptoms": "Spindle-shaped elliptical lesions with gray centers and reddish-brown margins; neck blast leading to blank chaffy panicles.",
+    "IsActive": true
+  },
+  {
+    "CropProblemId": "3",
+    "CropId": "1",
+    "ProblemCategoryId": "38",
+    "ProblemName": "Zinc Deficiency (Khaira Disease)",
+    "ScientificName": "Zn Micro-Nutrient Deficiency",
+    "Description": "Widespread micro-nutrient deficiency in submerged calcareous soils of Indo-Gangetic and Deccan plains.",
+    "Symptoms": "Rust-colored reddish-brown pigmentation on 3rd and 4th leaves; stunted tillering; uneven plant height and delayed heading.",
+    "IsActive": true
+  },
+  {
+    "CropProblemId": "4",
+    "CropId": "2",
+    "ProblemCategoryId": "36",
+    "ProblemName": "Fall Armyworm (FAW)",
+    "ScientificName": "Spodoptera frugiperda",
+    "Description": "Invasive voracious foliar caterpillar feeding aggressively inside the central whorls of maize plants.",
+    "Symptoms": "Pin-hole punctures on young leaves, ragged shot-hole appearance, abundant sawdust-like fecal frass in whorls.",
+    "IsActive": true
+  },
+  {
+    "CropProblemId": "5",
+    "CropId": "2",
+    "ProblemCategoryId": "37",
+    "ProblemName": "Turcicum Leaf Blight",
+    "ScientificName": "Exserohilum turcicum",
+    "Description": "Severe foliar disease causing large elliptical grayish-green or tan lesions across the maize canopy.",
+    "Symptoms": "Long elliptical necrotic lesions (2-15 cm) on lower leaves progressing upwards; premature plant senescence.",
+    "IsActive": true
+  },
+  {
+    "CropProblemId": "6",
+    "CropId": "3",
+    "ProblemCategoryId": "37",
+    "ProblemName": "Yellow Rust (Stripe Rust)",
+    "ScientificName": "Puccinia striiformis",
+    "Description": "High-impact cool season fungal rust prevalent in Northern and Central wheat zones with cool humid weather.",
+    "Symptoms": "Bright yellow pustules arranged in characteristic linear stripes on leaf blades; dusty yellow urediniospores rub off on touch.",
+    "IsActive": true
+  },
+  {
+    "CropProblemId": "7",
+    "CropId": "3",
+    "ProblemCategoryId": "36",
+    "ProblemName": "Wheat Aphids",
+    "ScientificName": "Rhopalosiphum padi",
+    "Description": "Colonies of green aphids congregating on developing ears and flag leaves during heading and grain filling.",
+    "Symptoms": "Sticky honeydew and sooty mold on earheads; yellowing and curling of flag leaf; shriveled light-weight grain formation.",
+    "IsActive": true
+  },
+  {
+    "CropProblemId": "8",
+    "CropId": "6",
+    "ProblemCategoryId": "36",
+    "ProblemName": "Gram Pod Borer",
+    "ScientificName": "Helicoverpa armigera",
+    "Description": "Primary economic pest attacking flowers and developing pods of pigeonpea and chickpea.",
+    "Symptoms": "Circular clean-cut holes bored into pods; caterpillars feeding with head inserted inside pod while body remains outside.",
+    "IsActive": true
+  },
+  {
+    "CropProblemId": "9",
+    "CropId": "6",
+    "ProblemCategoryId": "37",
+    "ProblemName": "Fusarium Wilt",
+    "ScientificName": "Fusarium udum",
+    "Description": "Soil-borne vascular wilt causing sudden collapse of pigeonpea plants during flowering and podding.",
+    "Symptoms": "Loss of turgidity in leaves, gradual yellowing and wilting, purple vertical band on stem base, dark brown vascular xylem discoloration.",
+    "IsActive": true
+  },
+  {
+    "CropProblemId": "10",
+    "CropId": "7",
+    "ProblemCategoryId": "38",
+    "ProblemName": "Iron Chlorosis",
+    "ScientificName": "Fe Deficiency in Calcareous Soils",
+    "Description": "Nutrient disorder frequently observed in black cotton calcareous soils with high calcium carbonate and high pH.",
+    "Symptoms": "Interveinal chlorosis on youngest leaves turning bleached ivory-white; suppressed nodulation and poor pod formation.",
+    "IsActive": true
+  },
+  {
+    "CropProblemId": "11",
+    "CropId": "8",
+    "ProblemCategoryId": "37",
+    "ProblemName": "Yellow Mosaic Virus (MYMV)",
+    "ScientificName": "Mungbean Yellow Mosaic Begomovirus",
+    "Description": "Whitefly-transmitted virus causing severe yield penalty in greengram and blackgram crops.",
+    "Symptoms": "Irregular bright yellow and dark green mottled patches on young trifoliate leaves; puckered malformed leaves and few stunted pods.",
+    "IsActive": true
+  },
+  {
+    "CropProblemId": "12",
+    "CropId": "4",
+    "ProblemCategoryId": "36",
+    "ProblemName": "Sorghum Shoot Fly",
+    "ScientificName": "Atherigona soccata",
+    "Description": "Early seedling pest attacking sorghum within 1 to 4 weeks after germination.",
+    "Symptoms": "Drying and rotting of central growing shoot producing typical 'dead heart' that easily pulls out with foul odor; excessive tillering.",
+    "IsActive": true
+  }
+]

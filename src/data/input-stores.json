@@ -1,0 +1,50 @@
+[
+  {
+    "id": "is_501",
+    "userId": "usr_input_1",
+    "storeName": "Prithvi Bio-Inputs & Organic Seeds",
+    "contactPerson": "Meera Venkataraman",
+    "contactPhone": "+91 98456 78914",
+    "contactEmail": "prithvi.bio@krishiseva.in",
+    "location": {
+      "state": "Telangana",
+      "district": "Warangal",
+      "block": "Hanamkonda",
+      "village": "Kazipet",
+      "lat": 17.9689,
+      "lng": 79.5941,
+      "pincode": "506003"
+    },
+    "operatingHours": "08:30 AM - 08:00 PM",
+    "verified": true,
+    "rating": 4.9,
+    "reviewCount": 64,
+    "productCategories": ["Biofertilizers", "Biopesticides", "Composts", "Botanical Extracts"],
+    "description": "Authorized dealer of certified bio-fertilizers (Rhizobium, PSB, KMB), biological fungicides (Trichoderma, Pseudomonas), and organic neem-based crop protectants.",
+    "imageUrl": "https://images.unsplash.com/photo-1628352081506-83c43123ed6d?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "is_502",
+    "userId": "usr_input_2",
+    "storeName": "Malwa Jaivik Krishi Kendra",
+    "contactPerson": "Ramesh Chandra Sharma",
+    "contactPhone": "+91 98260 44556",
+    "contactEmail": "jaivik.malwa@krishiseva.in",
+    "location": {
+      "state": "Madhya Pradesh",
+      "district": "Indore",
+      "block": "Sanwer",
+      "village": "Manglia",
+      "lat": 22.7842,
+      "lng": 75.8931,
+      "pincode": "453771"
+    },
+    "operatingHours": "09:00 AM - 07:30 PM",
+    "verified": true,
+    "rating": 4.7,
+    "reviewCount": 51,
+    "productCategories": ["Biofertilizers", "Biopesticides", "Botanical Preparations", "Microbial Cultures"],
+    "description": "Stockist of ICAR-IISR and KVK recommended bio-priming formulations, Beauveria bassiana, Metarhizium anisopliae, and vermicompost.",
+    "imageUrl": "https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?w=800&auto=format&fit=crop&q=80"
+  }
+]

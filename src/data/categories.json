@@ -1,0 +1,86 @@
+{
+  "serviceCategories": [
+    {
+      "id": "chc",
+      "name": "Custom Hiring Centres",
+      "shortDescription": "Locate accredited farm machinery hubs offering certified implements and skilled operators.",
+      "icon": "Building2",
+      "route": "/chc",
+      "count": "1,420+ Centres",
+      "image": "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=600&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "machinery",
+      "name": "Farm Machinery Hiring",
+      "shortDescription": "Browse tractors, rotavators, seed drills, harvesters, and sprayers with flexible rental rates.",
+      "icon": "Tractor",
+      "route": "/machinery",
+      "count": "8,850+ Machines",
+      "image": "https://images.unsplash.com/photo-1589923188900-85dae523342b?w=600&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "livestock",
+      "name": "Livestock Shop",
+      "shortDescription": "Certified cattle, buffaloes, goats, poultry, animal feed, mineral blocks, and veterinary care.",
+      "icon": "Milk",
+      "route": "/livestock",
+      "count": "3,120+ Listings",
+      "image": "https://images.unsplash.com/photo-1546445317-29f4545e9d53?w=600&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "scientists",
+      "name": "Consult Agricultural Scientists",
+      "shortDescription": "Schedule 1-on-1 audio/video consultations with ICAR, KVK, and State University agri-scientists.",
+      "icon": "GraduationCap",
+      "route": "/scientists",
+      "count": "340+ Verified Experts",
+      "image": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "bio-inputs",
+      "name": "Bio-Input Advisor",
+      "shortDescription": "Intelligent, symptom-grounded recommendations for biofertilizers, biopesticides, and soil health.",
+      "icon": "Sprout",
+      "route": "/bio-inputs",
+      "count": "200+ Bio Solutions",
+      "image": "https://images.unsplash.com/photo-1628352081506-83c43123ed6d?w=600&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "knowledge",
+      "name": "Agricultural Knowledge Centre",
+      "shortDescription": "Practical guidebooks, research articles, crop stage calendars, and expert video tutorials.",
+      "icon": "BookOpen",
+      "route": "/knowledge",
+      "count": "580+ Articles & Guides",
+      "image": "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=600&auto=format&fit=crop&q=80"
+    }
+  ],
+  "machineryCategories": [
+    "Tractors",
+    "Rotavators",
+    "Seed Drills",
+    "Harvesters",
+    "Cultivators",
+    "Sprayers",
+    "Threshers",
+    "Irrigation",
+    "Implements"
+  ],
+  "livestockCategories": [
+    "Cattle & Buffalo",
+    "Goat & Sheep",
+    "Poultry",
+    "Animal Feed",
+    "Mineral Mixtures",
+    "Care Equipment",
+    "Veterinary"
+  ],
+  "scientistSpecializations": [
+    "Agronomy & Field Crops",
+    "Plant Pathology & Crop Diseases",
+    "Entomology & Pest Management",
+    "Soil Science & Agricultural Chemistry",
+    "Horticulture & Vegetable Science",
+    "Animal Nutrition & Veterinary Science"
+  ]
+}

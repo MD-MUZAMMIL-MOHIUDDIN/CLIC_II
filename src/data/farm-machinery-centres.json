@@ -1,0 +1,48 @@
+[
+  {
+    "id": "fmc_301",
+    "userId": "usr_fmc_1",
+    "centreName": "Dhillon Farm Machinery Agro Hub",
+    "contactPerson": "Sukhwinder Dhillon",
+    "contactPhone": "+91 97123 45672",
+    "location": {
+      "state": "Punjab",
+      "district": "Ludhiana",
+      "block": "Dehlon",
+      "village": "Sahnewal",
+      "lat": 30.8521,
+      "lng": 75.9872,
+      "pincode": "141120"
+    },
+    "operatingHours": "06:00 AM - 08:30 PM",
+    "verified": true,
+    "rating": 4.9,
+    "equipmentCount": 14,
+    "machineryIds": ["mach_107", "mach_108"],
+    "description": "Multi-brand fleet offering combine harvesters, laser levellers, and 65HP 4WD heavy-duty tractors on hourly and daily contract.",
+    "imageUrl": "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "fmc_302",
+    "userId": "usr_fmc_2",
+    "centreName": "Kisan Shakti Harvester & Implements",
+    "contactPerson": "Rajanikanth Patil",
+    "contactPhone": "+91 98811 99001",
+    "location": {
+      "state": "Maharashtra",
+      "district": "Pune",
+      "block": "Baramati",
+      "village": "Malegaon",
+      "lat": 18.1528,
+      "lng": 74.5772,
+      "pincode": "413115"
+    },
+    "operatingHours": "07:00 AM - 08:00 PM",
+    "verified": true,
+    "rating": 4.7,
+    "equipmentCount": 9,
+    "machineryIds": ["mach_109", "mach_110"],
+    "description": "Specialized sugarcane harvesters, trenchers, and subsoilers for black cotton soils in Western Maharashtra.",
+    "imageUrl": "https://images.unsplash.com/photo-1589923188900-85dae523342b?w=800&auto=format&fit=crop&q=80"
+  }
+]

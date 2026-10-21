@@ -1,0 +1,101 @@
+[
+  {
+    "CropId": "1",
+    "CropCode": "PADDY",
+    "CropName": "Paddy",
+    "Category": "Cereals",
+    "Telugu": "వరి",
+    "ScientificName": "Oryza sativa",
+    "Season": "Kharif / Rabi",
+    "Description": "Primary staple food grain widely cultivated across wetlands, irrigated deltas, and canal command areas.",
+    "IsActive": true
+  },
+  {
+    "CropId": "2",
+    "CropCode": "MAIZE",
+    "CropName": "Maize",
+    "Category": "Cereals",
+    "Telugu": "మొక్కజొన్న",
+    "ScientificName": "Zea mays",
+    "Season": "Kharif / Rabi",
+    "Description": "Versatile high-yielding cereal crop cultivated for human consumption, livestock feed, and industrial processing.",
+    "IsActive": true
+  },
+  {
+    "CropId": "3",
+    "CropCode": "WHEAT",
+    "CropName": "Wheat",
+    "Category": "Cereals",
+    "Telugu": "గోధుమ",
+    "ScientificName": "Triticum aestivum",
+    "Season": "Rabi",
+    "Description": "Major winter season cereal grain crop grown in well-drained fertile loamy soils.",
+    "IsActive": true
+  },
+  {
+    "CropId": "4",
+    "CropCode": "JOWAR",
+    "CropName": "Jowar",
+    "Category": "Millets",
+    "Telugu": "జొన్న",
+    "ScientificName": "Sorghum bicolor",
+    "Season": "Kharif / Rabi",
+    "Description": "Drought-resilient coarse cereal and nutritious millet suited for semi-arid rainfed agro-ecosystems.",
+    "IsActive": true
+  },
+  {
+    "CropId": "5",
+    "CropCode": "BAJRA",
+    "CropName": "Bajra",
+    "Category": "Millets",
+    "Telugu": "సజ్జ",
+    "ScientificName": "Pennisetum glaucum",
+    "Season": "Kharif",
+    "Description": "Pearl millet renowned for heat and drought tolerance, high iron content, and low water requirement.",
+    "IsActive": true
+  },
+  {
+    "CropId": "6",
+    "CropCode": "RED_GRAM",
+    "CropName": "Red Gram",
+    "Category": "Pulses",
+    "Telugu": "కంది",
+    "ScientificName": "Cajanus cajan",
+    "Season": "Kharif",
+    "Description": "Major protein-rich pulse crop (Pigeonpea / Arhar / Tur) with deep taproot and atmospheric nitrogen fixation.",
+    "IsActive": true
+  },
+  {
+    "CropId": "7",
+    "CropCode": "BENGAL_GRAM",
+    "CropName": "Bengal Gram",
+    "Category": "Pulses",
+    "Telugu": "శనగ",
+    "ScientificName": "Cicer arietinum",
+    "Season": "Rabi",
+    "Description": "Premier winter pulse crop (Chickpea / Chana) highly rich in protein and fiber, cultivated on residual moisture.",
+    "IsActive": true
+  },
+  {
+    "CropId": "8",
+    "CropCode": "GREEN_GRAM",
+    "CropName": "Green Gram",
+    "Category": "Pulses",
+    "Telugu": "పెసర",
+    "ScientificName": "Vigna radiata",
+    "Season": "Kharif / Rabi",
+    "Description": "Short-duration leguminous pulse (Moong) ideal for catch-cropping, intercropping, and green manuring.",
+    "IsActive": true
+  },
+  {
+    "CropId": "9",
+    "CropCode": "BLACK_GRAM",
+    "CropName": "Black Gram",
+    "Category": "Pulses",
+    "Telugu": "మినుము",
+    "ScientificName": "Vigna mungo",
+    "Season": "Kharif / Rabi",
+    "Description": "Nutrient-dense warm-season legume (Urad) critical for dietary protein, soil fertility restoration, and fodder.",
+    "IsActive": true
+  }
+]

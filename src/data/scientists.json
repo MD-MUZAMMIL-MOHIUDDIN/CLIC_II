@@ -1,0 +1,123 @@
+[
+  {
+    "id": "sci_501",
+    "name": "Dr. Anandita Sengupta",
+    "designation": "Principal Scientist & Head, Plant Pathology",
+    "institution": "ICAR - Indian Institute of Soybean Research (IISR), Indore",
+    "specialization": "Plant Pathology & Integrated Fungal Disease Management",
+    "domain": "Crop",
+    "experienceYears": 18,
+    "languages": ["Hindi", "English", "Bengali"],
+    "consultationFormats": ["Video Call", "Audio Call", "Clinic Visit"],
+    "rating": 4.9,
+    "consultationCount": 420,
+    "researchInterests": [
+      "Biological control of Rhizoctonia aerial blight",
+      "Trichoderma viride seed treatments",
+      "Yellow mosaic virus resistance in pulse crops"
+    ],
+    "publications": [
+      "Field Efficacy of Bio-priming in Soybean Root Rot Complex (Phytopathology Journal, 2024)",
+      "Integrated Biopesticide Regimes in Vertisols of Central India (ICAR Bulletin #112)"
+    ],
+    "availableSlots": [
+      "Tomorrow 10:30 AM - 11:00 AM",
+      "Tomorrow 03:00 PM - 03:30 PM",
+      "Friday 11:00 AM - 11:30 AM",
+      "Saturday 04:00 PM - 04:30 PM"
+    ],
+    "avatarUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80",
+    "verified": true,
+    "about": "Over 18 years of advisory and translational field research. Specialized in diagnosing seed-borne and soil-borne fungal pathogens, collar rot, and formulating biological fungicide regimens for legume and cereal crops."
+  },
+  {
+    "id": "sci_502",
+    "name": "Dr. Virendra Singh Tomar",
+    "designation": "Senior Agronomist & Soil Scientist",
+    "institution": "Krishi Vigyan Kendra (KVK), Kasturbagram, Indore",
+    "specialization": "Soil Health, Biofertilizers & Micronutrient Correction",
+    "domain": "Soil",
+    "experienceYears": 22,
+    "languages": ["Hindi", "English", "Malwi"],
+    "consultationFormats": ["Video Call", "Audio Call"],
+    "rating": 4.8,
+    "consultationCount": 610,
+    "researchInterests": [
+      "Rhizobium and Phosphate Solubilizing Bacteria (PSB) synergy",
+      "Zinc and Sulphur deficiency diagnostics in black soils",
+      "Regenerative carbon sequestration practices"
+    ],
+    "publications": [
+      "Organic Carbon Restoration Protocols in Rainfed Agro-Ecosystems (Soil Science Letters, 2023)",
+      "Handbook of Biofertilizers for Semi-Arid Tropics (KVK Extension Manual)"
+    ],
+    "availableSlots": [
+      "Tomorrow 02:00 PM - 02:30 PM",
+      "Friday 09:30 AM - 10:00 AM",
+      "Monday 11:30 AM - 12:00 PM"
+    ],
+    "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
+    "verified": true,
+    "about": "Practical soil health advisor guiding farmers on soil test interpretation, custom humic & microbial consortiums, and reducing synthetic urea dependency through biofertilizers."
+  },
+  {
+    "id": "sci_503",
+    "name": "Dr. Manpreet Kaur Gill",
+    "designation": "Professor & Senior Entomologist",
+    "institution": "Punjab Agricultural University (PAU), Ludhiana",
+    "specialization": "Entomology & Integrated Pest Management (IPM)",
+    "domain": "Crop",
+    "experienceYears": 15,
+    "languages": ["Punjabi", "Hindi", "English"],
+    "consultationFormats": ["Video Call", "Audio Call"],
+    "rating": 4.9,
+    "consultationCount": 380,
+    "researchInterests": [
+      "Pheromone trapping and mating disruption in bollworms",
+      "Neem-based azadirachtin 10000 PPM field thresholds",
+      "Parasitoid wasps (Trichogramma) release protocols"
+    ],
+    "publications": [
+      "Ecological Thresholds for Fall Armyworm in Maize and Millets (PAU Advisory 2025)",
+      "Biological Alternatives to Chemical Insecticides in North-Western Plains"
+    ],
+    "availableSlots": [
+      "Thursday 04:00 PM - 04:30 PM",
+      "Friday 02:30 PM - 03:00 PM",
+      "Saturday 10:00 AM - 10:30 AM"
+    ],
+    "avatarUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&auto=format&fit=crop&q=80",
+    "verified": true,
+    "about": "Expert in IPM strategies for cereals, oilseeds, and vegetables. Helps farmers establish economic threshold levels before spraying and adopt botanical and biological controls."
+  },
+  {
+    "id": "sci_504",
+    "name": "Dr. Hemant Bhargava",
+    "designation": "Chief Veterinary Officer & Dairy Specialist",
+    "institution": "National Dairy Research Institute (NDRI), Karnal",
+    "specialization": "Animal Nutrition & High-Yielding Bovine Healthcare",
+    "domain": "Livestock",
+    "experienceYears": 20,
+    "languages": ["Hindi", "English", "Haryanvi"],
+    "consultationFormats": ["Video Call", "Audio Call", "Clinic Visit"],
+    "rating": 4.9,
+    "consultationCount": 540,
+    "researchInterests": [
+      "Balanced total mixed rations (TMR) for Murrah buffaloes",
+      "Chelated mineral mixture supplementation and fertility",
+      "Mastitis prevention using herbal udder ointments"
+    ],
+    "publications": [
+      "Optimal Mineral Bioavailability in Crossbred Cattle (Indian J. Animal Sci., 2024)",
+      "Calf Mortality Reduction via Colostrum Quality Monitoring"
+    ],
+    "availableSlots": [
+      "Tomorrow 11:30 AM - 12:00 PM",
+      "Thursday 11:00 AM - 11:30 AM",
+      "Saturday 03:30 PM - 04:00 PM"
+    ],
+    "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80",
+    "verified": true,
+    "about": "Guides dairy farmers and commercial livestock keepers on ration balancing, silage making, mastitis management, and breed improvement with scientific feeding."
+  }
+]

@@ -1,0 +1,111 @@
+{
+  "states": [
+    {
+      "name": "Madhya Pradesh",
+      "districts": [
+        {
+          "name": "Indore",
+          "blocks": ["Sanwer", "Depalpur", "Mhow (Dr. Ambedkar Nagar)", "Indore Urban"],
+          "villages": ["Kanadia", "Manglia", "Betma", "Hasalpur", "Rau", "Simrol"],
+          "lat": 22.7196,
+          "lng": 75.8577
+        },
+        {
+          "name": "Ujjain",
+          "blocks": ["Badnagar", "Mahidpur", "Tarana", "Ghatiya"],
+          "villages": ["Kajleshwar", "Panbihar", "Tajpur"],
+          "lat": 23.1765,
+          "lng": 75.7885
+        },
+        {
+          "name": "Dhar",
+          "blocks": ["Badnawar", "Sardarpur", "Dharampuri"],
+          "villages": ["Amjhera", "Rajgarh", "Kukshi"],
+          "lat": 22.5978,
+          "lng": 75.3039
+        }
+      ]
+    },
+    {
+      "name": "Punjab",
+      "districts": [
+        {
+          "name": "Ludhiana",
+          "blocks": ["Dehlon", "Samrala", "Jagraon", "Khanna"],
+          "villages": ["Sahnewal", "Doraha", "Mullanpur", "Raikot"],
+          "lat": 30.9010,
+          "lng": 75.8573
+        },
+        {
+          "name": "Patiala",
+          "blocks": ["Nabha", "Rajpura", "Samana"],
+          "villages": ["Bhadson", "Ghanour", "Sanaur"],
+          "lat": 30.3398,
+          "lng": 76.3869
+        }
+      ]
+    },
+    {
+      "name": "Haryana",
+      "districts": [
+        {
+          "name": "Karnal",
+          "blocks": ["Gharaunda", "Nilokheri", "Assandh", "Indri"],
+          "villages": ["Kohand", "Taraori", "Kunjpura"],
+          "lat": 29.6857,
+          "lng": 76.9905
+        },
+        {
+          "name": "Ambala",
+          "blocks": ["Barara", "Saha", "Naraingarh"],
+          "villages": ["Talheri", "Mullana", "Shehzadpur"],
+          "lat": 30.3782,
+          "lng": 76.7767
+        }
+      ]
+    },
+    {
+      "name": "Maharashtra",
+      "districts": [
+        {
+          "name": "Pune",
+          "blocks": ["Haveli", "Baramati", "Shirur", "Junnar"],
+          "villages": ["Shivajinagar", "Malegaon", "Narayangaon", "Manchar"],
+          "lat": 18.5204,
+          "lng": 73.8567
+        },
+        {
+          "name": "Nashik",
+          "blocks": ["Niphad", "Dindori", "Sinnar", "Yeola"],
+          "villages": ["Pimpalgaon", "Ozar", "Vani"],
+          "lat": 19.9975,
+          "lng": 73.7898
+        }
+      ]
+    },
+    {
+      "name": "Telangana",
+      "districts": [
+        {
+          "name": "Warangal",
+          "blocks": ["Hanamkonda", "Warangal Urban", "Wardhannapet", "Parkal"],
+          "villages": ["Kazipet", "Subedari", "Madikonda", "Geesugonda"],
+          "lat": 17.9689,
+          "lng": 79.5941
+        }
+      ]
+    },
+    {
+      "name": "Rajasthan",
+      "districts": [
+        {
+          "name": "Jaipur",
+          "blocks": ["Chaksu", "Sanganer", "Bassi", "Amer"],
+          "villages": ["Kotkhawda", "Bagru", "Watika"],
+          "lat": 26.9124,
+          "lng": 75.7873
+        }
+      ]
+    }
+  ]
+}

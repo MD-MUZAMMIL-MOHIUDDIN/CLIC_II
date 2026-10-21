@@ -1,0 +1,90 @@
+{
+  "roles": {
+    "Farmer": [
+      "profile.read.own",
+      "profile.update.own",
+      "chc.read",
+      "machinery.read",
+      "machinery.hire",
+      "booking.create",
+      "booking.read.own",
+      "booking.cancel.own",
+      "livestock.browse",
+      "livestock.order",
+      "consultation.create",
+      "consultation.read.own",
+      "bioinputs.read",
+      "knowledge.read"
+    ],
+    "CHC": [
+      "profile.read.own",
+      "profile.update.own",
+      "chc.manage.own",
+      "equipment.manage.own",
+      "booking.read.assigned",
+      "booking.update.assigned",
+      "analytics.read.own"
+    ],
+    "FMC": [
+      "profile.read.own",
+      "profile.update.own",
+      "fmc.manage.own",
+      "machinery.manage.own",
+      "hiring.read.assigned",
+      "hiring.update.assigned",
+      "analytics.read.own"
+    ],
+    "LivestockShop": [
+      "profile.read.own",
+      "profile.update.own",
+      "livestock.manage.own",
+      "orders.read.own",
+      "enquiries.manage.own"
+    ],
+    "Inputstore": [
+      "profile.read.own",
+      "profile.update.own",
+      "products.manage.own",
+      "inventory.manage.own",
+      "orders.read.own"
+    ],
+    "Facilitator": [
+      "profile.read.own",
+      "profile.update.own",
+      "registration.read.assigned",
+      "registration.review.assigned",
+      "registration.approve.assigned",
+      "registration.reject.assigned",
+      "registration.request_corrections",
+      "users.read.assigned"
+    ],
+    "Admin": [
+      "profile.read.own",
+      "profile.update.own",
+      "users.read",
+      "users.create",
+      "users.update",
+      "users.status_toggle",
+      "registration.read",
+      "registration.review",
+      "registration.approve",
+      "registration.reject",
+      "listings.manage",
+      "content.manage",
+      "scientists.manage",
+      "audit.read",
+      "reports.view"
+    ],
+    "superadmin": [
+      "platform.manage",
+      "roles.manage",
+      "permissions.manage",
+      "admins.manage",
+      "facilitators.manage",
+      "users.manage.all",
+      "registration.manage.all",
+      "audit.read",
+      "system.config"
+    ]
+  }
+}

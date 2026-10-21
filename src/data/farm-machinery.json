@@ -1,0 +1,352 @@
+[
+  {
+    "id": "mach_101",
+    "centreId": "chc_201",
+    "centreName": "Malwa Kisan Custom Hiring Centre",
+    "name": "Mahindra 575 DI XP Plus Tractor (47 HP)",
+    "category": "Tractors",
+    "model": "2024 XP Plus 4-Cylinder ELS",
+    "horsepower": 47,
+    "capacity": "1500 kg Hydraulic Lift Capacity",
+    "fuelType": "Diesel (Included in rental)",
+    "operatorProvided": true,
+    "pricePerUnit": 850,
+    "pricingUnit": "hourly",
+    "securityDeposit": 1500,
+    "minimumDuration": "2 Hours",
+    "available": true,
+    "specifications": {
+      "Engine HP": "47 HP @ 2000 RPM",
+      "PTO Power": "42 HP",
+      "Steering": "Dual Acting Power Steering",
+      "Brakes": "Oil Immersed Multi-Disc",
+      "Transmission": "8 Forward + 2 Reverse Partial Constant Mesh"
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1589923188900-85dae523342b?w=800&auto=format&fit=crop&q=80"
+    ],
+    "location": {
+      "state": "Madhya Pradesh",
+      "district": "Indore",
+      "block": "Sanwer",
+      "village": "Manglia",
+      "lat": 22.7842,
+      "lng": 75.8931
+    },
+    "description": "Heavy-duty fuel-efficient 47 HP tractor suited for heavy tillage, rotavator operations, haulage, and sowing in Malwa black soil conditions. Includes an experienced operator.",
+    "cancellationPolicy": "Free cancellation up to 6 hours before scheduled start. 20% charge within 6 hours."
+  },
+  {
+    "id": "mach_102",
+    "centreId": "chc_201",
+    "centreName": "Malwa Kisan Custom Hiring Centre",
+    "name": "Shaktiman Semi-Champion Rotavator (7 Feet)",
+    "category": "Rotavators",
+    "model": "Shaktiman SC-210",
+    "capacity": "7 Feet (54 Boron Steel Blades)",
+    "fuelType": "Powered via Tractor PTO",
+    "operatorProvided": true,
+    "pricePerUnit": 1100,
+    "pricingUnit": "acre",
+    "securityDeposit": 1000,
+    "minimumDuration": "1 Acre",
+    "available": true,
+    "specifications": {
+      "Working Width": "2100 mm (7 ft)",
+      "Blade Type": "L-Type Boron Steel Blades",
+      "Gearbox": "Multi-Speed Heavy Duty",
+      "Compatible Tractor": "45 - 60 HP"
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1589923188900-85dae523342b?w=800&auto=format&fit=crop&q=80"
+    ],
+    "location": {
+      "state": "Madhya Pradesh",
+      "district": "Indore",
+      "block": "Sanwer",
+      "village": "Manglia",
+      "lat": 22.7842,
+      "lng": 75.8931
+    },
+    "description": "Produces fine tilth in a single or double pass. Ideal for pulverizing cotton stalks, soybean stubble, and preparing seedbeds for wheat and gram.",
+    "cancellationPolicy": "Free cancellation up to 12 hours prior to scheduled dispatch."
+  },
+  {
+    "id": "mach_103",
+    "centreId": "chc_201",
+    "centreName": "Malwa Kisan Custom Hiring Centre",
+    "name": "National Multi-Crop Seed-cum-Fertilizer Drill",
+    "category": "Seed Drills",
+    "model": "9-Tyne Fluted Roller Model",
+    "capacity": "9 Rows, Dual Hopper (Seeds 50kg + Fert 60kg)",
+    "fuelType": "PTO Driven",
+    "operatorProvided": true,
+    "pricePerUnit": 750,
+    "pricingUnit": "acre",
+    "securityDeposit": 800,
+    "minimumDuration": "2 Acres",
+    "available": true,
+    "specifications": {
+      "Number of Rows": "9 Tynes with adjustable row-to-row spacing (15-25cm)",
+      "Metering Mechanism": "Fluted Roller with individual shut-offs",
+      "Furrow Openers": "Inverted T-type carbide tipped openers",
+      "Compatible Tractor": "35 HP and above"
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800&auto=format&fit=crop&q=80"
+    ],
+    "location": {
+      "state": "Madhya Pradesh",
+      "district": "Indore",
+      "block": "Sanwer",
+      "village": "Manglia",
+      "lat": 22.7842,
+      "lng": 75.8931
+    },
+    "description": "Calibrated precision seed drill for wheat, gram (chana), mustard, and soybean. Delivers uniform seed depth and basal fertilizer placement.",
+    "cancellationPolicy": "Free cancellation up to 4 hours in advance."
+  },
+  {
+    "id": "mach_104",
+    "centreId": "chc_201",
+    "centreName": "Malwa Kisan Custom Hiring Centre",
+    "name": "Spectra Precision Dual-Slope Laser Land Leveller",
+    "category": "Implements",
+    "model": "GL722 Precision Transmitter with 7ft Scraper Bucket",
+    "capacity": "Up to 1.5 - 2 Acres leveled per hour",
+    "fuelType": "Tractor Driven",
+    "operatorProvided": true,
+    "pricePerUnit": 1400,
+    "pricingUnit": "hourly",
+    "securityDeposit": 2000,
+    "minimumDuration": "3 Hours",
+    "available": false,
+    "specifications": {
+      "Operating Range": "900-meter diameter laser coverage",
+      "Blade Width": "2.1 meters (7 feet) high-tensile steel bucket",
+      "Hydraulic Control": "Proportional solenoid control valve",
+      "Water Saving": "Up to 30% reduction in irrigation water requirements"
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?w=800&auto=format&fit=crop&q=80"
+    ],
+    "location": {
+      "state": "Madhya Pradesh",
+      "district": "Indore",
+      "block": "Sanwer",
+      "village": "Manglia",
+      "lat": 22.7842,
+      "lng": 75.8931
+    },
+    "description": "Top-tier dual-slope laser leveller. Decreases irrigation water consumption, prevents waterlogging, and ensures uniform fertilizer distribution.",
+    "cancellationPolicy": "Cancellation allowed with 24 hours prior notice."
+  },
+  {
+    "id": "mach_105",
+    "centreId": "chc_202",
+    "centreName": "Nimar Agro Mechanization Hub",
+    "name": "ASPEE Tractor-Mounted 600L Boom Sprayer",
+    "category": "Sprayers",
+    "model": "HTP-600 Boom Special",
+    "capacity": "600 Litre Polyethylene Tank, 40ft Boom Swath",
+    "fuelType": "Tractor PTO Driven",
+    "operatorProvided": true,
+    "pricePerUnit": 650,
+    "pricingUnit": "acre",
+    "securityDeposit": 1000,
+    "minimumDuration": "3 Acres",
+    "available": true,
+    "specifications": {
+      "Boom Length": "12 meters (40 feet) folding boom",
+      "Nozzles": "24 Anti-drip ceramic fan nozzles",
+      "Pump": "Triple ceramic piston pump @ 40 bar",
+      "Coverage": "15-20 acres per day"
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1628352081506-83c43123ed6d?w=800&auto=format&fit=crop&q=80"
+    ],
+    "location": {
+      "state": "Madhya Pradesh",
+      "district": "Indore",
+      "block": "Depalpur",
+      "village": "Betma",
+      "lat": 22.6845,
+      "lng": 75.6178
+    },
+    "description": "Uniform mist application for bio-pesticides and foliar micronutrients. Minimizes chemical wastage and exposure for farm workers.",
+    "cancellationPolicy": "Full refund if cancelled before 8 AM on the booking date."
+  },
+  {
+    "id": "mach_106",
+    "centreId": "chc_202",
+    "centreName": "Nimar Agro Mechanization Hub",
+    "name": "Lemken Opal 090 2-Bottom Hydraulic Reversible Plough",
+    "category": "Cultivators",
+    "model": "Opal 090 2-MB",
+    "capacity": "Ploughing depth up to 14 inches",
+    "fuelType": "Tractor Mounted",
+    "operatorProvided": true,
+    "pricePerUnit": 1200,
+    "pricingUnit": "acre",
+    "securityDeposit": 1500,
+    "minimumDuration": "2 Acres",
+    "available": true,
+    "specifications": {
+      "Bottoms": "2 Mouldboards with shear-bolt safety",
+      "Underframe Clearance": "75 cm",
+      "Reversing Mechanism": "Single-acting hydraulic turnover cylinder"
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800&auto=format&fit=crop&q=80"
+    ],
+    "location": {
+      "state": "Madhya Pradesh",
+      "district": "Indore",
+      "block": "Depalpur",
+      "village": "Betma",
+      "lat": 22.6845,
+      "lng": 75.6178
+    },
+    "description": "Deep primary tillage implement for inverting hardpan soils, burying weed residues, and aerating the root zone.",
+    "cancellationPolicy": "Cancellation allowed up to 12 hours prior."
+  },
+  {
+    "id": "mach_107",
+    "centreId": "fmc_301",
+    "centreName": "Dhillon Farm Machinery Agro Hub",
+    "name": "Preet 987 Self-Propelled Multi-Crop Combine Harvester",
+    "category": "Harvesters",
+    "model": "Preet 987 101 HP Turbo",
+    "horsepower": 101,
+    "capacity": "14 Feet Cutter Bar with Straw Chopper (SMS)",
+    "fuelType": "High Speed Diesel (Included)",
+    "operatorProvided": true,
+    "pricePerUnit": 2400,
+    "pricingUnit": "acre",
+    "securityDeposit": 5000,
+    "minimumDuration": "5 Acres",
+    "available": true,
+    "specifications": {
+      "Cutter Bar Width": "4.2 meters (14 feet)",
+      "Engine": "6-Cylinder Turbocharged Ashok Leyland 101 HP",
+      "Grain Tank": "2.4 m³ high-speed unloading auger",
+      "Straw Management": "Equipped with Super-SMS attachment"
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=800&auto=format&fit=crop&q=80"
+    ],
+    "location": {
+      "state": "Punjab",
+      "district": "Ludhiana",
+      "block": "Dehlon",
+      "village": "Sahnewal",
+      "lat": 30.8521,
+      "lng": 75.9872
+    },
+    "description": "Clean harvesting for paddy, wheat, soybean, and gram with negligible grain loss (<1.5%). Includes Super-SMS ensuring clean seeding for subsequent crops.",
+    "cancellationPolicy": "Requires 24 hours cancellation notice due to transport logistics."
+  },
+  {
+    "id": "mach_108",
+    "centreId": "fmc_301",
+    "centreName": "Dhillon Farm Machinery Agro Hub",
+    "name": "Bakhsish Super Seeder (Crop Residue Sower)",
+    "category": "Seed Drills",
+    "model": "Bakhsish Super 2025",
+    "capacity": "Direct Sowing in standing paddy stubble",
+    "fuelType": "PTO Driven (Requires 55+ HP Tractor)",
+    "operatorProvided": true,
+    "pricePerUnit": 1500,
+    "pricingUnit": "acre",
+    "securityDeposit": 1500,
+    "minimumDuration": "3 Acres",
+    "available": true,
+    "specifications": {
+      "Working Width": "7.5 Feet",
+      "Blades": "Nickel-Chrome Rotary Blades",
+      "Press Wheels": "Rubberized depth compaction rollers"
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1589923188900-85dae523342b?w=800&auto=format&fit=crop&q=80"
+    ],
+    "location": {
+      "state": "Punjab",
+      "district": "Ludhiana",
+      "block": "Dehlon",
+      "village": "Sahnewal",
+      "lat": 30.8521,
+      "lng": 75.9872
+    },
+    "description": "Eliminates stubble burning by simultaneously chopping straw and drilling wheat seeds in one single pass.",
+    "cancellationPolicy": "Free cancellation within 6 hours."
+  },
+  {
+    "id": "mach_109",
+    "centreId": "fmc_302",
+    "centreName": "Kisan Shakti Harvester & Implements",
+    "name": "Kirloskar 10HP Mobile Diesel Irrigation Pump Set",
+    "category": "Irrigation",
+    "model": "Kirloskar MegaForce Mobile 10HP",
+    "capacity": "90,000 Litres / Hour Discharge",
+    "fuelType": "Diesel",
+    "operatorProvided": false,
+    "pricePerUnit": 400,
+    "pricingUnit": "hourly",
+    "securityDeposit": 1000,
+    "minimumDuration": "4 Hours",
+    "available": true,
+    "specifications": {
+      "Discharge": "1500 LPM at 20m head",
+      "Hose Delivery": "Included 100 meters 4-inch lay-flat hose pipe",
+      "Trolley": "2-wheel road towable chassis"
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800&auto=format&fit=crop&q=80"
+    ],
+    "location": {
+      "state": "Maharashtra",
+      "district": "Pune",
+      "block": "Baramati",
+      "village": "Malegaon",
+      "lat": 18.1528,
+      "lng": 74.5772
+    },
+    "description": "High-delivery portable centrifugal pumping unit for lifting water from open wells, farm ponds, or canal outlets to distant fields.",
+    "cancellationPolicy": "Cancel up to 2 hours before pick-up."
+  },
+  {
+    "id": "mach_110",
+    "centreId": "fmc_302",
+    "centreName": "Kisan Shakti Harvester & Implements",
+    "name": "Grewal Heavy Multi-Crop Stationary Thresher",
+    "category": "Threshers",
+    "model": "Grewal Multi-Flow 40 HP",
+    "capacity": "15-20 Quintals / Hour Threshing",
+    "fuelType": "Tractor PTO Driven",
+    "operatorProvided": true,
+    "pricePerUnit": 950,
+    "pricingUnit": "hourly",
+    "securityDeposit": 1200,
+    "minimumDuration": "2 Hours",
+    "available": true,
+    "specifications": {
+      "Crops Handled": "Wheat, Mustard, Soybean, Gram, Millets",
+      "Blower": "Double aspiration fan for 99% dust and chaff removal",
+      "Safety": "Reverse gear hopper safety mechanism"
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=800&auto=format&fit=crop&q=80"
+    ],
+    "location": {
+      "state": "Maharashtra",
+      "district": "Pune",
+      "block": "Baramati",
+      "village": "Malegaon",
+      "lat": 18.1528,
+      "lng": 74.5772
+    },
+    "description": "High throughput multi-crop thresher delivering clean, unbroken grains and fine straw for animal feed.",
+    "cancellationPolicy": "Free cancellation up to 6 hours before arrival."
+  }
+]

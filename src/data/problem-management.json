@@ -1,0 +1,122 @@
+[
+  {
+    "ManagementId": "1",
+    "CropProblemId": "1",
+    "PlantGrowthStage": "Tillering to Panicle Initiation",
+    "PestDevelopmentStage": "Nymphs & Adults",
+    "SeverityLevel": "Moderate (At ETL)",
+    "ManagementType": "Cultural",
+    "ManagementDetails": "Provide 'alleyways' (pathways of 30 cm every 2 meters in north-south direction) to improve sunlight penetration and air aeration, making microclimate unsuitable for hovers. Drain standing water for 3-4 days during peak tillering.",
+    "IsActive": true
+  },
+  {
+    "ManagementId": "2",
+    "CropProblemId": "1",
+    "PlantGrowthStage": "Tillering to Heading",
+    "PestDevelopmentStage": "Nymphs & Adults",
+    "SeverityLevel": "Moderate (At ETL: 5-10 hoppers/hill)",
+    "ManagementType": "Biological",
+    "ManagementDetails": "Conserve natural mirid predators (Cyrtorhinus lividipennis) and spiders (Lycosa pseudoannulata). Spray botanical Neem Oil 1500 ppm @ 3 ml/L or Azadirachtin 1% @ 1.5 ml/L directing nozzle strictly to the base of the plant.",
+    "IsActive": true
+  },
+  {
+    "ManagementId": "3",
+    "CropProblemId": "1",
+    "PlantGrowthStage": "Panicle Initiation to Milking",
+    "PestDevelopmentStage": "Nymphs & Adults",
+    "SeverityLevel": "Severe (Above ETL: >15-20 hoppers/hill)",
+    "ManagementType": "Chemical",
+    "ManagementDetails": "Spray Pymetrozine 50% WDG @ 0.6 g/L (120 g/acre) OR Triflumezopyrim 10% SC @ 0.48 ml/L (94 ml/acre) targeting the plant base. Avoid synthetic pyrethroids as they cause pest resurgence.",
+    "IsActive": true
+  },
+  {
+    "ManagementId": "4",
+    "CropProblemId": "2",
+    "PlantGrowthStage": "Seedling (Nursery)",
+    "PestDevelopmentStage": "Spore Germination",
+    "SeverityLevel": "Low (Preventive)",
+    "ManagementType": "Cultural",
+    "ManagementDetails": "Seed treatment with Tricyclazole 75% WP @ 2.0 g/kg seed or Carbendazim 50% WP @ 2.0 g/kg seed before sowing. Avoid excessive split application of nitrogenous fertilizers.",
+    "IsActive": true
+  },
+  {
+    "ManagementId": "5",
+    "CropProblemId": "2",
+    "PlantGrowthStage": "Tillering to Booting Stage",
+    "PestDevelopmentStage": "Leaf Lesion Expansion",
+    "SeverityLevel": "Severe (Above ETL: >5% leaf area infected)",
+    "ManagementType": "Chemical",
+    "ManagementDetails": "Spray Tricyclazole 75% WP @ 0.6 g/L (120 g/acre) OR Isoprothiolane 40% EC @ 1.5 ml/L (300 ml/acre). For neck blast, ensure prophylactic spray at 5% panicle emergence.",
+    "IsActive": true
+  },
+  {
+    "ManagementId": "6",
+    "CropProblemId": "3",
+    "PlantGrowthStage": "Vegetative (2-4 Weeks After Transplanting)",
+    "PestDevelopmentStage": "Deficiency Onset",
+    "SeverityLevel": "Moderate to Severe",
+    "ManagementType": "Chemical",
+    "ManagementDetails": "Foliar application of Zinc Sulphate (ZnSO4 21%) @ 5.0 g/L + Lime @ 2.5 g/L (or 2% Urea) in 200 L water/acre. Repeat spray 10-12 days later if symptoms persist. Basal: Apply ZnSO4 @ 25 kg/ha before last puddling.",
+    "IsActive": true
+  },
+  {
+    "ManagementId": "7",
+    "CropProblemId": "4",
+    "PlantGrowthStage": "Seedling to Early Vegetative (V2-V4)",
+    "PestDevelopmentStage": "Egg Masses & Early Instar Larvae",
+    "SeverityLevel": "Moderate (At ETL: 5% damaged plants)",
+    "ManagementType": "Mechanical",
+    "ManagementDetails": "Install FAW pheromone lures/traps @ 5-8 traps/acre for pest monitoring. Hand collection and destruction of cream-colored egg masses and young congregating caterpillars in whorls.",
+    "IsActive": true
+  },
+  {
+    "ManagementId": "8",
+    "CropProblemId": "4",
+    "PlantGrowthStage": "Vegetative (V4-V8)",
+    "PestDevelopmentStage": "Early Instar Larvae (1st-2nd Instar)",
+    "SeverityLevel": "Moderate (At ETL)",
+    "ManagementType": "Biological",
+    "ManagementDetails": "Apply Bacillus thuringiensis (Bt) kurstaki formulation @ 2 g/L OR Nomuraea rileyi / Metarhizium anisopliae formulation @ 5 g/L in whorls in early morning or late evening.",
+    "IsActive": true
+  },
+  {
+    "ManagementId": "9",
+    "CropProblemId": "4",
+    "PlantGrowthStage": "Vegetative to Tasseling (V6-VT)",
+    "PestDevelopmentStage": "3rd to 5th Instar Larvae",
+    "SeverityLevel": "Severe (Above ETL: >10% whorl damage)",
+    "ManagementType": "Chemical",
+    "ManagementDetails": "Whorl application: Spray Chlorantraniliprole 18.5% SC @ 0.4 ml/L (80 ml/acre) OR Emamectin Benzoate 5% SG @ 0.4 g/L (80 g/acre) using a single nozzle directed deep into the plant central whorl.",
+    "IsActive": true
+  },
+  {
+    "ManagementId": "10",
+    "CropProblemId": "6",
+    "PlantGrowthStage": "Tillering to Flag Leaf Stage",
+    "PestDevelopmentStage": "Uredinial Pustule Eruption",
+    "SeverityLevel": "Moderate to Severe",
+    "ManagementType": "Chemical",
+    "ManagementDetails": "Spray Propiconazole 25% EC (Tilt) @ 1.0 ml/L (200 ml/acre) OR Tebuconazole 25.9% EC @ 1.0 ml/L dissolved in 200 liters of water at first detection of stripe rust pustules.",
+    "IsActive": true
+  },
+  {
+    "ManagementId": "11",
+    "CropProblemId": "8",
+    "PlantGrowthStage": "Flowering to Pod Formation",
+    "PestDevelopmentStage": "Egg Laying to Early Larvae",
+    "SeverityLevel": "Moderate (At ETL: 1 larva/meter row)",
+    "ManagementType": "Biological",
+    "ManagementDetails": "Install Helicoverpa armigera pheromone traps @ 5 traps/acre. Release Trichogramma chilonis @ 50,000/ha at weekly intervals (3-4 times). Spray HaNPV 250 LE/acre with 0.1% teepol in evening.",
+    "IsActive": true
+  },
+  {
+    "ManagementId": "12",
+    "CropProblemId": "8",
+    "PlantGrowthStage": "Pod Development to Grain Fill",
+    "PestDevelopmentStage": "Grown Larvae Boring Pods",
+    "SeverityLevel": "Severe (Above ETL)",
+    "ManagementType": "Chemical",
+    "ManagementDetails": "Spray Chlorantraniliprole 18.5% SC @ 0.3 ml/L (60 ml/acre) OR Flubendiamide 39.35% SC @ 0.2 ml/L (40 ml/acre) in 200 L water. Rotate chemistries to prevent insecticide resistance.",
+    "IsActive": true
+  }
+]

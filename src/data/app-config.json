@@ -1,0 +1,35 @@
+{
+  "appName": "KrishiSeva",
+  "appTagline": "Integrated Agricultural Services & Knowledge Ecosystem",
+  "version": "2.4.0",
+  "environment": "interactive-prototype",
+  "contact": {
+    "helpline": "1800-180-1551 (Kisan Call Centre)",
+    "email": "support@krishiseva.gov.in",
+    "address": "Krishi Bhawan, Dr. Rajendra Prasad Road, New Delhi 110001",
+    "workingHours": "Mon - Sat: 06:00 AM - 10:00 PM IST"
+  },
+  "roles": {
+    "Farmer": { "label": "Farmer / Cultivator", "color": "#4F8A52", "badgeBg": "bg-emerald-50 text-emerald-800 border-emerald-200" },
+    "CHC": { "label": "Custom Hiring Centre (CHC)", "color": "#245C3A", "badgeBg": "bg-green-50 text-green-900 border-green-200" },
+    "FMC": { "label": "Farm Machinery Centre (FMC)", "color": "#3A6B3D", "badgeBg": "bg-teal-50 text-teal-900 border-teal-200" },
+    "LivestockShop": { "label": "Livestock & Feed Supplier", "color": "#9B6A43", "badgeBg": "bg-amber-50 text-amber-900 border-amber-200" },
+    "Inputstore": { "label": "Bio-Input & Seed Store", "color": "#8CBF66", "badgeBg": "bg-lime-50 text-lime-900 border-lime-200" },
+    "Facilitator": { "label": "Field Facilitator", "color": "#2B6CB0", "badgeBg": "bg-blue-50 text-blue-900 border-blue-200" },
+    "Admin": { "label": "Platform Administrator", "color": "#7B341E", "badgeBg": "bg-purple-50 text-purple-900 border-purple-200" },
+    "superadmin": { "label": "Super Administrator", "color": "#C53030", "badgeBg": "bg-rose-50 text-rose-900 border-rose-200" }
+  },
+  "seasonalContext": {
+    "currentSeason": "Rabi Season 2026",
+    "focusCrops": ["Wheat", "Mustard", "Gram (Chana)", "Barley", "Potato", "Winter Vegetables"],
+    "criticalOperations": ["Seed Bed Preparation", "Tractor & Rotavator Hiring", "Bio-fertilizer Inoculation (Rhizobium/Azotobacter)", "Micro-irrigation Setups"],
+    "weatherAlert": "Favourable soil moisture conditions across Central and Northern plains for Rabi sowing operations."
+  },
+  "stats": {
+    "verifiedChcs": "1,420+",
+    "registeredMachinery": "8,850+",
+    "participatingScientists": "340+",
+    "farmersServed": "95,000+",
+    "coverageDistricts": "142 Districts"
+  }
+}

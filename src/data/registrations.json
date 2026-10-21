@@ -1,0 +1,190 @@
+[
+  {
+    "id": "app_1001",
+    "userId": "usr_pending_chc",
+    "applicantName": "Kailash Chand Verma",
+    "applicantEmail": "pending.chc@krishiseva.in",
+    "applicantMobile": "9812345601",
+    "requestedRole": "CHC",
+    "organizationName": "Verma Agri Machinery Hub",
+    "location": {
+      "state": "Rajasthan",
+      "district": "Jaipur",
+      "block": "Chaksu",
+      "village": "Kotkhawda",
+      "pincode": "303901",
+      "lat": 26.6019,
+      "lng": 75.9528
+    },
+    "status": "pending",
+    "submittedAt": "2026-10-12T14:30:00+05:30",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "decisionReason": null,
+    "assignedFacilitatorId": "usr_facilitator_1",
+    "documents": [
+      {
+        "type": "Centre GST / Registration Certificate",
+        "docNumber": "08AAAAA0000A1Z5",
+        "fileName": "gst_registration_verma_agro.pdf",
+        "verified": false
+      },
+      {
+        "type": "Machinery Ownership Invoices",
+        "docNumber": "INV-2025-8891",
+        "fileName": "tractor_rotavator_rc_invoice.pdf",
+        "verified": false
+      }
+    ],
+    "roleSpecificData": {
+      "initialFleetCount": 4,
+      "serviceCoverageKm": 35,
+      "primaryEquipment": ["Mahindra 575 DI Tractor", "Shaktiman Rotavator 7ft", "Laser Land Leveller"]
+    }
+  },
+  {
+    "id": "app_1002",
+    "userId": "usr_new_farmer",
+    "applicantName": "Sunita Devi Solanki",
+    "applicantEmail": "sunita.solanki@krishiseva.in",
+    "applicantMobile": "9834112299",
+    "requestedRole": "Farmer",
+    "organizationName": "Solanki Organic Fields",
+    "location": {
+      "state": "Madhya Pradesh",
+      "district": "Indore",
+      "block": "Depalpur",
+      "village": "Betma",
+      "pincode": "453001",
+      "lat": 22.6845,
+      "lng": 75.6178
+    },
+    "status": "under_review",
+    "submittedAt": "2026-10-14T08:15:00+05:30",
+    "reviewedBy": "usr_facilitator_1",
+    "reviewedAt": "2026-10-14T11:00:00+05:30",
+    "decisionReason": "Facilitator currently verifying local patwari land passbook record.",
+    "assignedFacilitatorId": "usr_facilitator_1",
+    "documents": [
+      {
+        "type": "Kisan Credit Card / Land Passbook",
+        "docNumber": "KCC-MP-44129",
+        "fileName": "land_passbook_solanki.pdf",
+        "verified": true
+      }
+    ],
+    "roleSpecificData": {
+      "landSizeAcres": 8.5,
+      "primaryCrops": ["Soybean", "Wheat", "Gram"],
+      "irrigationSource": "Tube Well + Drip"
+    }
+  },
+  {
+    "id": "app_1003",
+    "userId": "usr_bio_corr",
+    "applicantName": "Balram Bio Agritech",
+    "applicantEmail": "balram.agri@krishiseva.in",
+    "applicantMobile": "9898981234",
+    "requestedRole": "Inputstore",
+    "organizationName": "Balram Bio Agritech Store",
+    "location": {
+      "state": "Telangana",
+      "district": "Warangal",
+      "block": "Warangal Urban",
+      "village": "Subedari",
+      "pincode": "506001",
+      "lat": 17.9814,
+      "lng": 79.5932
+    },
+    "status": "corrections_requested",
+    "submittedAt": "2026-10-09T16:00:00+05:30",
+    "reviewedBy": "usr_admin_1",
+    "reviewedAt": "2026-10-10T10:45:00+05:30",
+    "decisionReason": "Pesticide dealer license is expired; please re-upload valid license issued by Dept of Agriculture.",
+    "assignedFacilitatorId": null,
+    "documents": [
+      {
+        "type": "Fertilizer / Bio-input Retail License",
+        "docNumber": "TG-WAR-RET-0988",
+        "fileName": "state_license_scanned.pdf",
+        "verified": false
+      }
+    ],
+    "roleSpecificData": {
+      "inputCategories": ["Biofertilizers", "Biopesticides", "Organic Neem Cakes"],
+      "storageCapacityTonnes": 25
+    }
+  },
+  {
+    "id": "app_1004",
+    "userId": "usr_rejected_fmc",
+    "applicantName": "Harbhajan Mann",
+    "applicantEmail": "rejected.fmc@krishiseva.in",
+    "applicantMobile": "9812345602",
+    "requestedRole": "FMC",
+    "organizationName": "Mann Harvester Works",
+    "location": {
+      "state": "Haryana",
+      "district": "Ambala",
+      "block": "Barara",
+      "village": "Talheri",
+      "pincode": "133201",
+      "lat": 30.2214,
+      "lng": 77.0421
+    },
+    "status": "rejected",
+    "submittedAt": "2026-10-01T11:00:00+05:30",
+    "reviewedBy": "usr_admin_1",
+    "reviewedAt": "2026-10-03T15:20:00+05:30",
+    "decisionReason": "Commercial vehicle fitness documentation failed verification check. Machinery was reported scrap model.",
+    "assignedFacilitatorId": "usr_facilitator_1",
+    "documents": [
+      {
+        "type": "Machinery Fitness Certificate",
+        "docNumber": "HR-01-M-9912",
+        "fileName": "fitness_doc.pdf",
+        "verified": false
+      }
+    ],
+    "roleSpecificData": {
+      "initialFleetCount": 2,
+      "serviceCoverageKm": 20
+    }
+  },
+  {
+    "id": "app_1005",
+    "userId": "usr_chc_1",
+    "applicantName": "Vikram Singh Chaudhary",
+    "applicantEmail": "chc@krishiseva.in",
+    "applicantMobile": "9823456781",
+    "requestedRole": "CHC",
+    "organizationName": "Malwa Kisan Custom Hiring Centre",
+    "location": {
+      "state": "Madhya Pradesh",
+      "district": "Indore",
+      "block": "Sanwer",
+      "village": "Manglia",
+      "pincode": "453771",
+      "lat": 22.7842,
+      "lng": 75.8931
+    },
+    "status": "approved",
+    "submittedAt": "2026-07-15T11:00:00+05:30",
+    "reviewedBy": "usr_facilitator_1",
+    "reviewedAt": "2026-07-16T14:20:00+05:30",
+    "decisionReason": "All physical centre inspections and RC books verified in order.",
+    "assignedFacilitatorId": "usr_facilitator_1",
+    "documents": [
+      {
+        "type": "CHC Accreditation Certificate",
+        "docNumber": "SMAM-MP-IND-0042",
+        "fileName": "smam_chc_certificate.pdf",
+        "verified": true
+      }
+    ],
+    "roleSpecificData": {
+      "initialFleetCount": 8,
+      "serviceCoverageKm": 50
+    }
+  }
+]

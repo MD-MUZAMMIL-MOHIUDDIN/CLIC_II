@@ -1,0 +1,192 @@
+[
+  {
+    "id": "prod_1",
+    "sellerId": "ls_401",
+    "sellerName": "Gopalak Dairy & Livestock Breed Center",
+    "name": "Purebred Murrah Buffalo (2nd Lactation)",
+    "category": "Cattle & Buffalo",
+    "price": 95000,
+    "priceUnit": "per animal",
+    "stockStatus": "Available",
+    "isLiveAnimal": true,
+    "animalDetails": {
+      "breed": "Murrah",
+      "age": "4.5 Years",
+      "gender": "Female (with female calf at foot)",
+      "milkYieldPerDay": "16-18 Litres / Day (Tested)",
+      "vaccinationStatus": "FMD, HS & BQ Vaccinated (NDDB Tagged)",
+      "healthCertificateAvailable": true
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1546445317-29f4545e9d53?w=800&auto=format&fit=crop&q=80"
+    ],
+    "location": {
+      "state": "Haryana",
+      "district": "Karnal",
+      "block": "Gharaunda",
+      "village": "Kohand",
+      "lat": 29.5372,
+      "lng": 76.9723
+    },
+    "sellerPhone": "+91 99345 67893",
+    "verifiedSeller": true,
+    "description": "High genetic merit Murrah buffalo from Karnal belt. Quiet temperament, well-formed teats, high butterfat content (7.2%). Complete health and ear tag records provided."
+  },
+  {
+    "id": "prod_2",
+    "sellerId": "ls_401",
+    "sellerName": "Gopalak Dairy & Livestock Breed Center",
+    "name": "Kamdhenu Enriched Bypass Protein Cattle Feed (50kg)",
+    "category": "Animal Feed",
+    "price": 1450,
+    "priceUnit": "per 50kg bag",
+    "stockStatus": "In Stock",
+    "isLiveAnimal": false,
+    "specifications": {
+      "Crude Protein": "Min 22%",
+      "Crude Fat": "Min 4.0%",
+      "TDN (Total Digestible Nutrients)": "72%",
+      "Enrichment": "Contains Bypass Protein, Live Yeast Culture, Chelated Zinc & Copper"
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800&auto=format&fit=crop&q=80"
+    ],
+    "location": {
+      "state": "Haryana",
+      "district": "Karnal",
+      "block": "Gharaunda",
+      "village": "Kohand",
+      "lat": 29.5372,
+      "lng": 76.9723
+    },
+    "sellerPhone": "+91 99345 67893",
+    "verifiedSeller": true,
+    "description": "Scientifically balanced feed pellet formulated to boost milk fat, optimize rumen fermentation, and sustain peak lactation."
+  },
+  {
+    "id": "prod_3",
+    "sellerId": "ls_401",
+    "sellerName": "Gopalak Dairy & Livestock Breed Center",
+    "name": "Chelated Agro-Mineral Mixture with Chromium & Biotin (5kg)",
+    "category": "Mineral Mixtures",
+    "price": 680,
+    "priceUnit": "per bucket",
+    "stockStatus": "In Stock",
+    "isLiveAnimal": false,
+    "specifications": {
+      "Calcium to Phosphorus Ratio": "2:1",
+      "Chelated Trace Elements": "Copper, Zinc, Manganese, Chromium Glycinate",
+      "Vitamins": "Vitamin A (1,000,000 IU), Vitamin D3, Vitamin E, Biotin"
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?w=800&auto=format&fit=crop&q=80"
+    ],
+    "location": {
+      "state": "Haryana",
+      "district": "Karnal",
+      "block": "Gharaunda",
+      "village": "Kohand",
+      "lat": 29.5372,
+      "lng": 76.9723
+    },
+    "sellerPhone": "+91 99345 67893",
+    "verifiedSeller": true,
+    "description": "Prevents silent heat, improves conception rates, and strengthens hooves in milch animals. Dosage: 50g daily per cow/buffalo."
+  },
+  {
+    "id": "prod_4",
+    "sellerId": "ls_402",
+    "sellerName": "Deccan Pashu Seva & Poultry Hub",
+    "name": "Osmanabadi Breeding Goat (Male Buck)",
+    "category": "Goat & Sheep",
+    "price": 14000,
+    "priceUnit": "per animal",
+    "stockStatus": "Available",
+    "isLiveAnimal": true,
+    "animalDetails": {
+      "breed": "Osmanabadi Pureline",
+      "age": "14 Months",
+      "gender": "Male Buck",
+      "milkYieldPerDay": "N/A (Breeder Sire)",
+      "vaccinationStatus": "PPR and Enterotoxemia (ET) vaccinated",
+      "healthCertificateAvailable": true
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1524024973431-2ad916746881?w=800&auto=format&fit=crop&q=80"
+    ],
+    "location": {
+      "state": "Telangana",
+      "district": "Warangal",
+      "block": "Hanamkonda",
+      "village": "Kazipet",
+      "lat": 17.9689,
+      "lng": 79.5941
+    },
+    "sellerPhone": "+91 98490 11223",
+    "verifiedSeller": true,
+    "description": "Hardy breed adapted to semi-arid climates with strong disease resistance. Excellent weight gain and reproductive vigor for goat herd improvement."
+  },
+  {
+    "id": "prod_5",
+    "sellerId": "ls_402",
+    "sellerName": "Deccan Pashu Seva & Poultry Hub",
+    "name": "Kadaknath Day-Old Dual-Vaccinated Chicks (Batch of 50)",
+    "category": "Poultry",
+    "price": 3200,
+    "priceUnit": "per batch of 50",
+    "stockStatus": "In Stock",
+    "isLiveAnimal": true,
+    "animalDetails": {
+      "breed": "Kadaknath (Jhabua line)",
+      "age": "1 Day Old",
+      "gender": "Unsexed Batch",
+      "vaccinationStatus": "Marek's and Ranikhet F1 (B1 strain) administered at hatchery",
+      "healthCertificateAvailable": true
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=800&auto=format&fit=crop&q=80"
+    ],
+    "location": {
+      "state": "Telangana",
+      "district": "Warangal",
+      "block": "Hanamkonda",
+      "village": "Kazipet",
+      "lat": 17.9689,
+      "lng": 79.5941
+    },
+    "sellerPhone": "+91 98490 11223",
+    "verifiedSeller": true,
+    "description": "High-demand indigenous black meat poultry breed known for high protein, low cholesterol, and hardy free-range foraging abilities."
+  },
+  {
+    "id": "prod_6",
+    "sellerId": "ls_402",
+    "sellerName": "Deccan Pashu Seva & Poultry Hub",
+    "name": "Heavy-Duty 3HP Electric Fodder Chaff Cutter (Kutti Machine)",
+    "category": "Care Equipment",
+    "price": 24500,
+    "priceUnit": "per machine",
+    "stockStatus": "In Stock",
+    "isLiveAnimal": false,
+    "specifications": {
+      "Motor": "3 HP 100% Copper Winding Single Phase Motor",
+      "Capacity": "800 - 1000 kg green fodder / hour",
+      "Chaff Size": "Adjustable between 10mm to 25mm",
+      "Blades": "4 High-carbon tempered manganese blades"
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1589923188900-85dae523342b?w=800&auto=format&fit=crop&q=80"
+    ],
+    "location": {
+      "state": "Telangana",
+      "district": "Warangal",
+      "block": "Hanamkonda",
+      "village": "Kazipet",
+      "lat": 17.9689,
+      "lng": 79.5941
+    },
+    "sellerPhone": "+91 98490 11223",
+    "verifiedSeller": true,
+    "description": "Cuts green maize, sorghum, napier grass, and dry straw evenly to reduce fodder rejection by cattle and improve rumen digestibility."
+  }
+]
