@@ -4,6 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { useLocation } from '../context/LocationContext';
 import { useToast } from '../context/ToastContext';
 import { UserRole } from '../types';
+import { locationMasterService } from '../services/locationMasterService';
 import {
   Building2,
   Tractor,
@@ -15,14 +16,21 @@ import {
   Upload,
   ArrowRight,
   Sparkles,
-  AlertCircle
+  AlertCircle,
+  MapPin
 } from 'lucide-react';
 
 export const RegisterPage: React.FC = () => {
   const navigate = useNavigate();
   const { register } = useAuth();
   const { showToast } = useToast();
-  const { availableStates, availableDistricts } = useLocation();
+
+  // Location Master Data
+  const [masterStates] = useState(() => locationMasterService.getStates());
+  const [masterDistricts] = useState(() => locationMasterService.getDistricts());
+  const [masterMandals] = useState(() => locationMasterService.getMandals());
+  const [masterPanchayats] = useState(() => locationMasterService.getPanchayats());
+  const [masterVillages] = useState(() => locationMasterService.getVillages());
 
   // Registration step
   const [submittedApp, setSubmittedApp] = useState<any | null>(null);
@@ -34,10 +42,13 @@ export const RegisterPage: React.FC = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [selectedRole, setSelectedRole] = useState<'Farmer' | 'CHC' | 'FMC' | 'LivestockShop' | 'Inputstore'>('Farmer');
-  const [state, setState] = useState('Madhya Pradesh');
+
+  const [state, setState] = useState(masterStates[0]?.Text || 'Madhya Pradesh');
   const [district, setDistrict] = useState('Indore');
-  const [block, setBlock] = useState('Sanwer');
-  const [village, setVillage] = useState('');
+  const [mandal, setMandal] = useState('Sanwer');
+  const [panchayat, setPanchayat] = useState('Kanadia Gram Panchayat');
+  const [village, setVillage] = useState('Kanadia');
+
   const [organizationName, setOrganizationName] = useState('');
   const [consent, setConsent] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');

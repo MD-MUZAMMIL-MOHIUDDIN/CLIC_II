@@ -1,21 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { bioInputService } from '../../services/bioInputService';
+import inputStoresSeed from '../../data/input-stores.json';
 import {
   Store,
   Sprout,
   ShieldCheck,
   CheckCircle,
   Package,
-  Layers
+  Layers,
+  MapPin,
+  ArrowRight
 } from 'lucide-react';
 
 export const InputStoreDashboard: React.FC = () => {
   const { currentUser } = useAuth();
+  const store = inputStoresSeed.find(s => s.userId === currentUser?.id || s.id === currentUser?.linkedProfileId) || inputStoresSeed[0];
   const bioProducts = bioInputService.getAllBioInputs();
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-8 py-8 space-y-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-8 py-8 space-y-8 animate-fade-in">
       {/* Header */}
       <div className="bg-white rounded-3xl p-6 sm:p-8 border border-brand-border shadow-card flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div className="flex items-center gap-4">
@@ -25,19 +30,30 @@ export const InputStoreDashboard: React.FC = () => {
           <div>
             <div className="flex items-center gap-2">
               <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-lime-100 text-lime-900">
-                Authorized Input Store
+                Authorized Agri Input Store
               </span>
-              <span className="text-xs text-brand-muted">
-                Warangal Hub • Telangana
+              <span className="text-xs text-brand-muted flex items-center gap-1">
+                <MapPin className="w-3 h-3 text-forest-600" />
+                {store.location.village}, {store.location.district} • {store.location.state}
               </span>
             </div>
             <h1 className="font-heading font-extrabold text-2xl sm:text-3xl text-forest-900 mt-1">
-              Prithvi Bio-Inputs & Organic Seeds
+              {currentUser?.organizationName || store.storeName}
             </h1>
             <p className="text-xs text-brand-muted mt-0.5">
-              Authorized Stockist for ICAR-IISR Biofertilizers, Trichoderma & Neem Extract
+              Authorized Stockist: <strong>{currentUser?.fullName || store.contactPerson}</strong> • {store.description}
             </p>
           </div>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <Link
+            to="/profile"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-brand-border text-xs font-semibold text-brand-text hover:bg-forest-50 transition-colors shadow-xs"
+          >
+            <MapPin className="w-3.5 h-3.5 text-forest-600" />
+            Profile & Geolocation Settings
+          </Link>
         </div>
       </div>
 

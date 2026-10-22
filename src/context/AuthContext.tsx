@@ -8,7 +8,7 @@ interface AuthContextType {
   isAuthenticated: boolean;
   login: (email: string, password?: string) => { success: boolean; user?: User; error?: string };
   logout: () => void;
-  quickSwitchRole: (role: UserRole | 'pending_chc' | 'rejected_fmc' | 'suspended') => void;
+  quickSwitchRole: (roleOrUserId: UserRole | 'pending_chc' | 'rejected_fmc' | 'suspended' | string) => void;
   register: (params: {
     fullName: string;
     email: string;

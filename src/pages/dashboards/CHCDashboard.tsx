@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { chcService } from '../../services/chcService';
 import { machineryService } from '../../services/machineryService';
@@ -18,20 +19,26 @@ import {
   DollarSign,
   Users,
   Layers,
-  ArrowRight
+  ArrowRight,
+  MapPin
 } from 'lucide-react';
 
 export const CHCDashboard: React.FC = () => {
   const { currentUser } = useAuth();
   const { showToast } = useToast();
 
-  const centre = chcService.getAllCentres()[0]; // Malwa Kisan CHC
+  const centre = (currentUser ? chcService.getCentreByUserId(currentUser.id) || (currentUser.linkedProfileId ? chcService.getCentreById(currentUser.linkedProfileId) : undefined) : undefined) || chcService.getAllCentres()[0];
   const [machineryList, setMachineryList] = useState<FarmMachinery[]>(() =>
     machineryService.getMachineryByCentreId(centre.id)
   );
   const [bookings, setBookings] = useState<Booking[]>(() =>
     bookingService.getBookingsByCentreId(centre.id)
   );
+
+  useEffect(() => {
+    setMachineryList(machineryService.getMachineryByCentreId(centre.id));
+    setBookings(bookingService.getBookingsByCentreId(centre.id));
+  }, [currentUser?.id, centre.id]);
 
   // Add Machinery Modal
   const [addModalOpen, setAddModalOpen] = useState(false);
@@ -114,13 +121,22 @@ export const CHCDashboard: React.FC = () => {
           </div>
         </div>
 
-        <button
-          onClick={() => setAddModalOpen(true)}
-          className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-forest-600 hover:bg-forest-700 text-white font-heading font-bold text-xs shadow-subtle transition-all self-start md:self-auto"
-        >
-          <Plus className="w-4 h-4" />
-          <span>Add Implement to Fleet</span>
-        </button>
+        <div className="flex items-center gap-3">
+          <Link
+            to="/profile"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-brand-border text-xs font-semibold text-brand-text hover:bg-forest-50 transition-colors shadow-xs"
+          >
+            <MapPin className="w-3.5 h-3.5 text-forest-600" />
+            Profile & Geolocation
+          </Link>
+          <button
+            onClick={() => setAddModalOpen(true)}
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-forest-600 hover:bg-forest-700 text-white font-heading font-bold text-xs shadow-subtle transition-all self-start md:self-auto"
+          >
+            <Plus className="w-4 h-4" />
+            <span>Add Implement to Fleet</span>
+          </button>
+        </div>
       </div>
 
       {/* Metrics Row */}

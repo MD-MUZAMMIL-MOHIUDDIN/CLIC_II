@@ -8,8 +8,32 @@ const USERS_KEY = 'users';
 const CURRENT_USER_KEY = 'current_user';
 
 class AuthService {
-  private getUsers(): User[] {
-    return getInitialData<User[]>(USERS_KEY, usersSeed as User[]);
+  public getUsers(): User[] {
+    const users = getInitialData<User[]>(USERS_KEY, usersSeed as User[]);
+    const seed = usersSeed as User[];
+    let changed = false;
+
+    // Ensure all seed users exist in storage and reflect updated village locations
+    for (const s of seed) {
+      const idx = users.findIndex(u => u.id === s.id);
+      if (idx === -1) {
+        users.push(s);
+        changed = true;
+      } else if (
+        users[idx].location?.village !== s.location?.village ||
+        users[idx].location?.panchayat !== s.location?.panchayat ||
+        users[idx].fullName !== s.fullName ||
+        users[idx].role !== s.role
+      ) {
+        users[idx] = { ...users[idx], ...s };
+        changed = true;
+      }
+    }
+
+    if (changed) {
+      this.saveUsers(users);
+    }
+    return users;
   }
 
   private saveUsers(users: User[]): void {
@@ -42,13 +66,33 @@ class AuthService {
     }
   }
 
-  public login(email: string, _password?: string): { success: boolean; user?: User; error?: string } {
+  public login(identifier: string, _password?: string): { success: boolean; user?: User; error?: string } {
     const users = this.getUsers();
-    const cleanEmail = email.trim().toLowerCase();
-    const user = users.find(u => u.email.toLowerCase() === cleanEmail);
+    const clean = identifier.trim().toLowerCase();
+    const cleanDigits = identifier.replace(/\D/g, '');
+
+    const user = users.find(u => {
+      // 1. Match email (case-insensitive)
+      if (u.email && u.email.trim().toLowerCase() === clean) {
+        return true;
+      }
+
+      // 2. Match mobile number (digits matching with optional +91 or 0 prefix handling)
+      if (u.mobile) {
+        const userMobileDigits = u.mobile.replace(/\D/g, '');
+        if (cleanDigits.length >= 7) {
+          if (userMobileDigits === cleanDigits) return true;
+          const target10 = cleanDigits.slice(-10);
+          const user10 = userMobileDigits.slice(-10);
+          if (target10.length === 10 && user10 === target10) return true;
+        }
+      }
+
+      return false;
+    });
 
     if (!user) {
-      return { success: false, error: 'Invalid credentials. User with this email does not exist.' };
+      return { success: false, error: 'Invalid credentials. User with this email address or mobile number does not exist.' };
     }
 
     if (user.approvalStatus === 'pending') {
@@ -74,18 +118,23 @@ class AuthService {
     return { success: true, user };
   }
 
-  public quickSwitchUser(role: UserRole | 'pending_chc' | 'rejected_fmc' | 'suspended'): User | null {
+  public quickSwitchUser(roleOrUserId: string): User | null {
     const users = this.getUsers();
     let target: User | undefined;
 
-    if (role === 'pending_chc') {
-      target = users.find(u => u.id === 'usr_pending_chc');
-    } else if (role === 'rejected_fmc') {
-      target = users.find(u => u.id === 'usr_rejected_fmc');
-    } else if (role === 'suspended') {
-      target = users.find(u => u.id === 'usr_suspended_user');
-    } else {
-      target = users.find(u => u.role === role && u.approvalStatus === 'approved' && u.accountStatus === 'active');
+    // Check by user ID first
+    target = users.find(u => u.id === roleOrUserId);
+
+    if (!target) {
+      if (roleOrUserId === 'pending_chc') {
+        target = users.find(u => u.id === 'usr_pending_chc');
+      } else if (roleOrUserId === 'rejected_fmc') {
+        target = users.find(u => u.id === 'usr_rejected_fmc');
+      } else if (roleOrUserId === 'suspended') {
+        target = users.find(u => u.id === 'usr_suspended_user');
+      } else {
+        target = users.find(u => u.role === roleOrUserId && u.approvalStatus === 'approved' && u.accountStatus === 'active');
+      }
     }
 
     if (target) {

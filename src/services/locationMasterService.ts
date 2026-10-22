@@ -14,13 +14,37 @@ interface LocationMasterStorage {
 
 class LocationMasterService {
   private getData(): LocationMasterStorage {
-    return getInitialData<LocationMasterStorage>(STORAGE_KEY, {
+    const data = getInitialData<LocationMasterStorage>(STORAGE_KEY, {
       states: locationMasterSeed.states as StateItem[],
       districts: locationMasterSeed.districts as DistrictItem[],
       mandals: locationMasterSeed.mandals as MandalItem[],
       panchayats: locationMasterSeed.panchayats as PanchayatItem[],
       villages: locationMasterSeed.villages as VillageItem[]
     });
+
+    let modified = false;
+    for (const m of locationMasterSeed.mandals) {
+      if (!data.mandals.some(item => String(item.MandalId) === String(m.MandalId))) {
+        data.mandals.push(m as MandalItem);
+        modified = true;
+      }
+    }
+    for (const p of locationMasterSeed.panchayats) {
+      if (!data.panchayats.some(item => String(item.PanchayatId) === String(p.PanchayatId))) {
+        data.panchayats.push(p as PanchayatItem);
+        modified = true;
+      }
+    }
+    for (const v of locationMasterSeed.villages) {
+      if (!data.villages.some(item => String(item.VillageId) === String(v.VillageId))) {
+        data.villages.push(v as VillageItem);
+        modified = true;
+      }
+    }
+    if (modified) {
+      this.saveData(data);
+    }
+    return data;
   }
 
   private saveData(data: LocationMasterStorage): void {

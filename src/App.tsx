@@ -37,6 +37,8 @@ import { DropdownManagementPage } from './pages/dropdowns/DropdownManagementPage
 import { CropProblemsPage } from './pages/crops/CropProblemsPage';
 import { ProblemManagementPage } from './pages/crops/ProblemManagementPage';
 import { CropsPage } from './pages/crops/CropsPage';
+import { UsersPage } from './pages/users/UsersPage';
+import { RolesPage } from './pages/users/RolesPage';
 
 function AppLayout() {
   const { currentUser } = useAuth();
@@ -71,6 +73,22 @@ function AppLayout() {
     }
   };
 
+  const getRoleDashboard = (role?: string) => {
+    switch (role) {
+      case 'Farmer': return '/farmer';
+      case 'CHC': return '/chc-dashboard';
+      case 'FMC': return '/fmc-dashboard';
+      case 'LivestockShop': return '/livestock-shop';
+      case 'Inputstore': return '/input-store';
+      case 'Facilitator': return '/facilitator';
+      case 'Admin': return '/admin';
+      case 'superadmin': return '/superadmin';
+      default: return '/farmer';
+    }
+  };
+
+  const isAdminUser = currentUser?.role === 'Admin' || currentUser?.role === 'superadmin';
+
   return (
     <div className="h-screen flex flex-col bg-[#F7F8F2] text-[#202B24] font-sans antialiased overflow-hidden">
       <Navbar
@@ -78,8 +96,8 @@ function AppLayout() {
         isSidebarCollapsed={sidebarCollapsed}
       />
       <div className="flex-1 flex min-h-0 overflow-hidden">
-        {/* Sidebar only rendered on authenticated portal / master / dashboard pages */}
-        {currentUser && !isPublicPage && (
+        {/* Admin Master Sidebar ONLY rendered for Admin and superadmin */}
+        {isAdminUser && !isPublicPage && (
           <AppSidebar
             isCollapsed={sidebarCollapsed}
             onToggleCollapse={() => setSidebarCollapsed(prev => !prev)}
@@ -90,8 +108,17 @@ function AppLayout() {
         <div className="flex-1 min-w-0 h-full overflow-y-auto flex flex-col">
           <main className="flex-1">
             <Routes>
-              {/* Public Discovery Routes */}
-              <Route path="/" element={<HomePage />} />
+              {/* Root Route: If authenticated non-admin, automatically redirect to role dashboard */}
+              <Route
+                path="/"
+                element={
+                  currentUser && !isAdminUser ? (
+                    <Navigate to={getRoleDashboard(currentUser.role)} replace />
+                  ) : (
+                    <HomePage />
+                  )
+                }
+              />
               <Route path="/services" element={<CHCDiscoveryPage />} />
               <Route path="/chc" element={<CHCDiscoveryPage />} />
               <Route path="/machinery" element={<MachineryHiringPage />} />
@@ -119,7 +146,7 @@ function AppLayout() {
               <Route
                 path="/locations"
                 element={
-                  <ProtectedRoute>
+                  <ProtectedRoute allowedRoles={['Admin', 'superadmin']}>
                     <LocationsPage defaultTab="state" />
                   </ProtectedRoute>
                 }
@@ -127,7 +154,7 @@ function AppLayout() {
               <Route
                 path="/locations/states"
                 element={
-                  <ProtectedRoute>
+                  <ProtectedRoute allowedRoles={['Admin', 'superadmin']}>
                     <LocationsPage defaultTab="state" />
                   </ProtectedRoute>
                 }
@@ -135,7 +162,7 @@ function AppLayout() {
               <Route
                 path="/locations/districts"
                 element={
-                  <ProtectedRoute>
+                  <ProtectedRoute allowedRoles={['Admin', 'superadmin']}>
                     <LocationsPage defaultTab="district" />
                   </ProtectedRoute>
                 }
@@ -143,7 +170,7 @@ function AppLayout() {
               <Route
                 path="/locations/mandals"
                 element={
-                  <ProtectedRoute>
+                  <ProtectedRoute allowedRoles={['Admin', 'superadmin']}>
                     <LocationsPage defaultTab="mandal" />
                   </ProtectedRoute>
                 }
@@ -151,7 +178,7 @@ function AppLayout() {
               <Route
                 path="/locations/panchayats"
                 element={
-                  <ProtectedRoute>
+                  <ProtectedRoute allowedRoles={['Admin', 'superadmin']}>
                     <LocationsPage defaultTab="panchayat" />
                   </ProtectedRoute>
                 }
@@ -159,7 +186,7 @@ function AppLayout() {
               <Route
                 path="/locations/villages"
                 element={
-                  <ProtectedRoute>
+                  <ProtectedRoute allowedRoles={['Admin', 'superadmin']}>
                     <LocationsPage defaultTab="village" />
                   </ProtectedRoute>
                 }
@@ -169,7 +196,7 @@ function AppLayout() {
               <Route
                 path="/dropdown-management"
                 element={
-                  <ProtectedRoute>
+                  <ProtectedRoute allowedRoles={['Admin', 'superadmin']}>
                     <DropdownManagementPage defaultTab="ref-types" />
                   </ProtectedRoute>
                 }
@@ -177,7 +204,7 @@ function AppLayout() {
               <Route
                 path="/dropdown-management/ref-types"
                 element={
-                  <ProtectedRoute>
+                  <ProtectedRoute allowedRoles={['Admin', 'superadmin']}>
                     <DropdownManagementPage defaultTab="ref-types" />
                   </ProtectedRoute>
                 }
@@ -185,7 +212,7 @@ function AppLayout() {
               <Route
                 path="/dropdown-management/dropdowns"
                 element={
-                  <ProtectedRoute>
+                  <ProtectedRoute allowedRoles={['Admin', 'superadmin']}>
                     <DropdownManagementPage defaultTab="dropdowns" />
                   </ProtectedRoute>
                 }
@@ -194,7 +221,7 @@ function AppLayout() {
               <Route
                 path="/dropdowns"
                 element={
-                  <ProtectedRoute>
+                  <ProtectedRoute allowedRoles={['Admin', 'superadmin']}>
                     <DropdownManagementPage defaultTab="ref-types" />
                   </ProtectedRoute>
                 }
@@ -202,7 +229,7 @@ function AppLayout() {
               <Route
                 path="/dropdowns/ref-types"
                 element={
-                  <ProtectedRoute>
+                  <ProtectedRoute allowedRoles={['Admin', 'superadmin']}>
                     <DropdownManagementPage defaultTab="ref-types" />
                   </ProtectedRoute>
                 }
@@ -210,7 +237,7 @@ function AppLayout() {
               <Route
                 path="/dropdowns/dropdowns"
                 element={
-                  <ProtectedRoute>
+                  <ProtectedRoute allowedRoles={['Admin', 'superadmin']}>
                     <DropdownManagementPage defaultTab="dropdowns" />
                   </ProtectedRoute>
                 }
@@ -218,7 +245,7 @@ function AppLayout() {
               <Route
                 path="/dropdowns/items"
                 element={
-                  <ProtectedRoute>
+                  <ProtectedRoute allowedRoles={['Admin', 'superadmin']}>
                     <DropdownManagementPage defaultTab="dropdowns" />
                   </ProtectedRoute>
                 }
@@ -228,7 +255,7 @@ function AppLayout() {
               <Route
                 path="/crops"
                 element={
-                  <ProtectedRoute>
+                  <ProtectedRoute allowedRoles={['Admin', 'superadmin']}>
                     <CropsPage />
                   </ProtectedRoute>
                 }
@@ -236,7 +263,7 @@ function AppLayout() {
               <Route
                 path="/crops/list"
                 element={
-                  <ProtectedRoute>
+                  <ProtectedRoute allowedRoles={['Admin', 'superadmin']}>
                     <CropsPage />
                   </ProtectedRoute>
                 }
@@ -246,7 +273,7 @@ function AppLayout() {
               <Route
                 path="/crop-problems"
                 element={
-                  <ProtectedRoute>
+                  <ProtectedRoute allowedRoles={['Admin', 'superadmin']}>
                     <CropProblemsPage />
                   </ProtectedRoute>
                 }
@@ -264,10 +291,32 @@ function AppLayout() {
               <Route
                 path="/problem-management"
                 element={
-                  <ProtectedRoute>
+                  <ProtectedRoute allowedRoles={['Admin', 'superadmin']}>
                     <ProblemManagementPage />
                   </ProtectedRoute>
                 }
+              />
+
+              {/* User Management Master CRUD Routes */}
+              <Route
+                path="/users"
+                element={
+                  <ProtectedRoute allowedRoles={['Admin', 'superadmin']}>
+                    <UsersPage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/roles"
+                element={
+                  <ProtectedRoute allowedRoles={['Admin', 'superadmin']}>
+                    <RolesPage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/user-management"
+                element={<Navigate to="/users" replace />}
               />
 
               {/* Role-Specific Dashboards */}

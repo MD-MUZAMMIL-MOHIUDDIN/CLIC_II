@@ -13,7 +13,8 @@ import {
   Check,
   Filter,
   Building2,
-  Compass
+  Compass,
+  MapPin
 } from 'lucide-react';
 
 interface MandalCRUDProps {
@@ -29,13 +30,20 @@ export const MandalCRUD: React.FC<MandalCRUDProps> = ({
   const [mandals, setMandals] = useState<MandalItem[]>(() => locationMasterService.getMandals());
   const [districts, setDistricts] = useState<DistrictItem[]>(() => locationMasterService.getDistricts());
   const [states] = useState<StateItem[]>(() => locationMasterService.getStates());
+  const [selectedStateFilter, setSelectedStateFilter] = useState<string>(() => {
+    if (initialDistrictFilter !== 'ALL') {
+      const d = districts.find(dist => String(dist.DistrictId) === initialDistrictFilter);
+      return d ? String(d.StateId) : 'ALL';
+    }
+    return 'ALL';
+  });
   const [selectedDistrictFilter, setSelectedDistrictFilter] = useState<string>(initialDistrictFilter);
   const [searchQuery, setSearchQuery] = useState('');
 
   // Add / Edit Modal
   const [modalOpen, setModalOpen] = useState(false);
   const [editingItem, setEditingItem] = useState<MandalItem | null>(null);
-  const [mandalIdInput, setMandalIdInput] = useState('');
+  const [modalStateIdInput, setModalStateIdInput] = useState<string>('');
   const [valueInput, setValueInput] = useState('');
   const [textInput, setTextInput] = useState('');
   const [districtIdInput, setDistrictIdInput] = useState('');
@@ -50,18 +58,31 @@ export const MandalCRUD: React.FC<MandalCRUDProps> = ({
     setDistricts(locationMasterService.getDistricts());
   };
 
+  // Districts available for the selected state filter
+  const availableDistrictsForFilter = selectedStateFilter === 'ALL'
+    ? districts
+    : districts.filter(d => String(d.StateId) === selectedStateFilter);
+
+  const handleStateFilterChange = (stateId: string) => {
+    setSelectedStateFilter(stateId);
+    setSelectedDistrictFilter('ALL');
+  };
+
   const filteredMandals = mandals.filter((item) => {
-    if (selectedDistrictFilter !== 'ALL' && String(item.DistrictId) !== selectedDistrictFilter) {
-      return false;
+    if (selectedDistrictFilter !== 'ALL') {
+      if (String(item.DistrictId) !== selectedDistrictFilter) return false;
+    } else if (selectedStateFilter !== 'ALL') {
+      const parentDist = districts.find(d => String(d.DistrictId) === String(item.DistrictId));
+      if (!parentDist || String(parentDist.StateId) !== selectedStateFilter) return false;
     }
     if (searchQuery) {
       const q = searchQuery.toLowerCase();
-      const parentDist = districts.find(d => String(d.DistrictId) === String(item.DistrictId));
+      const { distName, stateName } = getDistrictInfo(item.DistrictId);
       return (
         item.Text.toLowerCase().includes(q) ||
         item.Value.toLowerCase().includes(q) ||
-        String(item.MandalId).toLowerCase().includes(q) ||
-        (parentDist && parentDist.Text.toLowerCase().includes(q))
+        distName.toLowerCase().includes(q) ||
+        stateName.toLowerCase().includes(q)
       );
     }
     return true;
@@ -69,42 +90,50 @@ export const MandalCRUD: React.FC<MandalCRUDProps> = ({
 
   const handleOpenAdd = () => {
     setEditingItem(null);
-    setMandalIdInput(String(mandals.length + 1));
+    const initialStId = selectedStateFilter !== 'ALL'
+      ? selectedStateFilter
+      : (states[0] ? String(states[0].StateId) : '');
+    setModalStateIdInput(initialStId);
+    const districtsForSt = districts.filter(d => String(d.StateId) === initialStId);
+    const initialDistId = selectedDistrictFilter !== 'ALL'
+      ? selectedDistrictFilter
+      : (districtsForSt[0] ? String(districtsForSt[0].DistrictId) : (districts[0] ? String(districts[0].DistrictId) : ''));
+    setDistrictIdInput(initialDistId);
     setValueInput('');
     setTextInput('');
-    if (selectedDistrictFilter !== 'ALL') {
-      setDistrictIdInput(selectedDistrictFilter);
-    } else if (districts.length > 0) {
-      setDistrictIdInput(String(districts[0].DistrictId));
-    } else {
-      setDistrictIdInput('');
-    }
     setFormError('');
     setModalOpen(true);
   };
 
   const handleOpenEdit = (item: MandalItem) => {
     setEditingItem(item);
-    setMandalIdInput(String(item.MandalId));
+    const parentDist = districts.find(d => String(d.DistrictId) === String(item.DistrictId));
+    setModalStateIdInput(parentDist ? String(parentDist.StateId) : (states[0] ? String(states[0].StateId) : ''));
+    setDistrictIdInput(String(item.DistrictId));
     setValueInput(item.Value);
     setTextInput(item.Text);
-    setDistrictIdInput(String(item.DistrictId));
     setFormError('');
     setModalOpen(true);
+  };
+
+  const handleModalStateChange = (newStId: string) => {
+    setModalStateIdInput(newStId);
+    const districtsForSt = districts.filter(d => String(d.StateId) === newStId);
+    setDistrictIdInput(districtsForSt[0] ? String(districtsForSt[0].DistrictId) : '');
   };
 
   const handleSave = (e: React.FormEvent) => {
     e.preventDefault();
     if (!valueInput.trim()) {
-      setFormError('Value is required');
+      setFormError('Code / Value is required');
       return;
     }
     if (!textInput.trim()) {
-      setFormError('Text is required');
+      setFormError('Mandal Name is required');
       return;
     }
     if (!districtIdInput) {
-      setFormError('District (DistrictId) is required');
+      setFormError('District is required');
       return;
     }
 
@@ -122,11 +151,11 @@ export const MandalCRUD: React.FC<MandalCRUDProps> = ({
         setFormError(err.message || 'Failed to update mandal');
       }
     } else {
-      const idToUse = mandalIdInput.trim() || String(Date.now());
-      if (mandals.some(m => String(m.MandalId) === idToUse)) {
-        setFormError(`A Mandal with MandalId "${idToUse}" already exists.`);
-        return;
-      }
+      const maxId = mandals.reduce((max, m) => {
+        const n = Number(m.MandalId);
+        return !isNaN(n) && n > max ? n : max;
+      }, 0);
+      const idToUse = String(maxId + 1);
       try {
         locationMasterService.createMandal({
           MandalId: idToUse,
@@ -186,7 +215,7 @@ export const MandalCRUD: React.FC<MandalCRUDProps> = ({
                 Mandal / Block Management
               </h2>
               <p className="text-xs text-brand-muted">
-                Schema: <code className="bg-cream-200 px-1.5 py-0.5 rounded text-[11px] font-mono text-forest-800">Mandal(MandalId, Value, Text, DistrictId)</code>
+                Manage sub-district tehsil and block administrative divisions under each State and District.
               </p>
             </div>
           </div>
@@ -202,19 +231,38 @@ export const MandalCRUD: React.FC<MandalCRUDProps> = ({
         </button>
       </div>
 
-      {/* Controls */}
+      {/* Controls with Cascading State -> District Filter */}
       <div className="p-4 bg-cream-50/50 border-b border-brand-border flex flex-col md:flex-row items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-2.5 w-full md:w-auto">
-          {/* District Filter */}
+          {/* 1. State Filter */}
           <div className="flex items-center gap-2 w-full sm:w-auto">
-            <Filter className="w-4 h-4 text-brand-muted shrink-0" />
+            <span className="text-[11px] font-bold text-forest-900 uppercase">State:</span>
+            <select
+              value={selectedStateFilter}
+              onChange={(e) => handleStateFilterChange(e.target.value)}
+              className="px-3 py-1.5 text-xs bg-white border border-brand-border rounded-xl focus:outline-none focus:ring-2 focus:ring-forest-500/20 focus:border-forest-600 text-forest-900 font-medium"
+            >
+              <option value="ALL">All States</option>
+              {states.map((s) => (
+                <option key={String(s.StateId)} value={String(s.StateId)}>
+                  {s.Text} ({s.Value})
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {/* 2. District Filter (Cascaded by State) */}
+          <div className="flex items-center gap-2 w-full sm:w-auto">
+            <span className="text-[11px] font-bold text-forest-900 uppercase">District:</span>
             <select
               value={selectedDistrictFilter}
               onChange={(e) => setSelectedDistrictFilter(e.target.value)}
               className="px-3 py-1.5 text-xs bg-white border border-brand-border rounded-xl focus:outline-none focus:ring-2 focus:ring-forest-500/20 focus:border-forest-600 text-forest-900 font-medium"
             >
-              <option value="ALL">All Districts ({mandals.length} total)</option>
-              {districts.map((d) => (
+              <option value="ALL">
+                {selectedStateFilter === 'ALL' ? 'All Districts' : 'All in this State'} ({availableDistrictsForFilter.length})
+              </option>
+              {availableDistrictsForFilter.map((d) => (
                 <option key={String(d.DistrictId)} value={String(d.DistrictId)}>
                   {d.Text} ({d.Value})
                 </option>
@@ -223,11 +271,11 @@ export const MandalCRUD: React.FC<MandalCRUDProps> = ({
           </div>
 
           {/* Search Box */}
-          <div className="relative w-full sm:w-72">
+          <div className="relative w-full sm:w-64">
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-brand-muted" />
             <input
               type="text"
-              placeholder="Search by mandal name, value, or district..."
+              placeholder="Search by mandal, district, or state..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-9 pr-3 py-1.5 text-xs bg-white border border-brand-border rounded-xl focus:outline-none focus:ring-2 focus:ring-forest-500/20 focus:border-forest-600 text-forest-900 placeholder:text-brand-muted/70"
@@ -253,10 +301,11 @@ export const MandalCRUD: React.FC<MandalCRUDProps> = ({
         <table className="w-full text-left text-xs">
           <thead>
             <tr className="bg-cream-100 text-forest-800 font-semibold border-b border-brand-border uppercase tracking-wider text-[11px]">
-              <th className="py-3 px-4 w-28">MandalId</th>
-              <th className="py-3 px-4 w-48">District (DistrictId)</th>
-              <th className="py-3 px-4 w-36">Value</th>
-              <th className="py-3 px-4">Text (Mandal Name)</th>
+              <th className="py-3 px-4 w-14 text-center">#</th>
+              <th className="py-3 px-4">Mandal / Block Name</th>
+              <th className="py-3 px-4 w-44">District</th>
+              <th className="py-3 px-4 w-44">State</th>
+              <th className="py-3 px-4 w-32">Code / Key</th>
               <th className="py-3 px-4 w-36">Panchayats</th>
               <th className="py-3 px-4 text-right w-28">Actions</th>
             </tr>
@@ -264,35 +313,38 @@ export const MandalCRUD: React.FC<MandalCRUDProps> = ({
           <tbody className="divide-y divide-cream-200">
             {filteredMandals.length === 0 ? (
               <tr>
-                <td colSpan={6} className="py-8 text-center text-brand-muted">
+                <td colSpan={7} className="py-8 text-center text-brand-muted">
                   No mandals found matching your filters.
                 </td>
               </tr>
             ) : (
-              filteredMandals.map((item) => {
+              filteredMandals.map((item, index) => {
                 const childCount = locationMasterService.getChildCount('Mandal', String(item.MandalId));
                 const { distName, stateName } = getDistrictInfo(item.DistrictId);
                 return (
                   <tr key={String(item.MandalId)} className="hover:bg-forest-50/40 transition-colors">
-                    <td className="py-3 px-4 font-mono font-bold text-forest-700">
-                      <span className="inline-block px-2 py-0.5 rounded bg-forest-100 text-forest-800 text-[11px]">
-                        {item.MandalId}
-                      </span>
-                    </td>
-                    <td className="py-3 px-4">
-                      <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-cream-200 text-forest-900 text-[11px] font-medium border border-cream-300">
-                        <Building2 className="w-3 h-3 text-forest-600" />
-                        <span className="truncate max-w-[130px]">{distName}</span>
-                        {stateName && <span className="text-[10px] text-brand-muted">({stateName})</span>}
-                      </span>
-                    </td>
-                    <td className="py-3 px-4 font-mono font-semibold text-forest-800">
-                      <code className="bg-cream-100 px-1.5 py-0.5 rounded text-[11px]">
-                        {item.Value}
-                      </code>
+                    <td className="py-3 px-4 text-center font-bold text-brand-muted text-xs">
+                      {index + 1}
                     </td>
                     <td className="py-3 px-4 font-bold text-forest-950 text-sm">
                       {item.Text}
+                    </td>
+                    <td className="py-3 px-4">
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-cream-200 text-forest-900 text-xs font-semibold border border-cream-300">
+                        <Building2 className="w-3 h-3 text-forest-600" />
+                        <span>{distName}</span>
+                      </span>
+                    </td>
+                    <td className="py-3 px-4">
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-forest-50 text-forest-800 text-xs font-medium border border-forest-200">
+                        <MapPin className="w-3 h-3 text-forest-600" />
+                        <span>{stateName}</span>
+                      </span>
+                    </td>
+                    <td className="py-3 px-4 font-mono font-semibold text-forest-800">
+                      <code className="bg-cream-100 px-2 py-0.5 rounded text-[11px]">
+                        {item.Value}
+                      </code>
                     </td>
                     <td className="py-3 px-4">
                       {onSelectMandal ? (
@@ -361,24 +413,30 @@ export const MandalCRUD: React.FC<MandalCRUDProps> = ({
                 </div>
               )}
 
+              {/* 1. State Selector */}
               <div>
                 <label className="block text-xs font-bold text-forest-900 mb-1">
-                  MandalId <span className="text-red-500">*</span>
+                  State <span className="text-red-500">*</span>
                 </label>
-                <input
-                  type="text"
-                  value={mandalIdInput}
-                  onChange={(e) => setMandalIdInput(e.target.value)}
-                  disabled={!!editingItem}
-                  placeholder="e.g. 15 or MAN-15"
-                  className="w-full px-3 py-2 text-xs border border-brand-border rounded-xl focus:outline-none focus:ring-2 focus:ring-forest-500/20 focus:border-forest-600 disabled:bg-cream-100 disabled:text-brand-muted font-mono"
+                <select
+                  value={modalStateIdInput}
+                  onChange={(e) => handleModalStateChange(e.target.value)}
+                  className="w-full px-3 py-2 text-xs border border-brand-border rounded-xl focus:outline-none focus:ring-2 focus:ring-forest-500/20 focus:border-forest-600 font-medium"
                   required
-                />
+                >
+                  <option value="" disabled>Select state first...</option>
+                  {states.map((s) => (
+                    <option key={String(s.StateId)} value={String(s.StateId)}>
+                      {s.Text} ({s.Value})
+                    </option>
+                  ))}
+                </select>
               </div>
 
+              {/* 2. District Selector (Cascaded by State) */}
               <div>
                 <label className="block text-xs font-bold text-forest-900 mb-1">
-                  District (DistrictId) <span className="text-red-500">*</span>
+                  District <span className="text-red-500">*</span>
                 </label>
                 <select
                   value={districtIdInput}
@@ -386,16 +444,15 @@ export const MandalCRUD: React.FC<MandalCRUDProps> = ({
                   className="w-full px-3 py-2 text-xs border border-brand-border rounded-xl focus:outline-none focus:ring-2 focus:ring-forest-500/20 focus:border-forest-600 font-medium"
                   required
                 >
-                  <option value="" disabled>Select parent district...</option>
-                  {districts.map((d) => (
-                    <option key={String(d.DistrictId)} value={String(d.DistrictId)}>
-                      {d.Text} (DistrictId: {d.DistrictId})
-                    </option>
-                  ))}
+                  <option value="" disabled>Select district...</option>
+                  {districts
+                    .filter(d => !modalStateIdInput || String(d.StateId) === modalStateIdInput)
+                    .map((d) => (
+                      <option key={String(d.DistrictId)} value={String(d.DistrictId)}>
+                        {d.Text} ({d.Value})
+                      </option>
+                    ))}
                 </select>
-                <p className="text-[10px] text-brand-muted mt-1">
-                  Foreign key reference to District(DistrictId).
-                </p>
               </div>
 
               <div>
@@ -462,7 +519,7 @@ export const MandalCRUD: React.FC<MandalCRUDProps> = ({
             </div>
 
             <p className="text-xs text-brand-text leading-relaxed">
-              Are you sure you want to delete <strong className="text-forest-900">{itemToDelete.Text}</strong> (MandalId: {itemToDelete.MandalId})?
+              Are you sure you want to delete <strong className="text-forest-900">{itemToDelete.Text}</strong>?
             </p>
 
             {locationMasterService.getChildCount('Mandal', String(itemToDelete.MandalId)) > 0 && (

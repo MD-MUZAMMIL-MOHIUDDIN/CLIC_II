@@ -7,7 +7,9 @@
     "location": {
       "state": "Madhya Pradesh",
       "district": "Indore",
+      "mandal": "Sanwer",
       "block": "Sanwer",
+      "panchayat": "Kanadia Gram Panchayat",
       "village": "Kanadia",
       "lat": 22.7196,
       "lng": 75.8577,
@@ -21,20 +23,64 @@
   {
     "id": "farmer_102",
     "userId": "usr_farmer_2",
-    "name": "Jaswant Singh Brar",
-    "phone": "+91 98111 22334",
+    "name": "Jagdish Prasad Sharma",
+    "phone": "+91 98261 23451",
     "location": {
-      "state": "Punjab",
-      "district": "Ludhiana",
-      "block": "Samrala",
-      "village": "Doraha",
-      "lat": 30.8034,
-      "lng": 76.0319,
-      "pincode": "141421"
+      "state": "Madhya Pradesh",
+      "district": "Indore",
+      "mandal": "Sanwer",
+      "block": "Sanwer",
+      "panchayat": "Kanadia Gram Panchayat",
+      "village": "Semliya Chau",
+      "lat": 22.7245,
+      "lng": 75.8620,
+      "pincode": "452016"
     },
-    "landSizeAcres": 22,
-    "primaryCrops": ["Paddy (Basmati)", "Wheat", "Mustard", "Silage Maize"],
-    "soilType": "Alluvial Loam",
-    "irrigationType": "Canal + Submersible Tube Well"
+    "landSizeAcres": 18,
+    "primaryCrops": ["Wheat (Sharbati)", "Potato", "Soybean", "Mustard"],
+    "soilType": "Medium Black Loam",
+    "irrigationType": "Canal + Tube Well"
+  },
+  {
+    "id": "farmer_103",
+    "userId": "usr_farmer_3",
+    "name": "Sunita Bai Solanki",
+    "phone": "+91 98261 23452",
+    "location": {
+      "state": "Madhya Pradesh",
+      "district": "Indore",
+      "mandal": "Sanwer",
+      "block": "Sanwer",
+      "panchayat": "Manglia Gram Panchayat",
+      "village": "Manglia",
+      "lat": 22.7520,
+      "lng": 75.8910,
+      "pincode": "453771"
+    },
+    "landSizeAcres": 9,
+    "primaryCrops": ["Organic Cotton", "Pigeon Pea (Tur)", "Soybean", "Coriander"],
+    "soilType": "Black Cotton Soil",
+    "irrigationType": "Farm Pond + Micro Sprinklers"
+  },
+  {
+    "id": "farmer_104",
+    "userId": "usr_farmer_4",
+    "name": "Suresh Chandra Patidar",
+    "phone": "+91 98261 23453",
+    "location": {
+      "state": "Madhya Pradesh",
+      "district": "Indore",
+      "mandal": "Sanwer",
+      "block": "Sanwer",
+      "panchayat": "Manglia Gram Panchayat",
+      "village": "Hasalpur",
+      "lat": 22.7650,
+      "lng": 75.9100,
+      "pincode": "453771"
+    },
+    "landSizeAcres": 24,
+    "primaryCrops": ["Sweet Corn", "Garlic", "Onion", "Wheat"],
+    "soilType": "Alluvial Clay Loam",
+    "irrigationType": "Automated Drip Fertigation"
   }
 ]

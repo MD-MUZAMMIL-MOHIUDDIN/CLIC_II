@@ -21,17 +21,20 @@ import {
   AlertCircle
 } from 'lucide-react';
 
+import farmersSeed from '../../data/farmers.json';
+
 export const FarmerDashboard: React.FC = () => {
   const { currentUser } = useAuth();
 
+  const farmer = farmersSeed.find(f => f.userId === currentUser?.id || f.id === currentUser?.linkedProfileId) || farmersSeed[0];
   const [activeTab, setActiveTab] = useState<'bookings' | 'consultations' | 'advisories'>('bookings');
 
-  const bookings = bookingService.getBookingsByFarmerId(currentUser?.id || 'usr_farmer_1');
-  const consultations = consultationService.getConsultationsByFarmerId(currentUser?.id || 'usr_farmer_1');
+  const bookings = bookingService.getBookingsByFarmerId(currentUser?.id || farmer.userId);
+  const consultations = consultationService.getConsultationsByFarmerId(currentUser?.id || farmer.userId);
   const bioRecommendations = bioInputService.getAllBioInputs().slice(0, 3);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-8 py-8 space-y-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-8 py-8 space-y-8 animate-fade-in">
       {/* Welcome Greeting Strip */}
       <div className="bg-white rounded-3xl p-6 sm:p-8 border border-brand-border shadow-card flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div className="flex items-center gap-4">
@@ -47,28 +50,38 @@ export const FarmerDashboard: React.FC = () => {
               </span>
               <span className="text-xs text-brand-muted flex items-center gap-1">
                 <MapPin className="w-3.5 h-3.5 text-forest-600" />
-                {currentUser?.location.village || 'Kanadia'}, {currentUser?.location.district}, {currentUser?.location.state}
+                {farmer.location.village}, {farmer.location.district}, {farmer.location.state}
               </span>
             </div>
             <h1 className="font-heading font-extrabold text-2xl sm:text-3xl text-forest-900 mt-1">
-              Namaste, {currentUser?.fullName || 'Rameshwar Patel'}
+              Namaste, {currentUser?.fullName || farmer.name}
             </h1>
             <p className="text-xs text-brand-muted mt-0.5">
-              Patel Organic Farms • 14 Acres Holding (Vertisol Black Soil)
+              {currentUser?.organizationName || farmer.name + ' Farms'} • {farmer.landSizeAcres} Acres Holding ({farmer.soilType})
             </p>
           </div>
         </div>
 
-        {/* Seasonal Alert Card */}
-        <div className="bg-forest-900 text-white p-4 rounded-2xl flex items-center gap-3.5 shrink-0 max-w-sm">
-          <div className="w-10 h-10 rounded-xl bg-forest-800 flex items-center justify-center text-harvest shrink-0">
-            <Sun className="w-5 h-5" />
-          </div>
-          <div className="text-xs space-y-0.5">
-            <div className="font-heading font-bold text-harvest">Rabi Sowing Forecast</div>
-            <p className="text-[11px] text-forest-200 leading-snug">
-              Optimal soil moisture in Malwa belt. Schedule rotavators & seed drills before 25 Oct.
-            </p>
+        <div className="flex items-center gap-3">
+          <Link
+            to="/profile"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-brand-border text-xs font-semibold text-brand-text hover:bg-forest-50 transition-colors shadow-xs"
+          >
+            <MapPin className="w-3.5 h-3.5 text-forest-600" />
+            Profile & Geolocation
+          </Link>
+
+          {/* Seasonal Alert Card */}
+          <div className="bg-forest-900 text-white p-3.5 rounded-2xl flex items-center gap-3 shrink-0 max-w-xs hidden xl:flex">
+            <div className="w-9 h-9 rounded-xl bg-forest-800 flex items-center justify-center text-harvest shrink-0">
+              <Sun className="w-4 h-4" />
+            </div>
+            <div className="text-xs space-y-0.5">
+              <div className="font-heading font-bold text-harvest text-[11px]">Rabi Sowing Forecast</div>
+              <p className="text-[10.5px] text-forest-200 leading-snug">
+                Optimal soil moisture in Malwa belt.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -100,7 +113,7 @@ export const FarmerDashboard: React.FC = () => {
             <Sprout className="w-6 h-6" />
           </div>
           <div>
-            <div className="text-xl font-heading font-extrabold text-forest-900">14 Acres</div>
+            <div className="text-xl font-heading font-extrabold text-forest-900">{farmer.landSizeAcres} Acres</div>
             <div className="text-xs text-brand-muted">Land Holding</div>
           </div>
         </div>

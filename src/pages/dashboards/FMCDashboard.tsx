@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { machineryService } from '../../services/machineryService';
 import { useToast } from '../../context/ToastContext';
+import fmcCentresSeed from '../../data/farm-machinery-centres.json';
 import { FarmMachinery } from '../../types';
 import { formatCurrency } from '../../lib/utils';
 import {
@@ -12,12 +14,15 @@ import {
   Plus,
   ShieldCheck,
   Clock,
-  Sparkles
+  Sparkles,
+  ArrowRight
 } from 'lucide-react';
 
 export const FMCDashboard: React.FC = () => {
   const { currentUser } = useAuth();
   const { showToast } = useToast();
+
+  const centre = fmcCentresSeed.find(f => f.userId === currentUser?.id || f.id === currentUser?.linkedProfileId) || fmcCentresSeed[0];
 
   const [machinery, setMachinery] = useState<FarmMachinery[]>(() =>
     machineryService.getAllMachinery().slice(4, 9)
@@ -30,7 +35,7 @@ export const FMCDashboard: React.FC = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-8 py-8 space-y-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-8 py-8 space-y-8 animate-fade-in">
       {/* Header */}
       <div className="bg-white rounded-3xl p-6 sm:p-8 border border-brand-border shadow-card flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div className="flex items-center gap-4">
@@ -40,19 +45,30 @@ export const FMCDashboard: React.FC = () => {
           <div>
             <div className="flex items-center gap-2">
               <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-teal-100 text-teal-900">
-                Farm Machinery Centre (FMC)
+                Farm Machinery Centre (FMC Dealer)
               </span>
-              <span className="text-xs text-brand-muted">
-                Ludhiana Hub • Punjab
+              <span className="text-xs text-brand-muted flex items-center gap-1">
+                <MapPin className="w-3 h-3 text-forest-600" />
+                {centre.location.village}, {centre.location.district} • {centre.location.state}
               </span>
             </div>
             <h1 className="font-heading font-extrabold text-2xl sm:text-3xl text-forest-900 mt-1">
-              Dhillon Farm Machinery Agro Hub
+              {currentUser?.organizationName || centre.centreName}
             </h1>
             <p className="text-xs text-brand-muted mt-0.5">
-              Heavy Harvesters, Super Seeders, and High-Tonnage Tractors Fleet
+              Authorized FMC Dealer: <strong>{currentUser?.fullName || centre.contactPerson}</strong> • {centre.description}
             </p>
           </div>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <Link
+            to="/profile"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-brand-border text-xs font-semibold text-brand-text hover:bg-forest-50 transition-colors shadow-xs"
+          >
+            <MapPin className="w-3.5 h-3.5 text-forest-600" />
+            Profile & Geolocation Settings
+          </Link>
         </div>
       </div>
 

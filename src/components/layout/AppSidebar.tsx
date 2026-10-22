@@ -7,6 +7,8 @@ import { cropProblemService } from '../../services/cropProblemService';
 import { cropService } from '../../services/cropService';
 import { problemMediaService } from '../../services/problemMediaService';
 import { problemManagementService } from '../../services/problemManagementService';
+import { userService } from '../../services/userService';
+import { roleService } from '../../services/roleService';
 import {
   MapPin,
   Building2,
@@ -17,6 +19,7 @@ import {
   ListFilter,
   LayoutDashboard,
   User,
+  Users,
   Sliders,
   ChevronLeft,
   ChevronRight,
@@ -56,6 +59,8 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
   const cropStats = cropService.getStats();
   const mediaStats = problemMediaService.getStats();
   const mgmtStats = problemManagementService.getStats();
+  const userStats = userService.getStats();
+  const roleStats = roleService.getStats();
 
   const getDashboardRoute = () => {
     switch (currentUser.role) {
@@ -162,6 +167,68 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
           >
             <User className="w-4 h-4 shrink-0 text-forest-600" />
             {!isCollapsed && <span className="truncate">Profile Settings</span>}
+          </NavLink>
+        </div>
+
+        {/* Small Heading: USER MANAGEMENT */}
+        <div className="space-y-1">
+          {!isCollapsed ? (
+            <div className="px-2 pb-1">
+              <span className="text-[10.5px] font-extrabold uppercase tracking-wider text-forest-800 flex items-center gap-1.5">
+                <Users className="w-3 h-3 text-agri" />
+                USER MANAGEMENT
+              </span>
+            </div>
+          ) : (
+            <div className="h-px bg-brand-border my-2" title="user management" />
+          )}
+
+          {/* Users */}
+          <NavLink
+            to="/users"
+            onClick={onCloseMobile}
+            className={({ isActive }) =>
+              `flex items-center justify-between px-3 py-2 rounded-xl text-xs font-medium transition-all ${
+                isActive
+                  ? 'bg-forest-700 text-white shadow-subtle font-bold'
+                  : 'text-brand-text hover:text-forest-900 hover:bg-forest-50/60'
+              } ${isCollapsed ? 'justify-center px-2' : ''}`
+            }
+            title={isCollapsed ? `Users (${userStats.totalCount})` : undefined}
+          >
+            <div className="flex items-center gap-2.5 truncate">
+              <Users className="w-4 h-4 shrink-0 text-harvest" />
+              {!isCollapsed && <span className="truncate">Users</span>}
+            </div>
+            {!isCollapsed && (
+              <span className="text-[10px] px-1.5 py-0.2 rounded-md font-bold font-mono bg-cream-200 text-brand-muted">
+                {userStats.totalCount}
+              </span>
+            )}
+          </NavLink>
+
+          {/* Roles */}
+          <NavLink
+            to="/roles"
+            onClick={onCloseMobile}
+            className={({ isActive }) =>
+              `flex items-center justify-between px-3 py-2 rounded-xl text-xs font-medium transition-all ${
+                isActive
+                  ? 'bg-forest-700 text-white shadow-subtle font-bold'
+                  : 'text-brand-text hover:text-forest-900 hover:bg-forest-50/60'
+              } ${isCollapsed ? 'justify-center px-2' : ''}`
+            }
+            title={isCollapsed ? `Roles (${roleStats.totalCount})` : undefined}
+          >
+            <div className="flex items-center gap-2.5 truncate">
+              <Shield className="w-4 h-4 shrink-0 text-harvest" />
+              {!isCollapsed && <span className="truncate">Roles</span>}
+            </div>
+            {!isCollapsed && (
+              <span className="text-[10px] px-1.5 py-0.2 rounded-md font-bold font-mono bg-cream-200 text-brand-muted">
+                {roleStats.totalCount}
+              </span>
+            )}
           </NavLink>
         </div>
 

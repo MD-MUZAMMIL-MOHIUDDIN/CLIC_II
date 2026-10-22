@@ -34,7 +34,19 @@
     { "MandalId": "11", "Value": "HAV", "Text": "Haveli", "DistrictId": "8" },
     { "MandalId": "12", "Value": "BAR", "Text": "Baramati", "DistrictId": "8" },
     { "MandalId": "13", "Value": "HNK", "Text": "Hanamkonda", "DistrictId": "10" },
-    { "MandalId": "14", "Value": "CHK", "Text": "Chaksu", "DistrictId": "11" }
+    { "MandalId": "14", "Value": "CHK", "Text": "Chaksu", "DistrictId": "11" },
+    { "MandalId": "15", "Value": "BDW", "Text": "Badnawar", "DistrictId": "3" },
+    { "MandalId": "16", "Value": "SRD", "Text": "Sardarpur", "DistrictId": "3" },
+    { "MandalId": "17", "Value": "DHP", "Text": "Dharampuri", "DistrictId": "3" },
+    { "MandalId": "18", "Value": "NBH", "Text": "Nabha", "DistrictId": "5" },
+    { "MandalId": "19", "Value": "RJP", "Text": "Rajpura", "DistrictId": "5" },
+    { "MandalId": "20", "Value": "SMN", "Text": "Samana", "DistrictId": "5" },
+    { "MandalId": "21", "Value": "BRR", "Text": "Barara", "DistrictId": "7" },
+    { "MandalId": "22", "Value": "SHA", "Text": "Saha", "DistrictId": "7" },
+    { "MandalId": "23", "Value": "NRG", "Text": "Naraingarh", "DistrictId": "7" },
+    { "MandalId": "24", "Value": "NPH", "Text": "Niphad", "DistrictId": "9" },
+    { "MandalId": "25", "Value": "DND", "Text": "Dindori", "DistrictId": "9" },
+    { "MandalId": "26", "Value": "SNR", "Text": "Sinnar", "DistrictId": "9" }
   ],
   "panchayats": [
     { "PanchayatId": "1", "Value": "KAN_GP", "Text": "Kanadia Gram Panchayat", "MandalId": "1" },
@@ -48,7 +60,16 @@
     { "PanchayatId": "9", "Value": "TAR_GP", "Text": "Taraori Gram Panchayat", "MandalId": "10" },
     { "PanchayatId": "10", "Value": "MAL_GP", "Text": "Malegaon Gram Panchayat", "MandalId": "11" },
     { "PanchayatId": "11", "Value": "KAZ_GP", "Text": "Kazipet Gram Panchayat", "MandalId": "13" },
-    { "PanchayatId": "12", "Value": "KOT_GP", "Text": "Kotkhawda Gram Panchayat", "MandalId": "14" }
+    { "PanchayatId": "12", "Value": "KOT_GP", "Text": "Kotkhawda Gram Panchayat", "MandalId": "14" },
+    { "PanchayatId": "13", "Value": "BDW_GP", "Text": "Badnawar Gram Panchayat", "MandalId": "15" },
+    { "PanchayatId": "14", "Value": "SRD_GP", "Text": "Sardarpur Gram Panchayat", "MandalId": "16" },
+    { "PanchayatId": "15", "Value": "DHP_GP", "Text": "Dharampuri Gram Panchayat", "MandalId": "17" },
+    { "PanchayatId": "16", "Value": "NBH_GP", "Text": "Nabha Gram Panchayat", "MandalId": "18" },
+    { "PanchayatId": "17", "Value": "RJP_GP", "Text": "Rajpura Gram Panchayat", "MandalId": "19" },
+    { "PanchayatId": "18", "Value": "BRR_GP", "Text": "Barara Gram Panchayat", "MandalId": "21" },
+    { "PanchayatId": "19", "Value": "SHA_GP", "Text": "Saha Gram Panchayat", "MandalId": "22" },
+    { "PanchayatId": "20", "Value": "NPH_GP", "Text": "Niphad Gram Panchayat", "MandalId": "24" },
+    { "PanchayatId": "21", "Value": "DND_GP", "Text": "Dindori Gram Panchayat", "MandalId": "25" }
   ],
   "villages": [
     { "VillageId": "1", "Value": "KAN_VIL", "Text": "Kanadia", "PanchayatId": "1" },
@@ -68,6 +89,18 @@
     { "VillageId": "15", "Value": "KAZ_VIL", "Text": "Kazipet", "PanchayatId": "11" },
     { "VillageId": "16", "Value": "MAD_VIL", "Text": "Madikonda", "PanchayatId": "11" },
     { "VillageId": "17", "Value": "KOT_VIL", "Text": "Kotkhawda", "PanchayatId": "12" },
-    { "VillageId": "18", "Value": "BAG_VIL", "Text": "Bagru", "PanchayatId": "12" }
+    { "VillageId": "18", "Value": "BAG_VIL", "Text": "Bagru", "PanchayatId": "12" },
+    { "VillageId": "19", "Value": "AMJ_VIL", "Text": "Amjhera", "PanchayatId": "13" },
+    { "VillageId": "20", "Value": "RAJ_VIL", "Text": "Rajgarh", "PanchayatId": "14" },
+    { "VillageId": "21", "Value": "KUK_VIL", "Text": "Kukshi", "PanchayatId": "15" },
+    { "VillageId": "22", "Value": "BHD_VIL", "Text": "Bhadson", "PanchayatId": "16" },
+    { "VillageId": "23", "Value": "GHN_VIL", "Text": "Ghanour", "PanchayatId": "17" },
+    { "VillageId": "24", "Value": "SNR_VIL", "Text": "Sanaur", "PanchayatId": "17" },
+    { "VillageId": "25", "Value": "TLH_VIL", "Text": "Talheri", "PanchayatId": "18" },
+    { "VillageId": "26", "Value": "MUL_VIL", "Text": "Mullana", "PanchayatId": "19" },
+    { "VillageId": "27", "Value": "SHZ_VIL", "Text": "Shehzadpur", "PanchayatId": "19" },
+    { "VillageId": "28", "Value": "PMP_VIL", "Text": "Pimpalgaon", "PanchayatId": "20" },
+    { "VillageId": "29", "Value": "OZR_VIL", "Text": "Ozar", "PanchayatId": "21" },
+    { "VillageId": "30", "Value": "VAN_VIL", "Text": "Vani", "PanchayatId": "21" }
   ]
 }

@@ -93,12 +93,12 @@ export const LocationsPage: React.FC<LocationsPageProps> = ({ defaultTab }) => {
     switchTab('village');
   };
 
-  const tabs: { id: LocationTab; label: string; icon: any; count: number; schema: string }[] = [
-    { id: 'state', label: 'State', icon: MapPin, count: stats.statesCount, schema: 'State(StateId, Value, Text)' },
-    { id: 'district', label: 'District', icon: Building2, count: stats.districtsCount, schema: 'District(DistrictId, Value, Text, StateId)' },
-    { id: 'mandal', label: 'Mandal', icon: Layers, count: stats.mandalsCount, schema: 'Mandal(MandalId, Value, Text, DistrictId)' },
-    { id: 'panchayat', label: 'Panchayat', icon: Compass, count: stats.panchayatsCount, schema: 'Panchayat(PanchayatId, Value, Text, MandalId)' },
-    { id: 'village', label: 'Village', icon: Home, count: stats.villagesCount, schema: 'Village(VillageId, Value, Text, PanchayatId)' },
+  const tabs: { id: LocationTab; label: string; icon: any; count: number; description: string }[] = [
+    { id: 'state', label: 'State', icon: MapPin, count: stats.statesCount, description: 'State Level' },
+    { id: 'district', label: 'District', icon: Building2, count: stats.districtsCount, description: 'District Level' },
+    { id: 'mandal', label: 'Mandal', icon: Layers, count: stats.mandalsCount, description: 'Mandal / Block Level' },
+    { id: 'panchayat', label: 'Panchayat', icon: Compass, count: stats.panchayatsCount, description: 'Gram Panchayat Level' },
+    { id: 'village', label: 'Village', icon: Home, count: stats.villagesCount, description: 'Village Level' },
   ];
 
   return (
@@ -164,7 +164,7 @@ export const LocationsPage: React.FC<LocationsPageProps> = ({ defaultTab }) => {
               <div className="text-xl font-heading font-extrabold">{t.count}</div>
               <div className={`text-xs font-semibold ${isActive ? 'text-cream-200' : 'text-forest-900'}`}>{t.label}s</div>
               <div className={`text-[10px] truncate mt-1 ${isActive ? 'text-cream-300/80' : 'text-brand-muted'}`}>
-                {t.schema.split('(')[0]}
+                {t.description}
               </div>
             </button>
           );

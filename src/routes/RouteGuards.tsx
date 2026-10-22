@@ -53,6 +53,20 @@ export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children, allowe
 
   // Handle role restrictions
   if (allowedRoles && !allowedRoles.includes(currentUser.role) && currentUser.role !== 'superadmin') {
+    const getRoleDashboard = (role: string) => {
+      switch (role) {
+        case 'Farmer': return '/farmer';
+        case 'CHC': return '/chc-dashboard';
+        case 'FMC': return '/fmc-dashboard';
+        case 'LivestockShop': return '/livestock-shop';
+        case 'Inputstore': return '/input-store';
+        case 'Facilitator': return '/facilitator';
+        case 'Admin': return '/admin';
+        case 'superadmin': return '/superadmin';
+        default: return '/';
+      }
+    };
+
     return (
       <div className="min-h-[70vh] flex items-center justify-center p-4">
         <div className="max-w-md w-full bg-white rounded-2xl shadow-elevation border border-brand-border p-8 text-center">
@@ -71,10 +85,10 @@ export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children, allowe
               <ArrowLeft className="w-4 h-4" /> Return Home
             </Link>
             <Link
-              to={currentUser.role === 'Farmer' ? '/farmer' : '/admin'}
+              to={getRoleDashboard(currentUser.role)}
               className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-forest-600 text-white text-xs font-semibold hover:bg-forest-700 shadow-subtle"
             >
-              <RefreshCw className="w-4 h-4" /> Go to My Portal
+              <RefreshCw className="w-4 h-4" /> Go to My Dashboard
             </Link>
           </div>
         </div>

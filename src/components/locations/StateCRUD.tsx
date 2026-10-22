@@ -92,11 +92,11 @@ export const StateCRUD: React.FC<StateCRUDProps> = ({ onSelectState }) => {
         setFormError(err.message || 'Failed to update state');
       }
     } else {
-      const idToUse = stateIdInput.trim() || String(Date.now());
-      if (states.some(s => String(s.StateId) === idToUse)) {
-        setFormError(`A State with StateId "${idToUse}" already exists.`);
-        return;
-      }
+      const maxId = states.reduce((max, s) => {
+        const n = Number(s.StateId);
+        return !isNaN(n) && n > max ? n : max;
+      }, 0);
+      const idToUse = String(maxId + 1);
       try {
         locationMasterService.createState({
           StateId: idToUse,
@@ -191,9 +191,9 @@ export const StateCRUD: React.FC<StateCRUDProps> = ({ onSelectState }) => {
         <table className="w-full text-left text-xs">
           <thead>
             <tr className="bg-cream-100 text-forest-800 font-semibold border-b border-brand-border uppercase tracking-wider text-[11px]">
-              <th className="py-3 px-4 w-28">StateId</th>
-              <th className="py-3 px-4 w-40">Value</th>
-              <th className="py-3 px-4">Text (State Name)</th>
+              <th className="py-3 px-4 w-14 text-center">#</th>
+              <th className="py-3 px-4">State Name</th>
+              <th className="py-3 px-4 w-36">Code / Key</th>
               <th className="py-3 px-4 w-36">Districts</th>
               <th className="py-3 px-4 text-right w-28">Actions</th>
             </tr>
@@ -206,22 +206,20 @@ export const StateCRUD: React.FC<StateCRUDProps> = ({ onSelectState }) => {
                 </td>
               </tr>
             ) : (
-              filteredStates.map((item) => {
+              filteredStates.map((item, index) => {
                 const childCount = locationMasterService.getChildCount('State', String(item.StateId));
                 return (
                   <tr key={String(item.StateId)} className="hover:bg-forest-50/40 transition-colors">
-                    <td className="py-3 px-4 font-mono font-bold text-forest-700">
-                      <span className="inline-block px-2 py-0.5 rounded bg-forest-100 text-forest-800 text-[11px]">
-                        {item.StateId}
-                      </span>
-                    </td>
-                    <td className="py-3 px-4 font-mono font-semibold text-forest-900">
-                      <code className="bg-cream-100 px-1.5 py-0.5 rounded text-[11px]">
-                        {item.Value}
-                      </code>
+                    <td className="py-3 px-4 text-center font-bold text-brand-muted text-xs">
+                      {index + 1}
                     </td>
                     <td className="py-3 px-4 font-bold text-forest-900 text-sm">
                       {item.Text}
+                    </td>
+                    <td className="py-3 px-4 font-mono font-semibold text-forest-900">
+                      <code className="bg-cream-100 px-2 py-0.5 rounded text-[11px]">
+                        {item.Value}
+                      </code>
                     </td>
                     <td className="py-3 px-4">
                       {onSelectState ? (
@@ -290,23 +288,6 @@ export const StateCRUD: React.FC<StateCRUDProps> = ({ onSelectState }) => {
                 </div>
               )}
 
-              <div>
-                <label className="block text-xs font-bold text-forest-900 mb-1">
-                  StateId <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  value={stateIdInput}
-                  onChange={(e) => setStateIdInput(e.target.value)}
-                  disabled={!!editingItem}
-                  placeholder="e.g. 7 or ST-07"
-                  className="w-full px-3 py-2 text-xs border border-brand-border rounded-xl focus:outline-none focus:ring-2 focus:ring-forest-500/20 focus:border-forest-600 disabled:bg-cream-100 disabled:text-brand-muted font-mono"
-                  required
-                />
-                <p className="text-[10px] text-brand-muted mt-1">
-                  {editingItem ? 'Primary key cannot be modified.' : 'Unique identifier for the State.'}
-                </p>
-              </div>
 
               <div>
                 <label className="block text-xs font-bold text-forest-900 mb-1">
@@ -378,7 +359,7 @@ export const StateCRUD: React.FC<StateCRUDProps> = ({ onSelectState }) => {
             </div>
 
             <p className="text-xs text-brand-text leading-relaxed">
-              Are you sure you want to delete <strong className="text-forest-900">{itemToDelete.Text}</strong> (StateId: {itemToDelete.StateId})?
+              Are you sure you want to delete <strong className="text-forest-900">{itemToDelete.Text}</strong>?
             </p>
 
             {locationMasterService.getChildCount('State', String(itemToDelete.StateId)) > 0 && (

@@ -6,7 +6,9 @@ export type UserRole =
   | 'Inputstore'
   | 'Facilitator'
   | 'Admin'
-  | 'superadmin';
+  | 'superadmin'
+  | 'Scientist'
+  | string;
 
 export type ApprovalStatus =
   | 'pending'
@@ -24,6 +26,8 @@ export interface LocationInfo {
   state: string;
   district: string;
   block?: string;
+  mandal?: string;
+  panchayat?: string;
   village?: string;
   lat?: number;
   lng?: number;
@@ -35,7 +39,9 @@ export interface User {
   fullName: string;
   email: string;
   mobile: string;
+  password?: string;
   role: UserRole;
+  roles?: string[];
   approvalStatus: ApprovalStatus;
   accountStatus: AccountStatus;
   location: LocationInfo;
@@ -46,6 +52,25 @@ export interface User {
   reviewedBy?: string | null;
   avatarUrl?: string;
   verified?: boolean;
+}
+
+export interface PermissionDefinition {
+  id: string;
+  name: string;
+  category: string;
+  description?: string;
+}
+
+export interface Role {
+  id: string;
+  roleKey: string;
+  roleName: string;
+  description: string;
+  status: 'active' | 'inactive';
+  isSystem: boolean;
+  createdAt: string;
+  updatedAt: string;
+  permissions?: string[];
 }
 
 export interface RegistrationApplication {

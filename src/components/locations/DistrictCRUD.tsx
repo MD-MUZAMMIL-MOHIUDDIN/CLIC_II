@@ -121,11 +121,11 @@ export const DistrictCRUD: React.FC<DistrictCRUDProps> = ({
         setFormError(err.message || 'Failed to update district');
       }
     } else {
-      const idToUse = districtIdInput.trim() || String(Date.now());
-      if (districts.some(d => String(d.DistrictId) === idToUse)) {
-        setFormError(`A District with DistrictId "${idToUse}" already exists.`);
-        return;
-      }
+      const maxId = districts.reduce((max, d) => {
+        const n = Number(d.DistrictId);
+        return !isNaN(n) && n > max ? n : max;
+      }, 0);
+      const idToUse = String(maxId + 1);
       try {
         locationMasterService.createDistrict({
           DistrictId: idToUse,
@@ -180,7 +180,7 @@ export const DistrictCRUD: React.FC<DistrictCRUDProps> = ({
                 District Management
               </h2>
               <p className="text-xs text-brand-muted">
-                Schema: <code className="bg-cream-200 px-1.5 py-0.5 rounded text-[11px] font-mono text-forest-800">District(DistrictId, Value, Text, StateId)</code>
+                Manage district administrative divisions under each state.
               </p>
             </div>
           </div>
@@ -247,10 +247,10 @@ export const DistrictCRUD: React.FC<DistrictCRUDProps> = ({
         <table className="w-full text-left text-xs">
           <thead>
             <tr className="bg-cream-100 text-forest-800 font-semibold border-b border-brand-border uppercase tracking-wider text-[11px]">
-              <th className="py-3 px-4 w-28">DistrictId</th>
-              <th className="py-3 px-4 w-44">State (StateId)</th>
-              <th className="py-3 px-4 w-36">Value</th>
-              <th className="py-3 px-4">Text (District Name)</th>
+              <th className="py-3 px-4 w-14 text-center">#</th>
+              <th className="py-3 px-4">District Name</th>
+              <th className="py-3 px-4 w-48">State</th>
+              <th className="py-3 px-4 w-36">Code / Key</th>
               <th className="py-3 px-4 w-36">Mandals</th>
               <th className="py-3 px-4 text-right w-28">Actions</th>
             </tr>
@@ -263,29 +263,26 @@ export const DistrictCRUD: React.FC<DistrictCRUDProps> = ({
                 </td>
               </tr>
             ) : (
-              filteredDistricts.map((item) => {
+              filteredDistricts.map((item, index) => {
                 const childCount = locationMasterService.getChildCount('District', String(item.DistrictId));
                 return (
                   <tr key={String(item.DistrictId)} className="hover:bg-forest-50/40 transition-colors">
-                    <td className="py-3 px-4 font-mono font-bold text-forest-700">
-                      <span className="inline-block px-2 py-0.5 rounded bg-forest-100 text-forest-800 text-[11px]">
-                        {item.DistrictId}
-                      </span>
-                    </td>
-                    <td className="py-3 px-4">
-                      <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-cream-200 text-forest-900 text-[11px] font-medium border border-cream-300">
-                        <MapPin className="w-3 h-3 text-forest-600" />
-                        <span className="truncate max-w-[130px]">{getStateName(item.StateId)}</span>
-                        <span className="text-[10px] text-brand-muted font-mono">({item.StateId})</span>
-                      </span>
-                    </td>
-                    <td className="py-3 px-4 font-mono font-semibold text-forest-800">
-                      <code className="bg-cream-100 px-1.5 py-0.5 rounded text-[11px]">
-                        {item.Value}
-                      </code>
+                    <td className="py-3 px-4 text-center font-bold text-brand-muted text-xs">
+                      {index + 1}
                     </td>
                     <td className="py-3 px-4 font-bold text-forest-950 text-sm">
                       {item.Text}
+                    </td>
+                    <td className="py-3 px-4">
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-cream-200 text-forest-900 text-xs font-semibold border border-cream-300">
+                        <MapPin className="w-3 h-3 text-forest-600" />
+                        <span>{getStateName(item.StateId)}</span>
+                      </span>
+                    </td>
+                    <td className="py-3 px-4 font-mono font-semibold text-forest-800">
+                      <code className="bg-cream-100 px-2 py-0.5 rounded text-[11px]">
+                        {item.Value}
+                      </code>
                     </td>
                     <td className="py-3 px-4">
                       {onSelectDistrict ? (
@@ -356,22 +353,7 @@ export const DistrictCRUD: React.FC<DistrictCRUDProps> = ({
 
               <div>
                 <label className="block text-xs font-bold text-forest-900 mb-1">
-                  DistrictId <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  value={districtIdInput}
-                  onChange={(e) => setDistrictIdInput(e.target.value)}
-                  disabled={!!editingItem}
-                  placeholder="e.g. 12 or DIST-12"
-                  className="w-full px-3 py-2 text-xs border border-brand-border rounded-xl focus:outline-none focus:ring-2 focus:ring-forest-500/20 focus:border-forest-600 disabled:bg-cream-100 disabled:text-brand-muted font-mono"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold text-forest-900 mb-1">
-                  State (StateId) <span className="text-red-500">*</span>
+                  State <span className="text-red-500">*</span>
                 </label>
                 <select
                   value={stateIdInput}
@@ -382,13 +364,10 @@ export const DistrictCRUD: React.FC<DistrictCRUDProps> = ({
                   <option value="" disabled>Select parent state...</option>
                   {states.map((s) => (
                     <option key={String(s.StateId)} value={String(s.StateId)}>
-                      {s.Text} (StateId: {s.StateId})
+                      {s.Text} ({s.Value})
                     </option>
                   ))}
                 </select>
-                <p className="text-[10px] text-brand-muted mt-1">
-                  Foreign key reference to State(StateId).
-                </p>
               </div>
 
               <div>
@@ -455,7 +434,7 @@ export const DistrictCRUD: React.FC<DistrictCRUDProps> = ({
             </div>
 
             <p className="text-xs text-brand-text leading-relaxed">
-              Are you sure you want to delete <strong className="text-forest-900">{itemToDelete.Text}</strong> (DistrictId: {itemToDelete.DistrictId})?
+              Are you sure you want to delete <strong className="text-forest-900">{itemToDelete.Text}</strong>?
             </p>
 
             {locationMasterService.getChildCount('District', String(itemToDelete.DistrictId)) > 0 && (

@@ -5,15 +5,17 @@
     "storeName": "Prithvi Bio-Inputs & Organic Seeds",
     "contactPerson": "Meera Venkataraman",
     "contactPhone": "+91 98456 78914",
-    "contactEmail": "prithvi.bio@krishiseva.in",
+    "contactEmail": "inputstore@krishiseva.in",
     "location": {
-      "state": "Telangana",
-      "district": "Warangal",
-      "block": "Hanamkonda",
-      "village": "Kazipet",
-      "lat": 17.9689,
-      "lng": 79.5941,
-      "pincode": "506003"
+      "state": "Madhya Pradesh",
+      "district": "Indore",
+      "mandal": "Sanwer",
+      "block": "Sanwer",
+      "panchayat": "Kanadia Gram Panchayat",
+      "village": "Kanadia",
+      "lat": 22.7200,
+      "lng": 75.8585,
+      "pincode": "452016"
     },
     "operatingHours": "08:30 AM - 08:00 PM",
     "verified": true,
@@ -26,18 +28,20 @@
   {
     "id": "is_502",
     "userId": "usr_input_2",
-    "storeName": "Malwa Jaivik Krishi Kendra",
-    "contactPerson": "Ramesh Chandra Sharma",
-    "contactPhone": "+91 98260 44556",
-    "contactEmail": "jaivik.malwa@krishiseva.in",
+    "storeName": "Shanti Krishi Seva Kendra (Fertilizers & Pesticides)",
+    "contactPerson": "Arvind Kumar Joshi",
+    "contactPhone": "+91 98456 78915",
+    "contactEmail": "input2@krishiseva.in",
     "location": {
       "state": "Madhya Pradesh",
       "district": "Indore",
+      "mandal": "Sanwer",
       "block": "Sanwer",
-      "village": "Manglia",
-      "lat": 22.7842,
-      "lng": 75.8931,
-      "pincode": "453771"
+      "panchayat": "Kanadia Gram Panchayat",
+      "village": "Semliya Chau",
+      "lat": 22.7255,
+      "lng": 75.8625,
+      "pincode": "452016"
     },
     "operatingHours": "09:00 AM - 07:30 PM",
     "verified": true,
@@ -46,5 +50,31 @@
     "productCategories": ["Biofertilizers", "Biopesticides", "Botanical Preparations", "Microbial Cultures"],
     "description": "Stockist of ICAR-IISR and KVK recommended bio-priming formulations, Beauveria bassiana, Metarhizium anisopliae, and vermicompost.",
     "imageUrl": "https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "is_503",
+    "userId": "usr_input_3",
+    "storeName": "Kisan Kalyan Fertilizer & Hybrid Seeds",
+    "contactPerson": "Deepchand Verma",
+    "contactPhone": "+91 98456 78916",
+    "contactEmail": "input3@krishiseva.in",
+    "location": {
+      "state": "Madhya Pradesh",
+      "district": "Indore",
+      "mandal": "Sanwer",
+      "block": "Sanwer",
+      "panchayat": "Manglia Gram Panchayat",
+      "village": "Manglia",
+      "lat": 22.7510,
+      "lng": 75.8935,
+      "pincode": "453771"
+    },
+    "operatingHours": "08:00 AM - 08:30 PM",
+    "verified": true,
+    "rating": 4.8,
+    "reviewCount": 47,
+    "productCategories": ["Hybrid Seeds", "Nutrient Mixtures", "Neem Cake", "Water Soluble Fertilizers"],
+    "description": "Comprehensive village agricultural input outlet offering government-certified seeds, micronutrient foliar sprays, bio-stimulants, and organic soil conditioners.",
+    "imageUrl": "https://images.unsplash.com/photo-1589923188900-85dae523342b?w=800&auto=format&fit=crop&q=80"
   }
 ]
