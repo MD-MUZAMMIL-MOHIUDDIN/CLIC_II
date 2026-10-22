@@ -29,6 +29,8 @@ export interface LocationInfo {
   mandal?: string;
   panchayat?: string;
   village?: string;
+  address?: string;
+  description?: string;
   lat?: number;
   lng?: number;
   pincode?: string;
@@ -46,6 +48,7 @@ export interface User {
   accountStatus: AccountStatus;
   location: LocationInfo;
   profileId: string;
+  linkedProfileId?: string;
   organizationName?: string;
   createdAt: string;
   reviewedAt?: string | null;
@@ -143,15 +146,41 @@ export type MachineryCategory =
   | 'Irrigation'
   | 'Implements';
 
+export type MachineOperationType = 'Tillage' | 'Sowing' | 'Plant Protection' | 'Harvesting';
+
+export interface MachineMedia {
+  machineId: string; // Foreign key & sole relational identifier to FarmMachinery
+  galleryMediaUrls: string[];
+  demoVideoUrl: string;
+  videoTitle?: string;
+  // Transient / joined attributes from parent FarmMachinery
+  id?: string; // Machine ID alias for key backward compatibility
+  machineName?: string;
+  operationType?: MachineOperationType;
+  thumbnailUrl?: string;
+}
+
+export type MachineDemoVideo = MachineMedia;
+
 export type PricingUnit = 'hourly' | 'daily' | 'acre';
 
 export interface FarmMachinery {
-  id: string;
+  id: string; // Machine ID
+  machineId?: string; // Explicit Machine ID alias
   centreId: string;
   centreName: string;
-  name: string;
+  name: string; // Machine Name
+  operationType: MachineOperationType; // Operation Type: Tillage, Sowing, Plant Protection, Harvesting
   category: MachineryCategory;
   model: string;
+  thumbnailUrl: string; // Thumbnail Image URL
+  shortDescription: string; // Short Description
+  fullTechnicalDescription: string; // Full Technical Description
+  galleryMediaUrls?: string[]; // Resolved from machine_media.json by machineId
+  demoVideoUrl?: string; // Resolved from machine_media.json by machineId
+  isPurchasable: boolean; // Purchasable? (Yes/No)
+  isRentable: boolean; // Rentable? (Yes/No)
+  purchasePrice?: number;
   horsepower?: number;
   capacity?: string;
   fuelType: string;
@@ -162,7 +191,7 @@ export interface FarmMachinery {
   minimumDuration: string;
   available: boolean;
   specifications: Record<string, string>;
-  images: string[];
+  images?: string[]; // Optional runtime helper populated from thumbnailUrl + galleryMediaUrls
   location: LocationInfo;
   description: string;
   cancellationPolicy: string;

@@ -2,7 +2,7 @@ import dropdownMasterSeed from '../data/dropdown-master.json';
 import { RefTypeItem, DropdownItem } from '../types';
 import { getInitialData, saveStorageData } from './storageHelper';
 
-const STORAGE_KEY = 'dropdown_master_data_v5';
+const STORAGE_KEY = 'dropdown_master_data_v6';
 
 interface DropdownMasterStorage {
   refTypes: RefTypeItem[];
@@ -11,10 +11,33 @@ interface DropdownMasterStorage {
 
 class DropdownMasterService {
   private getData(): DropdownMasterStorage {
-    return getInitialData<DropdownMasterStorage>(STORAGE_KEY, {
+    const data = getInitialData<DropdownMasterStorage>(STORAGE_KEY, {
       refTypes: dropdownMasterSeed.refTypes as RefTypeItem[],
       dropdowns: dropdownMasterSeed.dropdowns as DropdownItem[]
     });
+
+    // Ensure all seed refTypes exist in stored data
+    let modified = false;
+    for (const seedRef of dropdownMasterSeed.refTypes as RefTypeItem[]) {
+      if (!data.refTypes.some(r => String(r.RefId) === String(seedRef.RefId))) {
+        data.refTypes.push(seedRef);
+        modified = true;
+      }
+    }
+
+    // Ensure all seed dropdowns exist in stored data
+    for (const seedDrop of dropdownMasterSeed.dropdowns as DropdownItem[]) {
+      if (!data.dropdowns.some(d => String(d.DropdownId) === String(seedDrop.DropdownId))) {
+        data.dropdowns.push(seedDrop);
+        modified = true;
+      }
+    }
+
+    if (modified) {
+      this.saveData(data);
+    }
+
+    return data;
   }
 
   private saveData(data: DropdownMasterStorage): void {

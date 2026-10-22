@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { machineryService } from '../services/machineryService';
-import { FarmMachinery, MachineryCategory, PricingUnit } from '../types';
+import { FarmMachinery, MachineryCategory, PricingUnit, MachineOperationType } from '../types';
 import { BookingModal } from '../components/chc/BookingModal';
 import { MachineryCompareModal } from '../components/machinery/MachineryCompareModal';
+import { MachineDetailModal } from '../components/machinery/MachineDetailModal';
 import categoriesSeed from '../data/categories.json';
 import { formatCurrency } from '../lib/utils';
 import {
@@ -15,11 +16,16 @@ import {
   Sparkles,
   MapPin,
   Clock,
-  ArrowRight
+  ArrowRight,
+  Play,
+  Film,
+  Eye,
+  CheckCircle
 } from 'lucide-react';
 
 export const MachineryHiringPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<MachineryCategory | 'All'>('All');
+  const [selectedOperation, setSelectedOperation] = useState<MachineOperationType | 'All'>('All');
   const [selectedPricingUnit, setSelectedPricingUnit] = useState<PricingUnit | 'All'>('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [operatorOnly, setOperatorOnly] = useState(false);
@@ -33,13 +39,20 @@ export const MachineryHiringPage: React.FC = () => {
   const [selectedMachinery, setSelectedMachinery] = useState<FarmMachinery | null>(null);
   const [bookingModalOpen, setBookingModalOpen] = useState(false);
 
-  const machineryList = machineryService.searchMachinery({
+  // Detailed Technical Inspection Modal
+  const [inspectMachinery, setInspectMachinery] = useState<FarmMachinery | null>(null);
+
+  let machineryList = machineryService.searchMachinery({
     query: searchQuery,
     category: selectedCategory,
     pricingUnit: selectedPricingUnit,
     operatorProvidedOnly: operatorOnly,
     availableOnly
   });
+
+  if (selectedOperation !== 'All') {
+    machineryList = machineryList.filter(m => m.operationType === selectedOperation);
+  }
 
   const toggleCompare = (item: FarmMachinery) => {
     if (compareItems.some(c => c.id === item.id)) {
@@ -81,31 +94,56 @@ export const MachineryHiringPage: React.FC = () => {
         )}
       </div>
 
-      {/* Category Filter Pills */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
-        <button
-          onClick={() => setSelectedCategory('All')}
-          className={`px-4 py-2 rounded-xl text-xs font-semibold shrink-0 transition-all ${
-            selectedCategory === 'All'
-              ? 'bg-forest-600 text-white shadow-subtle'
-              : 'bg-white text-brand-text border border-brand-border hover:bg-cream-100'
-          }`}
-        >
-          All Machinery
-        </button>
-        {categoriesSeed.machineryCategories.map((cat) => (
+      {/* Operation Type & Category Filter Pills */}
+      <div className="space-y-3">
+        {/* Operation Types from dropdown master */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+          <span className="text-xs font-bold text-brand-muted shrink-0 flex items-center gap-1 mr-1">
+            <Filter className="w-3.5 h-3.5 text-forest-700" />
+            Operation:
+          </span>
+          {(['All', 'Tillage', 'Sowing', 'Plant Protection', 'Harvesting'] as const).map((op) => (
+            <button
+              key={op}
+              onClick={() => setSelectedOperation(op)}
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold shrink-0 transition-all ${
+                selectedOperation === op
+                  ? 'bg-forest-900 text-harvest shadow-subtle'
+                  : 'bg-white text-brand-text border border-brand-border hover:bg-cream-100'
+              }`}
+            >
+              {op === 'All' ? 'All Operations' : op}
+            </button>
+          ))}
+        </div>
+
+        {/* Machinery Categories */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+          <span className="text-xs font-bold text-brand-muted shrink-0 mr-1">Category:</span>
           <button
-            key={cat}
-            onClick={() => setSelectedCategory(cat as any)}
-            className={`px-4 py-2 rounded-xl text-xs font-semibold shrink-0 transition-all ${
-              selectedCategory === cat
+            onClick={() => setSelectedCategory('All')}
+            className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold shrink-0 transition-all ${
+              selectedCategory === 'All'
                 ? 'bg-forest-600 text-white shadow-subtle'
                 : 'bg-white text-brand-text border border-brand-border hover:bg-cream-100'
             }`}
           >
-            {cat}
+            All Categories
           </button>
-        ))}
+          {categoriesSeed.machineryCategories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setSelectedCategory(cat as any)}
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold shrink-0 transition-all ${
+                selectedCategory === cat
+                  ? 'bg-forest-600 text-white shadow-subtle'
+                  : 'bg-white text-brand-text border border-brand-border hover:bg-cream-100'
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Search and Advanced Filters */}
@@ -158,16 +196,30 @@ export const MachineryHiringPage: React.FC = () => {
               className="bg-white rounded-3xl border border-brand-border shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between overflow-hidden"
             >
               <div>
-                <div className="relative h-52 overflow-hidden bg-cream-100">
+                <div className="relative h-52 overflow-hidden bg-cream-100 group">
                   <img
-                    src={item.images[0]}
+                    src={item.thumbnailUrl || item.images?.[0] || ''}
                     alt={item.name}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer"
+                    onClick={() => setInspectMachinery(item)}
                   />
-                  <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-full text-[11px] font-bold text-forest-900 shadow-subtle">
-                    {item.category}
+                  <div className="absolute top-3 left-3 flex items-center gap-1.5 flex-wrap">
+                    <span className="bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-full text-[11px] font-bold text-forest-900 shadow-subtle">
+                      {item.category}
+                    </span>
+                    <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold shadow-subtle border ${
+                      item.operationType === 'Tillage'
+                        ? 'bg-amber-100/95 text-amber-900 border-amber-300'
+                        : item.operationType === 'Sowing'
+                        ? 'bg-emerald-100/95 text-emerald-900 border-emerald-300'
+                        : item.operationType === 'Plant Protection'
+                        ? 'bg-blue-100/95 text-blue-900 border-blue-300'
+                        : 'bg-purple-100/95 text-purple-900 border-purple-300'
+                    }`}>
+                      {item.operationType || 'Tillage'}
+                    </span>
                   </div>
-                  <div className="absolute top-3 right-3">
+                  <div className="absolute top-3 right-3 flex items-center gap-1.5">
                     {item.available ? (
                       <span className="bg-emerald-50 text-emerald-800 border border-emerald-200 px-2.5 py-1 rounded-full text-[10px] font-bold flex items-center gap-1 shadow-subtle">
                         <CheckCircle2 className="w-3 h-3 text-emerald-600" /> Available
@@ -178,56 +230,79 @@ export const MachineryHiringPage: React.FC = () => {
                       </span>
                     )}
                   </div>
+                  {item.demoVideoUrl && (
+                    <a
+                      href={item.demoVideoUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg bg-forest-900/90 hover:bg-forest-900 text-harvest text-[10px] font-bold shadow-subtle flex items-center gap-1 transition-all"
+                      title="Watch demo video"
+                    >
+                      <Play className="w-2.5 h-2.5 fill-current" />
+                      <span>Watch Demo</span>
+                    </a>
+                  )}
+                  <span className="absolute bottom-3 left-3 bg-forest-950/80 text-white font-mono text-[9px] px-2 py-0.5 rounded backdrop-blur-xs font-semibold">
+                    {item.id}
+                  </span>
                 </div>
 
                 <div className="p-5 space-y-3">
                   <div>
-                    <h3 className="font-heading font-bold text-base text-forest-900 leading-snug line-clamp-1">
+                    <h3
+                      onClick={() => setInspectMachinery(item)}
+                      className="font-heading font-bold text-base text-forest-900 leading-snug line-clamp-1 cursor-pointer hover:text-forest-700 transition-colors"
+                    >
                       {item.name}
                     </h3>
-                    <p className="text-[11px] text-brand-muted mt-0.5">{item.centreName}</p>
+                    <p className="text-[11px] text-brand-muted mt-0.5 flex items-center gap-1">
+                      <MapPin className="w-3 h-3 text-forest-600 shrink-0" />
+                      <span>{item.centreName}</span>
+                    </p>
                   </div>
 
-                  <div className="flex items-baseline justify-between pt-1">
+                  {/* Commercial Terms: Purchasable & Rentable */}
+                  <div className="grid grid-cols-2 gap-2 p-2 rounded-xl bg-cream-50 border border-brand-border text-[10px]">
                     <div>
-                      <span className="text-xl font-heading font-extrabold text-forest-800">
-                        {formatCurrency(item.pricePerUnit)}
-                      </span>
-                      <span className="text-xs text-brand-muted font-medium"> / {item.pricingUnit}</span>
+                      <span className="text-brand-muted font-medium block">Rentable:</span>
+                      {item.isRentable ? (
+                        <span className="font-extrabold text-forest-900 font-mono">
+                          {formatCurrency(item.pricePerUnit)}/{item.pricingUnit}
+                        </span>
+                      ) : (
+                        <span className="text-rose-600 font-semibold">No</span>
+                      )}
                     </div>
-                    {item.horsepower && (
-                      <span className="text-xs font-bold text-brand-text bg-cream-100 px-2.5 py-1 rounded-lg border border-brand-border">
-                        {item.horsepower} HP
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Specifications Grid */}
-                  <div className="bg-cream-50 p-3 rounded-2xl border border-brand-border text-[11px] space-y-1.5 text-brand-muted">
-                    <div className="flex justify-between">
-                      <span>Operator:</span>
-                      <strong className="text-forest-900">
-                        {item.operatorProvided ? 'Provided by Centre' : 'Self-Operated'}
-                      </strong>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Fuel Terms:</span>
-                      <strong className="text-forest-900">{item.fuelType}</strong>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Min. Duration:</span>
-                      <strong className="text-forest-900">{item.minimumDuration}</strong>
+                    <div>
+                      <span className="text-brand-muted font-medium block">Purchasable:</span>
+                      {item.isPurchasable && item.purchasePrice ? (
+                        <span className="font-extrabold text-emerald-800 font-mono">
+                          {formatCurrency(item.purchasePrice)}
+                        </span>
+                      ) : (
+                        <span className="text-brand-muted font-medium">Rental only</span>
+                      )}
                     </div>
                   </div>
 
+                  {/* Short Description */}
                   <p className="text-xs text-brand-muted line-clamp-2 leading-relaxed">
-                    {item.description}
+                    {item.shortDescription || item.description}
                   </p>
                 </div>
               </div>
 
               {/* Action Buttons */}
               <div className="p-5 pt-0 flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => setInspectMachinery(item)}
+                  className="p-2.5 rounded-xl border border-brand-border text-brand-text hover:bg-forest-50 hover:text-forest-900 text-xs font-semibold flex items-center justify-center transition-colors"
+                  title="Inspect full technical description & gallery"
+                >
+                  <Eye className="w-4 h-4" />
+                </button>
+
                 <button
                   type="button"
                   onClick={() => toggleCompare(item)}
@@ -256,6 +331,14 @@ export const MachineryHiringPage: React.FC = () => {
           );
         })}
       </div>
+
+      {/* Technical Detail Modal */}
+      {inspectMachinery && (
+        <MachineDetailModal
+          machinery={inspectMachinery}
+          onClose={() => setInspectMachinery(null)}
+        />
+      )}
 
       {/* Comparison Modal */}
       <MachineryCompareModal

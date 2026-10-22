@@ -49,6 +49,7 @@ export const ProfilePage: React.FC = () => {
   const [mandal, setMandal] = useState('Sanwer');
   const [panchayat, setPanchayat] = useState('Kanadia Gram Panchayat');
   const [village, setVillage] = useState('Kanadia');
+  const [address, setAddress] = useState(currentUser?.location?.address || currentUser?.location?.description || '');
 
   // Geographical coordinates (Latitude, Longitude)
   const [lat, setLat] = useState<number>(() => currentUser?.location?.lat ?? 22.7196);
@@ -97,6 +98,7 @@ export const ProfilePage: React.FC = () => {
       setMandal(validMandal);
       setPanchayat(validPanchayat);
       setVillage(validVillage);
+      setAddress(currentUser.location?.address || currentUser.location?.description || '');
 
       // Coordinates
       const userLat = currentUser.location?.lat ?? 22.7196;
@@ -230,6 +232,8 @@ export const ProfilePage: React.FC = () => {
         mandal: mandal.trim(),
         panchayat: panchayat.trim(),
         village: village.trim(),
+        address: address.trim(),
+        description: address.trim(),
         lat: Number(Number(lat).toFixed(6)),
         lng: Number(Number(lng).toFixed(6))
       }
@@ -314,9 +318,6 @@ export const ProfilePage: React.FC = () => {
                   </span>
                 )}
               </div>
-              <p className="text-xs text-brand-muted mt-1">
-                Account ID: <strong className="text-forest-900 font-mono">{currentUser?.id}</strong> • Role: <strong className="text-forest-900">{currentUser?.role}</strong> • Status: <strong className="text-forest-900 capitalize">{currentUser?.accountStatus}</strong>
-              </p>
             </div>
           </div>
 
@@ -553,11 +554,26 @@ export const ProfilePage: React.FC = () => {
               </div>
             </div>
 
-            <div className="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200/80 flex items-center gap-2.5 text-xs text-emerald-900">
-              <ShieldCheck className="w-4 h-4 text-emerald-700 shrink-0" />
-              <span>
-                <strong>Strict Master Geographic Validation:</strong> Custom entries for village, panchayat, mandal, or state are not permitted. Every regional jurisdiction must map to verified official records.
-              </span>
+            {/* Row 3: Description / Address Field */}
+            <div>
+              <div className="flex items-center justify-between mb-1">
+                <label className="block text-xs font-bold text-forest-900">
+                  Address / Location Description
+                </label>
+                <span className="text-[10.5px] text-brand-muted">
+                  House / Plot / Survey No., Street, Landmark, or Accessibility Notes
+                </span>
+              </div>
+              <textarea
+                rows={2}
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+                placeholder="e.g. Survey No. 42/1, Near Old Gram Panchayat Bhavan, Main Market Road, Kanadia"
+                className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-brand-border bg-white text-brand-text focus:ring-2 focus:ring-forest-500 focus:outline-none shadow-xs leading-relaxed"
+              />
+              <p className="text-[10px] text-brand-muted mt-1">
+                Specify exact physical address, landmark, or directions for machinery pickup, drop-off, and local service delivery.
+              </p>
             </div>
 
             {/* Geo-Coordinates & Pinpoint Location Marking Section */}

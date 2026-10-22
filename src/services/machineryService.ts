@@ -1,12 +1,27 @@
 import machinerySeed from '../data/farm-machinery.json';
 import { FarmMachinery, MachineryCategory, PricingUnit } from '../types';
 import { getInitialData, saveStorageData } from './storageHelper';
+import { machineMediaService } from './machineMediaService';
 
-const MACHINERY_KEY = 'machinery';
+const MACHINERY_KEY = 'machinery_v3';
 
 class MachineryService {
   public getAllMachinery(): FarmMachinery[] {
-    return getInitialData<FarmMachinery[]>(MACHINERY_KEY, machinerySeed as unknown as FarmMachinery[]);
+    const list = getInitialData<FarmMachinery[]>(MACHINERY_KEY, machinerySeed as unknown as FarmMachinery[]);
+    
+    // Dynamically join media from machine_media.json purely using machineId as the relationship
+    for (const item of list) {
+      const media = machineMediaService.getMediaByMachineId(item.id);
+      if (media) {
+        item.galleryMediaUrls = media.galleryMediaUrls || [];
+        item.demoVideoUrl = media.demoVideoUrl || '';
+      } else {
+        item.galleryMediaUrls = item.galleryMediaUrls || [];
+      }
+      // Populate helper images array for components needing full image list (thumbnail + gallery)
+      item.images = [item.thumbnailUrl, ...(item.galleryMediaUrls || [])];
+    }
+    return list;
   }
 
   public getMachineryById(id: string): FarmMachinery | undefined {
@@ -58,14 +73,36 @@ class MachineryService {
     return list;
   }
 
-  public addMachinery(machineryData: Omit<FarmMachinery, 'id'>): FarmMachinery {
+  public addMachinery(machineryData: Omit<FarmMachinery, 'id'> & { id?: string }): FarmMachinery {
     const list = this.getAllMachinery();
+    const finalId = machineryData.id?.trim() || `mach_${Date.now().toString().slice(-4)}`;
+    
+    // Store only machinery fields in machinery storage, separating media
+    const { images, galleryMediaUrls, demoVideoUrl, ...cleanData } = machineryData;
+
     const newMach: FarmMachinery = {
-      ...machineryData,
-      id: `mach_${Date.now().toString().slice(-4)}`
+      ...cleanData,
+      id: finalId,
+      machineId: finalId
     };
     list.unshift(newMach);
     saveStorageData(MACHINERY_KEY, list);
+
+    // Persist media via machineMediaService using machineId
+    if ((galleryMediaUrls && galleryMediaUrls.length > 0) || demoVideoUrl) {
+      machineMediaService.addMedia({
+        machineId: finalId,
+        galleryMediaUrls: galleryMediaUrls || [newMach.thumbnailUrl],
+        demoVideoUrl: demoVideoUrl || '',
+        videoTitle: `${newMach.name} Field Demo`
+      });
+    }
+
+    // Attach runtime fields
+    newMach.galleryMediaUrls = galleryMediaUrls || [];
+    newMach.demoVideoUrl = demoVideoUrl;
+    newMach.images = [newMach.thumbnailUrl, ...(newMach.galleryMediaUrls || [])];
+
     return newMach;
   }
 
@@ -73,8 +110,28 @@ class MachineryService {
     const list = this.getAllMachinery();
     const index = list.findIndex(m => m.id === id);
     if (index === -1) return false;
-    list[index] = { ...list[index], ...updates };
+
+    const { images, galleryMediaUrls, demoVideoUrl, ...cleanUpdates } = updates;
+    list[index] = { ...list[index], ...cleanUpdates };
     saveStorageData(MACHINERY_KEY, list);
+
+    if (galleryMediaUrls !== undefined || demoVideoUrl !== undefined) {
+      const existingMedia = machineMediaService.getMediaByMachineId(id);
+      if (existingMedia) {
+        machineMediaService.updateMedia(id, {
+          galleryMediaUrls: galleryMediaUrls ?? existingMedia.galleryMediaUrls,
+          demoVideoUrl: demoVideoUrl ?? existingMedia.demoVideoUrl
+        });
+      } else {
+        machineMediaService.addMedia({
+          machineId: id,
+          galleryMediaUrls: galleryMediaUrls || [],
+          demoVideoUrl: demoVideoUrl || '',
+          videoTitle: 'Field Demonstration'
+        });
+      }
+    }
+
     return true;
   }
 }

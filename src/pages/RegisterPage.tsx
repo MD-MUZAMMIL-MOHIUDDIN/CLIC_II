@@ -45,9 +45,15 @@ export const RegisterPage: React.FC = () => {
 
   const [state, setState] = useState(masterStates[0]?.Text || 'Madhya Pradesh');
   const [district, setDistrict] = useState('Indore');
-  const [mandal, setMandal] = useState('Sanwer');
+  const [block, setBlock] = useState('Sanwer');
   const [panchayat, setPanchayat] = useState('Kanadia Gram Panchayat');
   const [village, setVillage] = useState('Kanadia');
+
+  const availableStates = masterStates.map(s => s.Text);
+  const stateObj = masterStates.find(s => s.Text === state);
+  const availableDistricts = stateObj
+    ? masterDistricts.filter(d => String(d.StateId) === String(stateObj.StateId)).map(d => d.Text)
+    : [];
 
   const [organizationName, setOrganizationName] = useState('');
   const [consent, setConsent] = useState(false);

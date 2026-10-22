@@ -24,47 +24,61 @@ export const LocationPickerMap: React.FC<LocationPickerMapProps> = ({
   const markerRef = useRef<L.Marker | null>(null);
   const [isLocating, setIsLocating] = useState(false);
 
-  // Custom Pin Icon
+  // Custom Pin Icon with soft, elegant aesthetics
   const createPinIcon = () => {
     return L.divIcon({
       className: 'custom-location-picker-pin',
       html: `
-        <div style="position: relative; display: flex; align-items: center; justify-content: center;">
-          <div style="
-            background: linear-gradient(135deg, #1B472C 0%, #245C3A 100%);
-            width: 38px;
-            height: 38px;
-            border-radius: 50% 50% 50% 0;
-            transform: rotate(-45deg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 3px solid #ffffff;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.35);
-          ">
-            <div style="
-              width: 14px;
-              height: 14px;
-              background-color: #F8C346;
-              border-radius: 50%;
-              transform: rotate(45deg);
-              box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
-            "></div>
-          </div>
-          <div style="
-            position: absolute;
-            bottom: -8px;
-            width: 12px;
-            height: 5px;
-            background: rgba(0,0,0,0.25);
-            border-radius: 50%;
-            filter: blur(1.5px);
-          "></div>
+        <div style="position: relative; width: 40px; height: 48px; display: flex; align-items: center; justify-content: center; filter: drop-shadow(0 6px 12px rgba(27, 71, 44, 0.24)); cursor: grab;">
+          <svg width="40" height="48" viewBox="0 0 40 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="softPinGrad" x1="20" y1="2" x2="20" y2="42" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#3A8A59" />
+                <stop offset="100%" stop-color="#215B38" />
+              </linearGradient>
+              <radialGradient id="softCenterGlow" cx="20" cy="18" r="8" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#FDE68A" />
+                <stop offset="65%" stop-color="#F59E0B" />
+                <stop offset="100%" stop-color="#D97706" />
+              </radialGradient>
+              <filter id="softShadow" x="4" y="38" width="32" height="10" filterUnits="userSpaceOnUse">
+                <feGaussianBlur stdDeviation="1.5" />
+              </filter>
+            </defs>
+
+            <!-- Soft ground contact shadow -->
+            <ellipse cx="20" cy="43" rx="9" ry="3" fill="#143C24" fill-opacity="0.22" filter="url(#softShadow)" />
+
+            <!-- Soft teardrop pin with smooth, rounded bottom tip -->
+            <path
+              d="M20 3C11.16 3 4 10.16 4 19C4 28.5 17.8 39.8 19.3 41C19.7 41.3 20.3 41.3 20.7 41C22.2 39.8 36 28.5 36 19C36 10.16 28.84 3 20 3Z"
+              fill="url(#softPinGrad)"
+              stroke="#FFFFFF"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+
+            <!-- Subtle top-left soft gloss curve -->
+            <path
+              d="M10 16C10 11 14 7 20 7"
+              stroke="#FFFFFF"
+              stroke-opacity="0.32"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+
+            <!-- Soft white halo around the center dot -->
+            <circle cx="20" cy="19" r="7.5" fill="#FFFFFF" fill-opacity="0.96" />
+
+            <!-- Soft warm center dot -->
+            <circle cx="20" cy="19" r="5" fill="url(#softCenterGlow)" />
+          </svg>
         </div>
       `,
-      iconSize: [38, 48],
-      iconAnchor: [19, 44],
-      popupAnchor: [0, -44]
+      iconSize: [40, 48],
+      iconAnchor: [20, 42],
+      popupAnchor: [0, -42]
     });
   };
 

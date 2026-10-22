@@ -11,7 +11,6 @@ import {
   X,
   User,
   ChevronDown,
-  Calendar,
   LogOut,
   Settings,
   Shield,
@@ -32,11 +31,11 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ onToggleMobileSidebar, isSidebarCollapsed = false }) => {
-  const { currentUser, isAuthenticated, logout } = useAuth();
+  const { currentUser, logout } = useAuth();
   const routerLocation = useRouterLocation();
   const navigate = useNavigate();
   const isAdminUser = currentUser?.role === 'Admin' || currentUser?.role === 'superadmin';
-  const { selectedDistrict, selectedState, availableStates, setSelectedState, setSelectedDistrict } = useLocation();
+  const { selectedDistrict, selectedState, availableStates, availableDistricts, setSelectedState, setSelectedDistrict } = useLocation();
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -128,6 +127,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleMobileSidebar, isSidebar
 
   const notifications = notificationsSeed.filter(n => !currentUser || n.userId === currentUser.id || n.type === 'weather');
 
+  const formatUserJurisdiction = () => {
+    if (!currentUser?.location) return `${selectedDistrict}, ${selectedState}`;
+    const loc = currentUser.location;
+    const stateAbbr = loc.state === 'Madhya Pradesh' ? 'MP' : (loc.state || 'MP');
+    const dist = loc.district || selectedDistrict || 'Indore';
+    const block = loc.mandal || loc.block || 'Sanwer';
+    const rawPanchayat = loc.panchayat || 'Kanadia Gram Panchayat';
+    const panchayat = rawPanchayat.replace(/\s+Gram\s+Panchayat$/i, ' GP').replace(/\s+Panchayat$/i, ' GP');
+    const village = loc.village || 'Kanadia';
+
+    return `${stateAbbr} → ${dist} → ${block} → ${panchayat} → ${village}`;
+  };
+
   return (
     <>
       {/* Top Banner / Utility Bar */}
@@ -145,14 +157,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleMobileSidebar, isSidebar
           </div>
 
           <div className="flex items-center gap-3 ml-auto">
-            {/* Location selector trigger */}
+            {/* Location indicator / selector trigger */}
             <button
               onClick={() => setLocationModalOpen(true)}
-              className="flex items-center gap-1.5 text-xs text-cream-100 hover:text-white bg-forest-800/80 hover:bg-forest-800 px-2.5 py-1 rounded-md transition-colors border border-forest-700"
+              className="flex items-center gap-1.5 text-xs text-cream-100 hover:text-white bg-forest-800/80 hover:bg-forest-800 px-2.5 py-1 rounded-md transition-colors border border-forest-700 max-w-full"
+              title={currentUser ? "User Regional Jurisdiction (Click to change default region)" : "Select State & District"}
             >
-              <MapPin className="w-3.5 h-3.5 text-agri-light" />
-              <span className="font-medium">{selectedDistrict}, {selectedState}</span>
-              <ChevronDown className="w-3 h-3 text-forest-400" />
+              <MapPin className="w-3.5 h-3.5 text-agri-light shrink-0" />
+              <span className="font-medium truncate text-[11px] sm:text-xs">
+                {currentUser ? formatUserJurisdiction() : `${selectedDistrict}, ${selectedState}`}
+              </span>
+              <ChevronDown className="w-3 h-3 text-forest-400 shrink-0" />
             </button>
           </div>
         </div>
@@ -181,23 +196,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleMobileSidebar, isSidebar
 
             {/* Platform Logo */}
             <Link to="/" className="flex items-center gap-3 shrink-0 group">
-              <div className="w-10 h-10 rounded-xl bg-forest-600 flex items-center justify-center text-white shadow-subtle group-hover:bg-forest-700 transition-colors">
-                <svg className="w-6 h-6 text-harvest" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/>
-                  <path d="M12 8c-2 2-3 5-3 8"/>
-                  <path d="M12 8c2 2 3 5 3 8"/>
-                  <path d="M7 14c2-1 5-1 7 0"/>
-                </svg>
+              <div className="w-10 h-10 rounded-xl bg-forest-700 flex items-center justify-center text-white shadow-subtle group-hover:bg-forest-800 transition-colors border border-forest-600">
+                <span className="font-heading font-black text-base text-harvest tracking-tight">CLIC</span>
               </div>
               <div>
                 <div className="flex items-center gap-1.5">
-                  <span className="text-xl font-heading font-extrabold text-forest-900 tracking-tight">KrishiSeva</span>
+                  <span className="text-xl font-heading font-extrabold text-forest-900 tracking-tight">CLIC</span>
                   <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-forest-100 text-forest-800">
                     AgriHub
                   </span>
                 </div>
                 <p className="text-[10.5px] text-brand-muted font-medium -mt-0.5 hidden sm:block">
-                  Agricultural Services & Knowledge Platform
+                  Custom Hiring & Agricultural Services Ecosystem
                 </p>
               </div>
             </Link>

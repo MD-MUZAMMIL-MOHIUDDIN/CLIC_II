@@ -115,7 +115,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
             <div className="space-y-4">
               <div className="flex items-center gap-4 p-3.5 bg-cream-50 rounded-2xl border border-brand-border">
                 <img
-                  src={machinery.images[0]}
+                  src={machinery.images?.[0] || machinery.thumbnailUrl || ''}
                   alt={machinery.name}
                   className="w-20 h-20 rounded-xl object-cover shrink-0 border border-brand-border"
                 />

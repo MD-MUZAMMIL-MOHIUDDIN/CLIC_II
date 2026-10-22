@@ -7,7 +7,8 @@
     { "RefId": "5", "RefName": "Irrigation Method" },
     { "RefId": "6", "RefName": "Livestock Breed" },
     { "RefId": "7", "RefName": "Crop Season" },
-    { "RefId": "8", "RefName": "Crop Problem Category (crop_problem_category)" }
+    { "RefId": "8", "RefName": "Crop Problem Category (crop_problem_category)" },
+    { "RefId": "9", "RefName": "Machine_operation_type" }
   ],
   "dropdowns": [
     { "DropdownId": "1", "Value": "CEREALS", "Text": "Cereals", "RefId": "1" },
@@ -54,6 +55,11 @@
 
     { "DropdownId": "36", "Value": "1", "Text": "Pest", "RefId": "8" },
     { "DropdownId": "37", "Value": "2", "Text": "Disease", "RefId": "8" },
-    { "DropdownId": "38", "Value": "3", "Text": "Nutrient Deficiency", "RefId": "8" }
+    { "DropdownId": "38", "Value": "3", "Text": "Nutrient Deficiency", "RefId": "8" },
+
+    { "DropdownId": "39", "Value": "TILLAGE", "Text": "Tillage", "RefId": "9" },
+    { "DropdownId": "40", "Value": "SOWING", "Text": "Sowing", "RefId": "9" },
+    { "DropdownId": "41", "Value": "PLANT_PROTECTION", "Text": "Plant Protection", "RefId": "9" },
+    { "DropdownId": "42", "Value": "HARVESTING", "Text": "Harvesting", "RefId": "9" }
   ]
 }

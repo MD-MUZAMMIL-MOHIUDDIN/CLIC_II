@@ -1,0 +1,92 @@
+[
+  {
+    "machineId": "mach_101",
+    "galleryMediaUrls": [
+      "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1589923188900-85dae523342b?w=800&auto=format&fit=crop&q=80"
+    ],
+    "demoVideoUrl": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+    "videoTitle": "Field Operation & Dual-Clutch Tillage Demo"
+  },
+  {
+    "machineId": "mach_102",
+    "galleryMediaUrls": [
+      "https://images.unsplash.com/photo-1589923188900-85dae523342b?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=800&auto=format&fit=crop&q=80"
+    ],
+    "demoVideoUrl": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+    "videoTitle": "Stubble Mulching & Soil Pulverization Field Demo"
+  },
+  {
+    "machineId": "mach_103",
+    "galleryMediaUrls": [
+      "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=800&auto=format&fit=crop&q=80"
+    ],
+    "demoVideoUrl": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+    "videoTitle": "Zero-Tillage Precision Wheat & Gram Sowing Calibration Demo"
+  },
+  {
+    "machineId": "mach_104",
+    "galleryMediaUrls": [
+      "https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1589923188900-85dae523342b?w=800&auto=format&fit=crop&q=80"
+    ],
+    "demoVideoUrl": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+    "videoTitle": "Grade Accuracy Laser Transmitter Field Alignment & Levelling"
+  },
+  {
+    "machineId": "mach_105",
+    "galleryMediaUrls": [
+      "https://images.unsplash.com/photo-1628352081506-83c43123ed6d?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=800&auto=format&fit=crop&q=80"
+    ],
+    "demoVideoUrl": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+    "videoTitle": "40-Foot Folding Boom Pressure Testing & Ultra-Fine Bio-Mist Spray"
+  },
+  {
+    "machineId": "mach_106",
+    "galleryMediaUrls": [
+      "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1589923188900-85dae523342b?w=800&auto=format&fit=crop&q=80"
+    ],
+    "demoVideoUrl": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+    "videoTitle": "Deep Hardpan Inversion Ploughing & Headland Auto-Turnover"
+  },
+  {
+    "machineId": "mach_107",
+    "galleryMediaUrls": [
+      "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1589923188900-85dae523342b?w=800&auto=format&fit=crop&q=80"
+    ],
+    "demoVideoUrl": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+    "videoTitle": "Super-SMS Attached Soybean & Paddy Clean Grain Threshing Demo"
+  },
+  {
+    "machineId": "mach_108",
+    "galleryMediaUrls": [
+      "https://images.unsplash.com/photo-1589923188900-85dae523342b?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=800&auto=format&fit=crop&q=80"
+    ],
+    "demoVideoUrl": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+    "videoTitle": "Single-Pass Paddy Straw Chopping & Direct Wheat Sowing Field Test"
+  },
+  {
+    "machineId": "mach_109",
+    "galleryMediaUrls": [
+      "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?w=800&auto=format&fit=crop&q=80"
+    ],
+    "demoVideoUrl": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+    "videoTitle": "1500 LPM Long-Distance Layflat Hose Discharge Priming & Operation"
+  },
+  {
+    "machineId": "mach_110",
+    "galleryMediaUrls": [
+      "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1589923188900-85dae523342b?w=800&auto=format&fit=crop&q=80"
+    ],
+    "demoVideoUrl": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+    "videoTitle": "High-Efficiency Grain Separation & Chaff Cyclone Filtration Demo"
+  }
+]

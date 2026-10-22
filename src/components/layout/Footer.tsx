@@ -40,10 +40,10 @@ export const Footer: React.FC = () => {
         {/* Col 1: Platform Info */}
         <div className="lg:col-span-2 space-y-4">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-forest-700 flex items-center justify-center text-harvest font-bold">
-              KS
+            <div className="w-8 h-8 rounded-lg bg-forest-700 flex items-center justify-center text-harvest font-bold text-xs tracking-wider">
+              CLIC
             </div>
-            <span className="font-heading font-extrabold text-lg text-white tracking-tight">KrishiSeva</span>
+            <span className="font-heading font-extrabold text-lg text-white tracking-tight">CLIC</span>
           </div>
           <p className="text-forest-200 leading-relaxed max-w-sm">
             An integrated agricultural services and knowledge ecosystem uniting farmers, Custom Hiring Centres, farm machinery owners, livestock suppliers, and ICAR agricultural scientists.

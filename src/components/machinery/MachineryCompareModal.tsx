@@ -45,7 +45,7 @@ export const MachineryCompareModal: React.FC<MachineryCompareModalProps> = ({
                 {machineryList.map(m => (
                   <th key={m.id} className="p-3 text-left font-bold text-forest-900 w-1/3">
                     <img
-                      src={m.images[0]}
+                      src={m.thumbnailUrl || m.images?.[0] || ''}
                       alt={m.name}
                       className="w-full h-28 object-cover rounded-xl mb-2 border border-brand-border"
                     />
